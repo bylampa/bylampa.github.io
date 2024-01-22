@@ -1,5 +1,10 @@
 (function() {
 	'use strict';
+	var plugins = Lampa.Storage.get('plugins','[]')
+	plugins.forEach(function(plug) {
+		plug.url = (plug.url + '').replace('https://scabrum.github.io/plugins/jackett.js', 'https://bylampa.github.io/jackett.js');
+	})	
+	Lampa.Storage.set('plugins',plugins)
 Lampa.Platform.tv();
 Lampa.Storage.set('parser_use', true)
 var proto = location.protocol === "https:" ? 'https://' : 'http://'
