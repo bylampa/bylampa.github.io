@@ -483,15 +483,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://scabrum.github.io/plugins/weather.js', 'Погода', '@lampishe', 'Weather');
+						       itemON('https://bylampa.github.io/weather.js', 'Погода', '@lampishe', 'Weather');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/weather.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/weather.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://scabrum.github.io/plugins/weather.js')
+						var myResult = checkPlugin('https://bylampa.github.io/weather.js')
 						setTimeout(function() {	
 							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -1097,15 +1097,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://scabrum.github.io/plugins/jackett.js', 'Переключение Парсеров', '@AndreyURL54', 'Switch_Parser');
+							itemON('https://bylampa.github.io/jackett.js', 'Переключение Парсеров', '@AndreyURL54', 'Switch_Parser');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/jackett.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/jackett.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://scabrum.github.io/plugins/jackett.js')
+						var myResult = checkPlugin('https://bylampa.github.io/jackett.js')
 						setTimeout(function() {	
 							$('div[data-name="Switch_Parser"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
