@@ -1,10 +1,6 @@
 (function() {
 	'use strict';
-	var plugins = Lampa.Storage.get('plugins','[]')
-	plugins.forEach(function(plug) {
-		plug.url = (plug.url + '').replace('https://scabrum.github.io/plugins/jackett.js', 'https://bylampa.github.io/jackett.js');
-	})	
-	Lampa.Storage.set('plugins',plugins)
+	
 Lampa.Platform.tv();
 Lampa.Storage.set('parser_use', true)
 var proto = location.protocol === "https:" ? 'https://' : 'http://'
@@ -77,15 +73,15 @@ Lampa.Controller.listener.follow('toggle', function(e) {
 
 
 function changeParser() {
-     if (!Lampa.Storage.field('jackett_url_two')) 			                Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
-     if (Lampa.Storage.get('jackett_url_two') == 'no_parser') 		      Lampa.Storage.set('jackett_url', '')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
-     if (Lampa.Storage.get('jackett_url_two') == 'jac_lampa32_ru') 	    Lampa.Storage.set('jackett_url', 'jac.lampa32.ru')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
+     if (!Lampa.Storage.field('jackett_url_two')) 			Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
+     if (Lampa.Storage.get('jackett_url_two') == 'no_parser') 		Lampa.Storage.set('jackett_url', '')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
+     if (Lampa.Storage.get('jackett_url_two') == 'jac_lampa32_ru') 	Lampa.Storage.set('jackett_url', 'jac.lampa32.ru')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
      if (Lampa.Storage.get('jackett_url_two') == 'spawn_jacred')        Lampa.Storage.set('jackett_url', 'spawn.pp.ua:59118')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
-     if (Lampa.Storage.get('jackett_url_two') == 'jacred_xyz') 		      Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
-     if (Lampa.Storage.get('jackett_url_two') == 'spawn_jackett') 	    Lampa.Storage.set('jackett_url', 'spawn.pp.ua:59117')&Lampa.Storage.set('jackett_key', '2')&Lampa.Storage.set('jackett_interview', 'healthy')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'df');
-     if (Lampa.Storage.get('jackett_url_two') == 'jacred_ru') 		      Lampa.Storage.set('jackett_url', 'jacred.ru')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
-     if (Lampa.Storage.get('jackett_url_two') == 'unknown') 		        Lampa.Storage.set('jackett_url', '188.119.113.252:9117')&Lampa.Storage.set('jackett_key', '1')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
-     if (Lampa.Storage.get('jackett_url_two') == 'jack_letz_dev') 	    Lampa.Storage.set('jackett_url', 'jack.letz.dev')&Lampa.Storage.set('jackett_key', 'lampishe')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
+     if (Lampa.Storage.get('jackett_url_two') == 'jacred_xyz') 	        Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
+     if (Lampa.Storage.get('jackett_url_two') == 'spawn_jackett') 	Lampa.Storage.set('jackett_url', 'spawn.pp.ua:59117')&Lampa.Storage.set('jackett_key', '2')&Lampa.Storage.set('jackett_interview', 'healthy')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'df');
+     if (Lampa.Storage.get('jackett_url_two') == 'jacred_ru') 		Lampa.Storage.set('jackett_url', 'jacred.ru')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
+     if (Lampa.Storage.get('jackett_url_two') == 'unknown') 		Lampa.Storage.set('jackett_url', '188.119.113.252:9117')&Lampa.Storage.set('jackett_key', '1')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
+     if (Lampa.Storage.get('jackett_url_two') == 'jack_letz_dev') 	Lampa.Storage.set('jackett_url', 'jack.letz.dev')&Lampa.Storage.set('jackett_key', 'lampishe')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'lg');
      if (Lampa.Storage.get('jackett_url_two') == 'jacred_viewbox_dev') 	Lampa.Storage.set('jackett_url', 'jacred.viewbox.dev')&Lampa.Storage.set('jackett_key', 'viewbox')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', true)&Lampa.Storage.set('parse_lang', 'df_lg');
 	 return;
 }
@@ -99,9 +95,9 @@ Lampa.SettingsApi.addParam({
         no_parser:          'Не выбран',
         jac_lampa32_ru:     'Lampa32',
         jacred_xyz:         'Jacred.xyz',
-	      jacred_ru:          'Jacred.ru',
+	jacred_ru:          'Jacred.ru',
         jack_letz_dev:      'Lampishe',
-	      jacred_viewbox_dev: 'Viewbox',
+	jacred_viewbox_dev: 'Viewbox',
         spawn_jackett:      'Spawn Jackett',
         spawn_jacred:       'Spawn Jacred',
         unknown:            'Unknown',
