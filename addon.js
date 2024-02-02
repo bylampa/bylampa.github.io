@@ -996,43 +996,6 @@ Lampa.SettingsApi.addComponent({
 		Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
-                               			name: 'Онлайн',
-                   				type: 'select',
-                   				values: {
-							1:	'Установить',
-							2:	'Удалить',
-                   				},
-					//default: '1',
-               				},
-					field: {
-                                  		name: 'Онлайн',
-                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн от разработчика приложения Lampa'
-					},
-                           		onChange: function(value) {
-					if (value == '1') {
-						itemON('https://bwa.to/o', 'Онлайн', '@lampa', 'Онлайн');
-					}
-					if (value == '2') {
-						var pluginToRemoveUrl = "https://bwa.to/o";
-						deletePlugin(pluginToRemoveUrl);
-					}
-                },
-					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bwa.to/o')
-						setTimeout(function() {	
-							$('div[data-name="Онлайн"]').append('<div class="settings-param__status one"></div>')
-							if (myResult) {
-								$('div[data-name="Онлайн"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
-							} else {
-								$('div[data-name="Онлайн"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
-							}
-						}, 100);			  
-					}
-		});
-                
-		Lampa.SettingsApi.addParam({
-					component: 'add_online_plugin',
-					param: {
                                			name: 'Онлайн_BWA',
                    				type: 'select',
                    				values: {
