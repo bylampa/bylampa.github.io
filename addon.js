@@ -1029,39 +1029,39 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
-         
+                
 		Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
-                                 		name: 'Ebuland',
-                       				type: 'select',
-                       				values: {
+                               			name: 'Онлайн_BWA',
+                   				type: 'select',
+                   				values: {
 							1:	'Установить',
 							2:	'Удалить',
-                       			},
+                   				},
 					//default: '1',
-                   			},
+               				},
 					field: {
-						name: 'Ebu.land',
-						description: 'Плагин для просмотра фильмов и сериалов в высоком разрешении 4К, который доступен по подписке. Подробнее о подключении на сайте http://ebu.land'
+                                  		name: 'Онлайн BWA',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн'
 					},
-					onChange: function(value) {
-                        			if (value == '1') {
-                          			itemON('http://ebu.land/online.js', 'Ebu.land', '@rik', 'Ebuland');
-                        			}
-						if (value == '2') {
-							var pluginToRemoveUrl = "http://ebu.land/online.js";
-							deletePlugin(pluginToRemoveUrl);
-						}
-					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('https://bwa.to/o', 'Онлайн BWA', '@rik', 'Онлайн_BWA');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "https://bwa.to/o";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://ebu.land/online.js')
+						var myResult = checkPlugin('https://bwa.to/o')
 						setTimeout(function() {	
-							$('div[data-name="Ebuland"]').append('<div class="settings-param__status one"></div>')
+							$('div[data-name="Онлайн_BWA"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
-								$('div[data-name="Ebuland"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
 							} else {
-								$('div[data-name="Ebuland"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);			  
 					}
