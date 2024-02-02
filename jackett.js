@@ -1,8 +1,6 @@
 (function() {
 	'use strict';
-if (window.location.hostname = 'web.lampishe.cc') {
-		window.location.href = 'http://lampa.mx'
-}	
+
 Lampa.Platform.tv();
 Lampa.Storage.set('parser_use', true)
 var proto = location.protocol === "https:" ? 'https://' : 'http://'
