@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-	if (window.location.hostname = 'lampishe.cc') {
+	if (window.location.hostname = 'web.lampishe.cc') {
 		window.location.href = 'http://lampa.mx'
 	}
 function addonStart() {
