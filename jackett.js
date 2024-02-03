@@ -113,7 +113,7 @@ Lampa.SettingsApi.addParam({
 		Lampa.Settings.update();
     },
     onRender: function (item) {
-		changeParser();
+		//changeParser();
 			setTimeout(function() {
 				$('div[data-children="parser"]').on('hover:enter', function(){
 					Lampa.Settings.update();
