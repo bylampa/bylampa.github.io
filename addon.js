@@ -1651,6 +1651,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_sisi_plugin',
+					param: {
+						name: 'Nyam',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+						//default: '1',
+					},
+					field: {
+						name: 'Sisi Nyam',
+						description: 'Другая версия плагина Клубничка (частично платная)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://sisi.am/nyam.js', 'Sisi Nyam', '@rik', 'Nyam');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://sisi.am/nyam.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://sisi.am/nyam.js')
+						setTimeout(function() {	
+							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
 	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
                                   param: {
