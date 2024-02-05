@@ -5,7 +5,7 @@
 	
       function hideIT(){
 
-                document.addEventListener('DOMSubtreeModified', function removeAD(event){
+                //document.addEventListener('DOMSubtreeModified', function removeAD(event){
 		  var cardElements = document.getElementsByClassName('card');
 		  if(cardElements.length > 0){
 			if (initMarker == 0) {
@@ -19,7 +19,7 @@
 			  }, 500)
 			}
 		  }
-		}, false);
+		//}, false);
 		
 		var myCardInterval = setInterval(function(){
 			if (document.querySelector('.card') !== null) {
