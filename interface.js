@@ -36,7 +36,7 @@
         if (pg) details.push('<span class="full-start__pg" style="font-size: 0.9em;">' + pg + '</span>');
           if (data.number_of_seasons) {
 			details.push('<span>Сезоны: ' + data.number_of_seasons + '</span>');
-		  }
+          }
         html.find('.new-interface-info__head').empty().append(head.join(', '));
         html.find('.new-interface-info__details').html(details.join('<span class="new-interface-info__split">&#9679;</span>'));
       };
