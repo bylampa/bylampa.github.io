@@ -28,7 +28,6 @@
 						setTimeout(function(){	
 							$('.selectbox-item__lock').parent().css('display', 'none');
 							$('.settings-param-title').last().css('display', 'none');
-							$('.settings-param-title > span:contains("@lampa_plugins_uncensored")').last().css('display', 'block');
 						},50)
 				})
 				clearInterval(myCardInterval);
@@ -65,7 +64,6 @@ function cub_off() {
 		    setTimeout(function(){	
 			$('.selectbox-item__lock').parent().css('display', 'none');
 			$('.settings-param-title').last().css('display', 'none');
-			$('.settings-param-title > span:contains("@lampa_plugins_uncensored")').last().css('display', 'block');
 		    },0)
 		  });	  
                    setTimeout(function(){
