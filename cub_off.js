@@ -13,6 +13,7 @@
 			  setTimeout(function(){
  				  $('.selectbox-item__lock').parent().css('display', 'none');
 				  $('.settings-param-title').last().css('display', 'none');
+				  $('.settings-param-title > span:contains("@lampa_plugins_uncensored")').last().css('display', 'block');
 			  }, 50)
 			  setTimeout(function(){
 				  initMarker = 0 // Снимаем флаг
