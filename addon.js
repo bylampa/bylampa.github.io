@@ -1499,7 +1499,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					field: {
 							name: 'Hack TV',
-							description: 'Плагин для просмотра IPTV каналов. Сортировка каналов по группам и возможность добавить каналы в избранное. Работает только со своим плейлистом, добавленным на сайте https://cub.watch/iptv'
+							description: 'Плагин для просмотра IPTV каналов'
 					},
 					onChange: function(value) {
 						if (value == '1') {
