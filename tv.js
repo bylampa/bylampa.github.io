@@ -1365,9 +1365,9 @@ function langGet(name) {
 
 langAdd('default_playlist',
     {
-	ru: 'https://goo.su/4rxrAP',
-	uk: 'https://goo.su/4rxrAP',
-	be: 'https://goo.su/4rxrAP',
+	ru: 'https://lightiptv.cc/playlist/hls/86fzonrydg.m3u',
+	uk: 'https://lightiptv.cc/playlist/hls/86fzonrydg.m3u',
+	be: 'https://lightiptv.cc/playlist/hls/86fzonrydg.m3u',
 	en: 'https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8',
 	zh: 'https://raw.iqiq.io/Free-TV/IPTV/master/playlist.m3u8'
     }
