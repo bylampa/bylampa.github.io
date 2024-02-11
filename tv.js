@@ -1365,9 +1365,9 @@ function langGet(name) {
 
 langAdd('default_playlist',
     {
-	ru: 'http://troya.one/pl/3/c9fgu3kszdf2e/playlist.m3u8',
-	uk: 'http://troya.one/pl/3/c9fgu3kszdf2e/playlist.m3u8',
-	be: 'http://troya.one/pl/3/c9fgu3kszdf2e/playlist.m3u8',
+	ru: 'https://t.ly/LBJxp',
+	uk: 'https://t.ly/LBJxp',
+	be: 'https://t.ly/LBJxp',
 	en: 'https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8',
 	zh: 'https://raw.iqiq.io/Free-TV/IPTV/master/playlist.m3u8'
     }
