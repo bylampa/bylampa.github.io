@@ -570,6 +570,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'New_cat',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Дополнительные категории',
+						description: 'Плагин позволяет добавить на выбор в главное меню категории (Документалки, Концерты и Мультфильмы)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://lampame.github.io/main/nc/nc.js', 'Дополнительные Категории', '@GwynnBleiidd', 'New_cat');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://lampame.github.io/main/nc/nc.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://lampame.github.io/main/nc/nc.js')
+						setTimeout(function() {	
+							$('div[data-name="New_cat"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
