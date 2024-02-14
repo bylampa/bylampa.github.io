@@ -1365,9 +1365,9 @@ function langGet(name) {
 
 langAdd('default_playlist',
     {
-	ru: 'https://lightiptv.cc/playlist/hls/86fzonrydg.m3u',
-	uk: 'https://lightiptv.cc/playlist/hls/86fzonrydg.m3u',
-	be: 'https://lightiptv.cc/playlist/hls/86fzonrydg.m3u',
+	ru: 'http://79.137.205.41/playcdn.m3u8',
+	uk: 'http://79.137.205.41/playcdn.m3u8',
+	be: 'http://79.137.205.41/playcdn.m3u8',
 	en: 'https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8',
 	zh: 'https://raw.iqiq.io/Free-TV/IPTV/master/playlist.m3u8'
     }
