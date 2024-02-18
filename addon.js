@@ -480,15 +480,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/weather.js', 'Погода', '@lampishe', 'Weather');
+						       itemON('http://tinyurl.com/rassfp3j', 'Погода', '@lampishe', 'Weather');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/weather.js";
+							var pluginToRemoveUrl = "http://tinyurl.com/rassfp3j";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						var myResult = checkPlugin('http://tinyurl.com/rassfp3j')
 						setTimeout(function() {	
 							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -516,15 +516,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/cub_off.js', 'Cub Off', '@scabrum', 'Cub_off');
+						       itemON('http://tinyurl.com/4pwey9ry', 'Cub Off', '@scabrum', 'Cub_off');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/cub_off.js";
+							var pluginToRemoveUrl = "http://tinyurl.com/4pwey9ry";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/cub_off.js')
+						var myResult = checkPlugin('http://tinyurl.com/4pwey9ry')
 						setTimeout(function() {	
 							$('div[data-name="Cub_off"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -552,15 +552,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/interface.js', 'Стильный Интерфейс', '@lampa', 'Style_interface_fix');
+						       itemON('http://tinyurl.com/yyux7dwx', 'Стильный Интерфейс', '@lampa', 'Style_interface_fix');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/interface.js";
+							var pluginToRemoveUrl = "http://tinyurl.com/yyux7dwx";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/interface.js')
+						var myResult = checkPlugin('http://tinyurl.com/yyux7dwx')
 						setTimeout(function() {	
 							$('div[data-name="Style_interface_fix"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -624,15 +624,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/source.js', 'Дополнительные Источники', '@scabrum', 'New_source');
+						       itemON('http://tinyurl.com/cbpt75ye', 'Дополнительные Источники', '@scabrum', 'New_source');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/source.js";
+							var pluginToRemoveUrl = "http://tinyurl.com/cbpt75ye";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/source.js')
+						var myResult = checkPlugin('http://tinyurl.com/cbpt75ye')
 						setTimeout(function() {	
 							$('div[data-name="New_source"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
