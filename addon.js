@@ -678,8 +678,8 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);
 					}
-		});
-			Lampa.SettingsApi.addParam({
+		  });
+	          Lampa.SettingsApi.addParam({
 						component: 'add_interface_plugin',
 						param: {
 							name: 'goldtheme',
@@ -692,11 +692,11 @@ Lampa.SettingsApi.addComponent({
 							},
 						field: {
 							name: 'Золотая тема',
-							description: 'Плагин включает золотую тему которая доступна для премиум пользователей'
+							description: 'Плагин включает золотую тему'
 						},
 						onChange: function(value) {
 							if (value == '1') {
-								itemON('https://bazzzilius.github.io/scripts/gold_theme.js', 'Золотая тема', '@BazZziliuS', 'goldtheme');
+								itemON('https://bazzzilius.github.io/scripts/gold_theme.js', 'Золотая Тема', '@BazZziliuS', 'goldtheme');
 							}
 							if (value == '2') {
 								var pluginToRemoveUrl = "https://bazzzilius.github.io/scripts/gold_theme.js";
