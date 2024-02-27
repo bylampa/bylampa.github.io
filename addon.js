@@ -1868,7 +1868,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	       /* Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
 					param: {
 						name: 'Nyam',
@@ -1903,7 +1903,7 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);		  
 					}
-		});
+		});*/
 	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
                                   param: {
