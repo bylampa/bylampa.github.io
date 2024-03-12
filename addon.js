@@ -1763,19 +1763,19 @@ Lampa.SettingsApi.addComponent({
 					},
 					field: {
 						name: 'Радио Record Mod',
-						description: 'Всё тот же плагин Радио Record, но с качеством потока в 320kbp/s и единым списком станций без разделения на жанры'
+						description: 'Всё тот же плагин Радио Record, но с единым списком станций без разделения на жанры'
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-							itemON('https://nemiroff.github.io/lampa/rr.js', 'Радио Record Mod', '@nemiroff', 'Record_Mod');
+							itemON('https://lampame.github.io/main/rradio.js', 'Радио Record Mod', '@GwynnBleiidd', 'Record_Mod');
                      				}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/rr.js";
+							var pluginToRemoveUrl = "https://lampame.github.io/main/rradio.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
                     },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://nemiroff.github.io/lampa/rr.js')
+						var myResult = checkPlugin('https://lampame.github.io/main/rradio.js')
 						setTimeout(function() {	
 							$('div[data-name="Record_Mod"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
