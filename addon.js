@@ -408,15 +408,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('http://95.215.8.180/plugins/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult');
+						       itemON('http://193.233.134.21/plugins/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://95.215.8.180/plugins/mult.js";
+							var pluginToRemoveUrl = "http://193.233.134.21/plugins/mult.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('http://95.215.8.180/plugins/mult.js')
+						var myResult = checkPlugin('http://193.233.134.21/plugins/mult.js')
 						setTimeout(function() {	
 							$('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -1419,15 +1419,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://95.215.8.180/checker.js', 'Поиск Локального TorrServera', '@AndreyURL54', 'Check_server');
+							itemON('http://193.233.134.21/plugins/checker.js', 'Поиск Локального TorrServera', '@AndreyURL54', 'Check_server');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://95.215.8.180/checker.js";
+							var pluginToRemoveUrl = "http://193.233.134.21/plugins/checker.js";
 							deletePlugin(pluginToRemoveUrl);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://95.215.8.180/checker.js')
+						var myResult = checkPlugin('http://193.233.134.21/plugins/checker.js')
 						setTimeout(function() {	
 							$('div[data-name="Check_server"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
