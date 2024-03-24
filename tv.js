@@ -1365,9 +1365,9 @@ function langGet(name) {
 
 langAdd('default_playlist',
     {
-	ru: 'https://lnky.ru/350td',
-	uk: 'https://lnky.ru/350td',
-	be: 'https://lnky.ru/350td',
+	ru: 'https://raw.githubusercontent.com/blackbirdstudiorus/LoganetXIPTV/main/LoganetXAll.m3u',
+	uk: 'https://raw.githubusercontent.com/blackbirdstudiorus/LoganetXIPTV/main/LoganetXAll.m3u',
+	be: 'https://raw.githubusercontent.com/blackbirdstudiorus/LoganetXIPTV/main/LoganetXAll.m3u',
 	en: 'https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8',
 	zh: 'https://raw.iqiq.io/Free-TV/IPTV/master/playlist.m3u8'
     }
