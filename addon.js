@@ -715,6 +715,42 @@ Lampa.SettingsApi.addComponent({
 							}, 100);
 						}
 		});
+	        Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'concert_search',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'Поиск концертов',
+							description: 'Плагин осуществляет поиск концертов через парсер Jackett'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('https://lampame.github.io/main/cts.js', 'Поиск Концертов', '@GwynnBleiidd', 'concert_search');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "https://lampame.github.io/main/cts.js";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							var myResult = checkPlugin('https://lampame.github.io/main/cts.js')
+							setTimeout(function() {	
+								$('div[data-name="concert_search"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);
+						}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
