@@ -1510,6 +1510,78 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'second_but_torrents',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Вторая кнопка Торренты',
+						description: 'Плагин добавляет вторую кнопку Торренты'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://github.freebie.tom.ru/torrents.js', 'Вторая Кнопка Торренты', '@VitalikPVA', 'second_but_torrents');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://github.freebie.tom.ru/torrents.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://github.freebie.tom.ru/torrents.js')
+						setTimeout(function() {	
+							$('div[data-name="second_but_torrents"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	       /* Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'free_torr',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Free Torrserver',
+						description: 'Плагин автоматически подставляет torrserver из своей базы'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bylampa.github.io/freetorr.js', 'Free Torrserver', '@scabrum', 'free_torr');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/freetorr.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bylampa.github.io/freetorr.js')
+						setTimeout(function() {	
+							$('div[data-name="free_torr"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});*/
 	/*
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_torrent_plugin',
