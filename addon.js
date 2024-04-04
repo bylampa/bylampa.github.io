@@ -1546,7 +1546,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
-	       /* Lampa.SettingsApi.addParam({
+	        Lampa.SettingsApi.addParam({
 					component: 'add_torrent_plugin',
 					param: {
 						name: 'free_torr',
@@ -1581,7 +1581,7 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);		  
 					}
-		});*/
+		});
 	/*
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_torrent_plugin',
