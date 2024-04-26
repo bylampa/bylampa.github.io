@@ -1282,6 +1282,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                               			name: 'Showy',
+                   				type: 'select',
+                   				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                   				},
+					//default: '1',
+               				},
+					field: {
+                                  		name: 'Showy',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн'
+					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('http://showy.online/m.js', 'Showy', '@showy', 'Showy');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "http://showy.online/m.js";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://showy.online/m.js')
+						setTimeout(function() {	
+							$('div[data-name="Showy"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
                                   param: {
