@@ -1089,6 +1089,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Timecode',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Синхронизация таймкодов',
+                                    		description: 'Плагин синхронизирует таймкоды между вашими устройствами'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/timecode.js', 'Синхронизация Таймкодов', '@scabrum', 'Timecode');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/timecode.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bylampa.github.io/timecode.js')
+						setTimeout(function() {	
+							$('div[data-name="Timecode"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Timecode"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Timecode"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
                                   param: {
