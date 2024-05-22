@@ -751,6 +751,78 @@ Lampa.SettingsApi.addComponent({
 							}, 100);
 						}
 		});
+	        Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'franchise',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'Франшиза',
+							description: 'Плагин показывает франшизу по текущему фильму в карточке под описанием'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('https://bdvburik.github.io/franshrezka.js', 'Франшиза', '@BDV_Burik', 'franchise');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "https://bdvburik.github.io/franshrezka.js";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							var myResult = checkPlugin('https://bdvburik.github.io/franshrezka.js')
+							setTimeout(function() {	
+								$('div[data-name="franchise"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="franchise"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="franchise"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);
+						}
+		});
+	        Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'Rezka_comments',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'Комментарии от Rezka',
+							description: 'Плагин выводит комментарии к фильму от сервиса Rezka'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('https://BDVBurik.github.io/rezkacommentwo.js', 'Комментарии Rezka', '@BDV_Burik', 'Rezka_comments');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "https://BDVBurik.github.io/rezkacommentwo.js";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							var myResult = checkPlugin('https://BDVBurik.github.io/rezkacommentwo.js')
+							setTimeout(function() {	
+								$('div[data-name="Rezka_comments"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="Rezka_comments"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="Rezka_comments"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);
+						}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
