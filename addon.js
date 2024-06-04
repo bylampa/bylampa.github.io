@@ -920,7 +920,7 @@ Lampa.SettingsApi.addComponent({
 						},
 					field: {
 						name: 'Проверка новой версии',
-						description: 'Проверяет наличие новой версии приложения на Android TV'
+						description: 'Проверяет наличие новой версии приложения на Android TV от Nemiroff (в данный момент не поддерживается)'
 					},
 					onChange: function(value) {
 						if (value == '1') {
@@ -1386,6 +1386,42 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
 							} else {
 								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                               			name: 'Онлайн_BWA_Cloud',
+                   				type: 'select',
+                   				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                   				},
+					//default: '1',
+               				},
+					field: {
+                                  		name: 'Онлайн BWA Cloud',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн, менее капризный для работы и более подходит для старых устройств, чем Online BWA'
+					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('http://bwa.to/cloud.js', 'Онлайн BWA Cloud', '@rik', 'Онлайн_BWA_Cloud');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "http://bwa.to/cloud.js";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://bwa.to/cloud.js')
+						setTimeout(function() {	
+							$('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);			  
 					}
