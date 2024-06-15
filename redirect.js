@@ -39,7 +39,7 @@ function startMe() {
 					name: 'location_server',
 					type: 'input', 
 					values: '',
-					placeholder: 'Например: lampa.surge.sh',
+					placeholder: 'Например: bylampa.online',
 					default: ''
 				},
 				field: {
