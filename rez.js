@@ -147,13 +147,27 @@ collectRender = async function (data) {
 
     ennTitle(url);
   };
-  ennTitle = async function (url) {
-    let enTitle;
-    await fetch(url)
-      .then((response) => response.json())
-      .then((e) => (enTitle = e.title || e.name));
+  function ennTitle(url) {
+  return new Promise(function(resolve, reject) {
+    fetch(url)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(e) {
+        var enTitle = e.title || e.name;
+        resolve(enTitle);
+      })
+      .catch(function(error) {
+        reject(error);
+      });
+  })
+  .then(function(enTitle) {
     searchRezka(normalizeTitle(enTitle), year);
-  };
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
+}
 
   // Функция для начала работы плагина
   startPlugin = function () {
