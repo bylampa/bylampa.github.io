@@ -72,9 +72,9 @@ collectRender = async function (data) {
     });
     
     data.forEach(function(el, index) {
-  // console.log("data", $("a", el.children[1])?.attr("href")?.split("/")[3]);
+  
   www += '<div id="search' + el.children[0].innerText + '" class=" stringhide selector ' + el.className + '">';
-  // console.log(wid, index);
+  
   if (wid + 2 >= index && index >= wid - 2) {
     www += " show";
   } else {
@@ -84,11 +84,10 @@ collectRender = async function (data) {
     el.children[0].innerText + '</span><span class="' + el.children[1].className + '">' +
     el.children[1].innerText +
     '</span><span class="' + el.children[1].className + '">';
-  
+
   var href = $("a", el.children[1]).attr("href");
-  if (href) {
-    www += Lampa.Lang.translate(href.split("/")[3]);
-  }
+  www += href ? Lampa.Lang.translate(href.split("/")[3]) : "";
+
   www += '</span><span class="' + el.children[2].className + '">' +
     el.children[2].innerText +
     '</span><span class="' + el.children[3].className + '"><i class="hd-tooltip tooltipstered">' +
