@@ -136,7 +136,7 @@ collectRender = async function (data) {
     });
   };
 
-  getEnTitle = async function (id, type) {
+  getEnTitle = function (id, type) {
     var url;
 
     if (type === "movie") {
@@ -147,11 +147,11 @@ collectRender = async function (data) {
 
     ennTitle(url);
   };
-  ennTitle = async function (url) {
+  ennTitle = function (url) {
     var enTitle;
-    await fetch(url)
-      .then((response) => response.json())
-      .then((e) => (enTitle = e.title || e.name));
+    fetch(url)
+      .then(function(response) { return response.json(); })
+      .then(function(e) { enTitle = e.title || e.name; });
     searchRezka(normalizeTitle(enTitle), year);
   };
 
