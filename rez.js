@@ -41,22 +41,23 @@
     );
   };
 
-  searchRezka = async function (name, year) {
-    var dom = await reazkaParseHtmlDom(
+  var searchRezka = function (name, year) {
+    var dom = reazkaParseHtmlDom(
       "https://hdrezka.ag/search/?do=search&subaction=search&q=",
       name,
       year
-    );
+    ).then(function (dom) {
+      var arr = Array.from(
+        dom.getElementsByClassName("b-content__inline_item-link")
+      );
+      var url = arr[0].children[0].href;
 
-    var arr = Array.from(
-      dom.getElementsByClassName("b-content__inline_item-link")
-    );
-    url = arr[0].children[0].href;
-
-    dom = await reazkaParseHtmlDom(url, "", "");
-    arr = Array.from(dom.getElementsByClassName("b-post__partcontent_item"));
-    // console.log("sech rezka arr", arr);
-    collectRender(arr);
+      return reazkaParseHtmlDom(url, "", "").then(function (dom) {
+        var arr = Array.from(dom.getElementsByClassName("b-post__partcontent_item"));
+        // console.log("sech rezka arr", arr);
+        return collectRender(arr);
+      });
+    });
   };
 
   collectRender = async function (data) {
