@@ -66,10 +66,12 @@ collectRender = async function (data) {
 
     // console.log("data", data);
 
-    let wid;
-    data.filter((el, index) => {
-      el.className.includes("current") ? (wid = index) : "";
-    });
+    var wid;
+data.filter(function(el, index) {
+  if (el.className.includes("current")) {
+    wid = index;
+  }
+});
     
     data.forEach((el, index) => {
       //console.log("data", $("a", el.children[1])?.attr("href")?.split("/")[3]);
