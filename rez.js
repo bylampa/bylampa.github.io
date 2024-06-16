@@ -151,7 +151,7 @@ collectRender = async function (data) {
     var enTitle;
     fetch(url)
       .then(function(response) { return response.json(); })
-      .then(function(e) { enTitle = e.title || e.name; });
+      .then(function(e) { enTitle = (e.title || e.name).toLowerCase(); });
     searchRezka(normalizeTitle(enTitle), year);
   };
 
