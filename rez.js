@@ -136,8 +136,8 @@ collectRender = async function (data) {
     });
   };
 
-  getEnTitle = function (id, type) {
-    var url;
+  getEnTitle = async function (id, type) {
+    let url;
 
     if (type === "movie") {
       url = kp_prox + tmdbApiUrl + "movie/" + id + urlEndTMDB;
@@ -147,11 +147,11 @@ collectRender = async function (data) {
 
     ennTitle(url);
   };
-  ennTitle = function (url) {
-    var enTitle;
-    fetch(url)
-      .then(function(response) { return response.json(); })
-      .then(function(e) { enTitle = (e.title || e.name).toLowerCase(); });
+  ennTitle = async function (url) {
+    let enTitle;
+    await fetch(url)
+      .then((response) => response.json())
+      .then((e) => (enTitle = e.title || e.name));
     searchRezka(normalizeTitle(enTitle), year);
   };
 
