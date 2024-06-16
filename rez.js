@@ -136,8 +136,8 @@ collectRender = async function (data) {
     });
   };
 
-  getEnTitle = async function (id, type) {
-    let url;
+  getEnTitle = function (id, type) {
+    var url;
 
     if (type === "movie") {
       url = kp_prox + tmdbApiUrl + "movie/" + id + urlEndTMDB;
