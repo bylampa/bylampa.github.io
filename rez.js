@@ -120,19 +120,17 @@ collectRender = async function (data) {
 
 
       // let hide = 1;
-      $(".collectionfocus").one("hover:enter", function () {
-        // console.log("asdasdasd");
-        $(".hdhd").removeClass("hide");
-        $("#collect").removeClass("collectionfocus selector");
-        $(".b-post__partcontent_item").bind("hover:enter", (e) => {
-          Lampa.Search.open({
-            input: `${e?.currentTarget?.children[1]?.innerText
-              ?.split("/")[0]
-              .trim()
-              .replace(/\s+$/, "")}`,
-          });
-        });
-      });
+      $(".collectionfocus").one("hover:enter", function() {
+  $(".hdhd").removeClass("hide");
+  $("#collect").removeClass("collectionfocus selector");
+
+  $(".b-post__partcontent_item").bind("hover:enter", function(e) {
+    var input = $(this).children()[1].innerText.split("/")[0].trim().replace(/\s+$/, "");
+    Lampa.Search.open({
+      input: input
+    });
+  });
+});
     });
   };
 
