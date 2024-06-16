@@ -66,21 +66,21 @@ collectRender = async function (data) {
 
     // console.log("data", data);
 
-    var wid;
+    let wid;
     data.filter((el, index) => {
       el.className.includes("current") ? (wid = index) : "";
     });
     // console.log("цid", wid);
     data.forEach((el, index) => {
       //console.log("data", $("a", el.children[1])?.attr("href")?.split("/")[3]);
-      www += <div  id="search${el.children[0].innerText}" class=" stringhide selector  ${el.className};
+      www += `<div  id="search${el.children[0].innerText}" class=" stringhide selector  ${el.className}`;
       //console.log(wid, index);
       if (wid + 2 >= index && index >= wid - 2) {
         www += " show";
       } else {
         www += " hide hdhd";
       }
-      www +=  "><span  class="${el.children[0].className}">
+      www += ` "><span  class="${el.children[0].className}">
       ${el.children[0].innerText}</span><span class="${
         el.children[1].className
       }">${el.children[1].innerText}
@@ -98,7 +98,7 @@ collectRender = async function (data) {
   }" ><i class="hd-tooltip tooltipstered" >${
         el.children[3].innerText
       }</i> </span>
-</div>;
+</div>`;
 
 
       // if (el.className.includes("current")) {
@@ -107,8 +107,8 @@ collectRender = async function (data) {
     });
 
     // console.log("www", www);
-    var collect = $(
-      <div id ="collect" class="collection selector collectionfocus" style='display: table;width: 100%;'> +
+    let collect = $(
+      `<div id ="collect" class="collection selector collectionfocus" style='display: table;width: 100%;'>` +
         www +
         "</div>"
     );
@@ -126,10 +126,10 @@ collectRender = async function (data) {
         $("#collect").removeClass("collectionfocus selector");
         $(".b-post__partcontent_item").bind("hover:enter", (e) => {
           Lampa.Search.open({
-            input: ${e?.currentTarget?.children[1]?.innerText
+            input: `${e?.currentTarget?.children[1]?.innerText
               ?.split("/")[0]
               .trim()
-              .replace(/\s+$/, "")},
+              .replace(/\s+$/, "")}`,
           });
         });
       });
