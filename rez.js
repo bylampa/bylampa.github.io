@@ -60,58 +60,76 @@
     });
   };
 
-  var collectRender = function (data) {
-    var www = "";
+collectRender = async function (data) {
+    www = "";
     
+
     // console.log("data", data);
 
     var wid;
-    data.filter(function (el, index) {
-      if (el.className.includes("current")) {
-        wid = index;
-      }
+    data.filter((el, index) => {
+      el.className.includes("current") ? (wid = index) : "";
     });
     // console.log("цid", wid);
-    data.forEach(function (el, index) {
+    data.forEach((el, index) => {
       //console.log("data", $("a", el.children[1])?.attr("href")?.split("/")[3]);
-      www += "<div  id=\"search" + el.children[0].innerText + "\" class=\" stringhide selector  " + el.className + "\">";
+      www += <div  id="search${el.children[0].innerText}" class=" stringhide selector  ${el.className};
       //console.log(wid, index);
       if (wid + 2 >= index && index >= wid - 2) {
         www += " show";
       } else {
         www += " hide hdhd";
       }
-      www +=  "><span  class=\"" + el.children[0].className + "\">" +
-      el.children[0].innerText + "</span><span class=\"" + 
-      el.children[1].className + "\">" + el.children[1].innerText +
-  "</span><span class=\"" + el.children[1].className + "\"> " + 
-      (Lampa && Lampa.Lang && Lampa.Lang.translate($("a", el.children[1]).attr("href") ? $("a", el.children[1]).attr("href").split("/")[3] : "")) +
-  " </span><span class=\"" + el.children[2].className + "\">" + 
-      el.children[2].innerText +
-  "</span><span class=\"" + 
-      el.children[3].className + "\" ><i class=\"hd-tooltip tooltipstered\" >" + 
-      el.children[3].innerText + "</i> </span>
-</div>";
+      www +=  "><span  class="${el.children[0].className}">
+      ${el.children[0].innerText}</span><span class="${
+        el.children[1].className
+      }">${el.children[1].innerText}
+  </span><span class="${el.children[1].className}"> ${
+        $("a", el.children[1]).attr("href")
+          ? Lampa.Lang.translate(
+              $("a", el.children[1])?.attr("href")?.split("/")[3]
+            )
+          : ""
+      } </span><span class="${el.children[2].className}">${
+        el.children[2].innerText
+      }
+  </span><span class="${
+    el.children[3].className
+  }" ><i class="hd-tooltip tooltipstered" >${
+        el.children[3].innerText
+      }</i> </span>
+</div>;
+
+
+      // if (el.className.includes("current")) {
+      //   wid = index;
+      // }
     });
 
     // console.log("www", www);
-    var collect = $("<div id =\"collect\" class=\"collection selector collectionfocus\" style='display: table;width: 100%;'>" +
+    var collect = $(
+      <div id ="collect" class="collection selector collectionfocus" style='display: table;width: 100%;'> +
         www +
-        "</div>");
+        "</div>"
+    );
 
     $(".collection").remove();
     $(".full-descr__text").after(collect);
 
     $("#collect").ready(function () {
+
+
+      // let hide = 1;
       $(".collectionfocus").one("hover:enter", function () {
+        // console.log("asdasdasd");
         $(".hdhd").removeClass("hide");
         $("#collect").removeClass("collectionfocus selector");
-        $(".b-post__partcontent_item").bind("hover:enter", function (e) {
+        $(".b-post__partcontent_item").bind("hover:enter", (e) => {
           Lampa.Search.open({
-            input: e.currentTarget.children[1].innerText
-              .split("/")[0]
+            input: ${e?.currentTarget?.children[1]?.innerText
+              ?.split("/")[0]
               .trim()
-              .replace(/\s+$/, ""),
+              .replace(/\s+$/, "")},
           });
         });
       });
