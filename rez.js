@@ -3,7 +3,7 @@
   ////rezkacomment без спойлеров
   ("use strict");
   var tmdbApiUrl = "https://api.themoviedb.org/3/";
-  var kp_prox = "https://apn.watch/";//"https://worker-patient-dream-26d7.bdvburik.workers.dev/";
+  var kp_prox = "https://cors.apn.monster";//"https://worker-patient-dream-26d7.bdvburik.workers.dev/";
   var urlEndTMDB = "?language=en-US&api_key=4ef0d7355d9ffb5151e987764708ce96";
   var namemovie;
   var www;
