@@ -60,7 +60,7 @@
     });
   };
 
-collectRender = async function (data) {
+/*collectRender = async function (data) {
     www = "";
 
     var wid;
@@ -111,7 +111,53 @@ data.filter(function(el, index) {
   });
   });
   });
-  };
+  };*/
+
+  collectRender = function (data) {
+    var www = "";
+
+    var wid;
+    data.forEach(function(el, index) {
+        if (el.className.indexOf("current") !== -1) {
+            wid = index;
+        }
+    });
+
+    data.forEach(function(el, index) {
+        www += "<div id=\"search" + el.children[0].innerText + "\" class=\"stringhide selector " + el.className;
+        if (wid + 2 >= index && index >= wid - 2) {
+            www += " show";
+        } else {
+            www += " hide hdhd";
+        }
+        www += "\"><span class=\"" + el.children[0].className + "\">" + el.children[0].innerText + "</span><span class=\"" + el.children[1].className + "\">" + el.children[1].innerText + "</span><span class=\"" + el.children[1].className + "\">";
+        if ($("a", el.children[1]).attr("href")) {
+            www += Lampa.Lang.translate($("a", el.children[1]).attr("href").split("/")[3]);
+        } else {
+            www += "";
+        }
+        www += "</span><span class=\"" + el.children[2].className + "\">" + el.children[2].innerText + "</span><span class=\"" + el.children[3].className + "\"><i class=\"hd-tooltip tooltipstered\">" + el.children[3].innerText + "</i></span></div>";
+    });
+
+    var collect = $("<div id=\"collect\" class=\"collection selector collectionfocus\" style='display: table;width: 100%;'>" + www + "</div>");
+
+    $(".collection").remove();
+    $(".full-descr__text").after(collect);
+
+    $("#collect").ready(function () {
+        $(".collectionfocus").one("hover:enter", function() {
+            $(".hdhd").removeClass("hide");
+            $("#collect").removeClass("collectionfocus selector");
+
+            $(".b-post__partcontent_item").bind("hover:enter", function(e) {
+                var input = $(this).children()[1].innerText.split("/")[0].trim().replace(/\s+$/, "");
+                Lampa.Search.open({
+                    input: input
+                });
+            });
+        });
+    });
+};
 
   getEnTitle = function (id, type) {
     var url;
