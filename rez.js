@@ -70,7 +70,7 @@ collectRender = async function (data) {
     data.filter((el, index) => {
       el.className.includes("current") ? (wid = index) : "";
     });
-    // console.log("цid", wid);
+    
     data.forEach((el, index) => {
       //console.log("data", $("a", el.children[1])?.attr("href")?.split("/")[3]);
       www += `<div  id="search${el.children[0].innerText}" class=" stringhide selector  ${el.className}`;
@@ -100,27 +100,21 @@ collectRender = async function (data) {
       }</i> </span>
 </div>`;
 
-
-      // if (el.className.includes("current")) {
-      //   wid = index;
-      // }
     });
 
-    // console.log("www", www);
-    let collect = $(
+    var collect = $(
       `<div id ="collect" class="collection selector collectionfocus" style='display: table;width: 100%;'>` +
         www +
         "</div>"
     );
 
-    $(".collection").remove();
-    $(".full-descr__text").after(collect);
+  $(".collection").remove();
+  $(".full-descr__text").after(collect);
 
-    $("#collect").ready(function () {
+  $("#collect").ready(function () {
 
 
-      // let hide = 1;
-      $(".collectionfocus").one("hover:enter", function() {
+  $(".collectionfocus").one("hover:enter", function() {
   $(".hdhd").removeClass("hide");
   $("#collect").removeClass("collectionfocus selector");
 
@@ -130,8 +124,8 @@ collectRender = async function (data) {
       input: input
     });
   });
-});
-    });
+  });
+  });
   };
 
   getEnTitle = function (id, type) {
