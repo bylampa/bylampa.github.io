@@ -10,8 +10,8 @@
   var ew;
   var year;
   var url;
-  reazkaParseHtmlDom = async function (url, name, year) {
-    var fc = await fetch(
+  var reazkaParseHtmlDom = function (url, name, year) {
+    var fc = fetch(
       kp_prox + url + (name ? name : "") + (year ? "+" + year : ""),
       {
         method: "GET",
@@ -19,15 +19,20 @@
           "Content-Type": "text/html",
         },
       }
-    ).then((response) => response.text());
+    ).then(function (response) {
+      return response.text();
+    });
 
-    return new DOMParser().parseFromString(fc, "text/html");
-  };
-  cleanTitle = function (str) {
-    return str.replace(/[\s.,:;’'`!?]+/g, "%20").trim();
+    return fc.then(function (result) {
+      return new DOMParser().parseFromString(result, "text/html");
+    });
   };
 
-  normalizeTitle = function (str) {
+  var cleanTitle = function (str) {
+    return str.replace(/[\s.,:;''`!?]+/g, "%20").trim();
+  };
+
+  var normalizeTitle = function (str) {
     return cleanTitle(
       str
         .toLowerCase()
