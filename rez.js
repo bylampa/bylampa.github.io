@@ -188,7 +188,7 @@ data.filter(function(el, index) {
 
     ennTitle(url);
   };
-  function ennTitle(url) {
+  /*function ennTitle(url) {
   return new Promise(function(resolve, reject) {
     fetch(url)
       .then(function(response) {
@@ -208,7 +208,35 @@ data.filter(function(el, index) {
   .catch(function(error) {
     console.error(error);
   });
-}
+}*/
+  function ennTitle(url) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        var enTitle = data.title || data.name;
+        resolve(enTitle);
+      } else {
+        reject(xhr.status);
+      }
+    };
+
+    xhr.onerror = function () {
+      reject(xhr.status);
+    };
+
+    xhr.send();
+  })
+  .then(function (enTitle) {
+    searchRezka(normalizeTitle(enTitle), year);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+  }
 
   // Функция для начала работы плагина
   startPlugin = function () {
