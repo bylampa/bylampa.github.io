@@ -10,7 +10,7 @@
   var ew;
   var year;
   var url;
-  var reazkaParseHtmlDom = function (url, name, year) {
+  /*var reazkaParseHtmlDom = function (url, name, year) {
     var fc = fetch(
       kp_prox + url + (name ? name : "") + (year ? "+" + year : ""),
       {
@@ -26,7 +26,25 @@
     return fc.then(function (result) {
       return new DOMParser().parseFromString(result, "text/html");
     });
-  };
+  };*/
+  function reazkaParseHtmlDom(url, name, year) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', kp_prox + url + (name ? name : "") + (year ? "+" + year : ""));
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var doc = new DOMParser().parseFromString(xhr.responseText, 'text/html');
+        resolve(doc);
+      } else {
+        reject(xhr.status);
+      }
+    };
+    xhr.onerror = function() {
+      reject(xhr.status);
+    };
+    xhr.send();
+  });
+}
 
   var cleanTitle = function (str) {
     return str.replace(/[\s.,:;''`!?]+/g, "%20").trim();
