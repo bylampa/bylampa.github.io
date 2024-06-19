@@ -2,12 +2,12 @@
     'use strict';
     Lampa.Platform.tv();
    
-/*// Создаем новый элемент <style>
-   var styleEl = document.createElement("style");
-   styleEl.setAttribute("type", "text/css");
+// Создаем новый элемент <style>
+   var styleElem = document.createElement("style");
+   styleElem.setAttribute("type", "text/css");
 
 // Добавляем CSS-правила
-  styleEl.innerHTML = `
+  styleElem.innerHTML = `
   .full-descr__text {
     font-size: 18px;
   }
@@ -17,19 +17,8 @@
 `;
 
 // Добавляем элемент <style> в DOM
-document.head.appendChild(styleEl);*/
+document.head.appendChild(styleElem);
 
-    // Получаем элементы по селекторам
-var fullDescrText = $(".full-descr__text");
-var newInterfaceInfoDescription = $(".new-interface-info__description");
-
-// Устанавливаем CSS-стили для этих элементов
-fullDescrText.css({
-  "font-size": "18px"
-});
-
-newInterfaceInfoDescription.css({
-  "font-size": "18px"
-});
+    
 
 })();
