@@ -7,11 +7,11 @@
    styleEl.setAttribute("type", "text/css");
 
 // Добавляем CSS-правила
-  styleEl.innerHTML = '
+  styleEl.innerHTML = `
   .full-descr__text {
     font-size: 18px;
   }
-';
+`;
 
 // Добавляем элемент <style> в DOM
 document.head.appendChild(styleEl);
