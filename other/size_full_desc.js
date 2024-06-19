@@ -12,7 +12,7 @@
     font-size: 18px;
   }
   .new-interface-info__description {
-    font-size: 24px;
+    font-size: 18px;
   }
 `;
 
