@@ -2,12 +2,11 @@
     'use strict';
     Lampa.Platform.tv();
    
-// Создаем новый элемент <style>
-   var styleElem = document.createElement("style");
-   styleElem.setAttribute("type", "text/css");
+var styleElem = document.createElement("style");
+styleElem.type = "text/css";
 
 // Добавляем CSS-правила
-  styleElem.innerHTML = `
+styleElem.style.cssText = `
   .full-descr__text {
     font-size: 18px;
   }
