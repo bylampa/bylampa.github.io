@@ -2,12 +2,16 @@
     'use strict';
     Lampa.Platform.tv();
    
-// Устанавливаем CSS-стили для элементов
-$(".full-descr__text").css({
+// Получаем элементы по селекторам
+var fullDescrText = $(".full-descr__text");
+var newInterfaceInfoDescription = $(".new-interface-info__description");
+
+// Устанавливаем CSS-стили для этих элементов
+fullDescrText.css({
   "font-size": "18px"
 });
 
-$(".new-interface-info__description").css({
+newInterfaceInfoDescription.css({
   "font-size": "18px"
 });
 
