@@ -768,15 +768,15 @@ Lampa.SettingsApi.addComponent({
 						},
 						onChange: function(value) {
 							if (value == '1') {
-								itemON('https://bdvburik.github.io/franshrezka.js', 'Франшиза', '@BDV_Burik', 'franchise');
+								itemON('https://bylampa.github.io/franchise.js', 'Франшиза', '@BDV_Burik', 'franchise');
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "https://bdvburik.github.io/franshrezka.js";
+								var pluginToRemoveUrl = "https://bylampa.github.io/franchise.js";
 								deletePlugin(pluginToRemoveUrl);
 							}
 						},
 								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-							var myResult = checkPlugin('https://bdvburik.github.io/franshrezka.js')
+							var myResult = checkPlugin('https://bylampa.github.io/franchise.js')
 							setTimeout(function() {	
 								$('div[data-name="franchise"]').append('<div class="settings-param__status one"></div>')
 								if (myResult) {
