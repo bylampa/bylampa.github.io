@@ -11,6 +11,9 @@
   .full-descr__text {
     font-size: 18px;
   }
+  .new-interface-info__description {
+    font-size: 24px;
+  }
 `;
 
 // Добавляем элемент <style> в DOM
