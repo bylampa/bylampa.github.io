@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
     $(".new-interface-info__details").each(function() {
       $(this).css({  
-        "font-size": "1.8em"
+        "font-size": "1.6em"
       });
     });
   }
