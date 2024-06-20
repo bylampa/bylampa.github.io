@@ -10,7 +10,6 @@ $(document).ready(function() {
   styleElem.textContent = `
     .full-descr__text {
       font-size: 1.8em;
-      width: 110%;
     }
     .items-line__title {
       font-size: 2.0em;
@@ -21,7 +20,8 @@ $(document).ready(function() {
   function setFontSize() {
     $(".new-interface-info__description").each(function() {
       $(this).css({
-        "font-size": "1.8em"
+        "font-size": "1.8em",
+        "width": "110%"
       });
     });
   }
