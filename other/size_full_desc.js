@@ -79,7 +79,7 @@
 
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description, .full-descr__text", setFontSize);
-});
+
 
 });
 
