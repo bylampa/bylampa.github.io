@@ -3,7 +3,7 @@
     Lampa.Platform.tv();
 
 
-/*$(document).ready(function() {
+$(document).ready(function() {
   // Создаем и добавляем новый элемент <style>
   var styleElem = document.createElement('style');
   styleElem.type = 'text/css';
@@ -26,7 +26,7 @@
 
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
-});*/
+});
 
    
 
