@@ -14,6 +14,9 @@ $(document).ready(function() {
     .items-line__title {
       font-size: 2.0em;
     }
+    .new-interface-info__details {
+    font-size: 1.8em;
+    }
   `;
   document.head.appendChild(styleElem);
 
