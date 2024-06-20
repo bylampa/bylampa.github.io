@@ -20,14 +20,14 @@ $(document).ready(function() {
   function setFontSize() {
     $(".new-interface-info__description").each(function() {
       $(this).css({
-        "font-size": "1.7em",
+        "font-size": "1.6em",
         "width": "110%",
         //"margin": "20px 0"
       });
     });
     $(".new-interface-info__details").each(function() {
       $(this).css({  
-        "font-size": "1.6em"
+        "font-size": "1.4em"
       });
     });
   }
