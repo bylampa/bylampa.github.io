@@ -35,6 +35,7 @@
 
   // Определяем CSS-правила для разных размеров устройств
   var cssRules = `
+  // Для телефона
     @media (max-width: 767px) {
       .new-interface-info__description {
         font-size: 16px !important;
@@ -43,20 +44,22 @@
         font-size: 32px !important;
       }
     }
+    // Для планшета
     @media (min-width: 768px) and (max-width: 1199px) {
       .new-interface-info__description {
         font-size: 24px !important;
       }
       .full-descr__text {
-        font-size: 32px !important;
+        font-size: 12px !important;
       }
     }
+    // Для ТВ
     @media (min-width: 1200px) {
       .new-interface-info__description {
-        font-size: 32px !important;
+        font-size: 12px !important;
       }
       .full-descr__text {
-        font-size: 32px !important;
+        font-size: 12px !important;
       }
     }
   `;
