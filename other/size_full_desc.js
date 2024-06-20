@@ -21,7 +21,8 @@ $(document).ready(function() {
     $(".new-interface-info__description").each(function() {
       $(this).css({
         "font-size": "1.8em",
-        "width": "110%"
+        "width": "110%",
+        "margin-top": "-10px"
       });
     });
     $(".new-interface-info__details").each(function() {
