@@ -28,7 +28,7 @@
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
 });
 */
-   /* $(document).ready(function() {
+    $(document).ready(function() {
   // Создаем и добавляем новый элемент <style>
   var styleElem = document.createElement('style');
   styleElem.type = 'text/css';
@@ -40,7 +40,7 @@
         font-size: 16px;
       }
       .full-descr__text {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
     @media (min-width: 768px) and (max-width: 1199px) {
@@ -48,15 +48,15 @@
         font-size: 24px;
       }
       .full-descr__text {
-        font-size: 18px;
+        font-size: 24px;
       }
     }
     @media (min-width: 1200px) {
       .new-interface-info__description {
-        font-size: 32px;
+        font-size: 28px;
       }
       .full-descr__text {
-        font-size: 22px;
+        font-size: 28px;
       }
     }
   `;
@@ -79,7 +79,7 @@
 
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description, .full-descr__text", setFontSize);
-});*/
+});
 
    
 
