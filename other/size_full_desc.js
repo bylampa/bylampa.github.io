@@ -9,7 +9,7 @@ $(document).ready(function() {
   styleElem.type = 'text/css';
   styleElem.textContent = `
     .full-descr__text {
-      font-size: 1.8em;
+      font-size: 1.6em;
     }
     .items-line__title {
       font-size: 2.0em;
