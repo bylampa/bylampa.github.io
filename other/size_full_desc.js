@@ -2,7 +2,6 @@
     'use strict';
     Lampa.Platform.tv();
 
-function startPlugin() {
 
 $(document).ready(function() {
   function setFontSize() {
@@ -34,17 +33,6 @@ styleElem.textContent = `
 // Добавляем элемент <style> в DOM
 document.head.appendChild(styleElem);
    
-}
-   if (window.appready) { 
-       startPlugin();
-   }
-   else {
-        Lampa.Listener.follow('app', function(e) {
-            // если приложение прогрузилось
-            if (e.type == 'ready') {
-                startPlugin();
-            }
-        });
-    } 
+
 
 })();
