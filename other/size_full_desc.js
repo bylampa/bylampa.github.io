@@ -4,7 +4,11 @@
 
 /*function startPlugin() {
 setTimeout(function() {*/
-$(".new-interface-info__description").css({"font-size": "38px"});
+$(document).ready(function() {
+  $(".new-interface-info__description").css({
+    "font-size": "38px"
+  });
+});
     
 // Создаем новый элемент <style>
 /*var styleElem = document.createElement('style');
