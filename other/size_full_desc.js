@@ -9,7 +9,7 @@ $(document).ready(function() {
   styleElem.type = 'text/css';
   styleElem.textContent = `
     .full-descr__text {
-      font-size: 38px;
+      font-size: 1.2em;
     }
   `;
   document.head.appendChild(styleElem);
@@ -17,7 +17,7 @@ $(document).ready(function() {
   function setFontSize() {
     $(".new-interface-info__description").each(function() {
       $(this).css({
-        "font-size": "38px"
+        "font-size": "1.2em"
       });
     });
   }
