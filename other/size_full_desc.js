@@ -34,6 +34,13 @@ $(document).ready(function() {
 
   setFontSize();
 
+ function increaseFranchiseHeadingSize() {
+     var franchiseHeading = $("h2:contains('Франшиза')");
+       franchiseHeading.css("font-size", "2em");
+ }
+
+  increaseFranchiseHeadingSize();
+    
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
 });
