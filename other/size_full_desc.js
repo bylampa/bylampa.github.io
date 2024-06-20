@@ -2,8 +2,8 @@
     'use strict';
     Lampa.Platform.tv();
 
-function startPlugin() {
-setTimeout(function() {
+/*function startPlugin() {
+setTimeout(function() {*/
 $(".new-interface-info__description").css({"font-size": "18px"});
     
 // Создаем новый элемент <style>
@@ -20,7 +20,7 @@ styleElem.textContent = `
 // Добавляем элемент <style> в DOM
 document.head.appendChild(styleElem);
     }, 20);
-}
+/*}
    if (window.appready) { 
        startPlugin();
    }
@@ -31,6 +31,6 @@ document.head.appendChild(styleElem);
                 startPlugin();
             }
         });
-    } 
+    } */
 
 })();
