@@ -20,7 +20,7 @@ $(document).ready(function() {
   function setFontSize() {
     $(".new-interface-info__description").each(function() {
       $(this).css({
-        "font-size": "1.8em",
+        "font-size": "1.7em",
         "width": "110%",
         //"margin": "20px 0"
       });
