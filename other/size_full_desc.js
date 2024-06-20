@@ -19,8 +19,8 @@ styleElem.textContent = `
 
 // Добавляем элемент <style> в DOM
 document.head.appendChild(styleElem);
-    }, 20);
-/*}
+    /*}, 20);
+}
    if (window.appready) { 
        startPlugin();
    }
