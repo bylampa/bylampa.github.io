@@ -13,6 +13,7 @@ $(document).ready(function() {
     }
     .items-line__title {
       font-size: 2.0em;
+      margin-top 20px;
     }
   `;
   document.head.appendChild(styleElem);
