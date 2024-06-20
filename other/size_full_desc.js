@@ -11,6 +11,9 @@ $(document).ready(function() {
     .full-descr__text {
       font-size: 1.8em;
     }
+    .items-line__title {
+      font-size: 2.0em;
+    }
   `;
   document.head.appendChild(styleElem);
 
