@@ -14,9 +14,6 @@ $(document).ready(function() {
     .items-line__title {
       font-size: 2.0em;
     }
-    .new-interface-info__details {
-    font-size: 1.8em;
-    }
   `;
   document.head.appendChild(styleElem);
 
@@ -25,9 +22,15 @@ $(document).ready(function() {
       $(this).css({
         "font-size": "1.8em",
         "width": "110%",
-        "margin-bottom": "2px"
+        "bottom": "2px"
       });
     });
+    $(".new-interface-info__details").each(function() {
+      $(this).css({  
+        "font-size": "1.8em"
+      });
+    });
+    }
   }
 
   setFontSize();
