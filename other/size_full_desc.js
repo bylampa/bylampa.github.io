@@ -4,8 +4,7 @@
 
 
 $(document).ready(function() {
-  var franchiseHeading = $("h2:contains('Франшиза')");
-  franchiseHeading.css("font-size", "2em");
+ 
   // Создаем и добавляем новый элемент <style>
   var styleElem = document.createElement('style');
   styleElem.type = 'text/css';
@@ -41,7 +40,9 @@ $(document).ready(function() {
        franchiseHeading.css("font-size", "2em");
  }
 
-  increaseFranchiseHeadingSize();
+  setTimeout(function() {
+    increaseFranchiseHeadingSize();
+  }, 500); 
     
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
