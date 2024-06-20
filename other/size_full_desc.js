@@ -10,6 +10,7 @@ $(document).ready(function() {
   styleElem.textContent = `
     .full-descr__text {
       font-size: 1.8em;
+      width: 110%;
     }
     .items-line__title {
       font-size: 2.0em;
