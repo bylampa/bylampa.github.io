@@ -26,32 +26,20 @@
 
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
-});
-*/
-   $(document).ready(function() {
+});*/
+    $(document).ready(function() {
   function setFontSize() {
-    $(".new-interface-info__description, .full-descr__text").each(function() {
+    $(".new-interface-info__description").each(function() {
       $(this).css({
-        "font-size": ""  // Сбрасываем ранее установленный размер шрифта
+        "font-size": "38px"
       });
     });
 
-    // Применяем стили в зависимости от типа устройства
-    if (Lampa.Platform.screen('mobile')) {
-      $(".new-interface-info__description").css({
-        "font-size": "32px !important"
+    $(".full-descr__text").each(function() {
+      $(this).css({
+        "font-size": "38px"
       });
-      $(".full-descr__text").css({
-        "font-size": "32px !important"
-      });
-    } else {
-      $(".new-interface-info__description").css({
-        "font-size": "18px !important"
-      });
-      $(".full-descr__text").css({
-        "font-size": "18px !important"
-      });
-    }
+    });
   }
 
   setFontSize();
@@ -60,5 +48,7 @@
   $(document).on("DOMSubtreeModified", ".new-interface-info__description, .full-descr__text", setFontSize);
 });
 
+
+  
 
 })();
