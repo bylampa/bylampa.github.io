@@ -5,10 +5,20 @@
 /*function startPlugin() {
 setTimeout(function() {*/
 $(document).ready(function() {
-  $(".new-interface-info__description").css({
-    "font-size": "38px"
-  });
+  function setFontSize() {
+    $(".new-interface-info__description").each(function() {
+      $(this).css({
+        "font-size": "38px"
+      });
+    });
+  }
+
+  setFontSize();
+
+  // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
+  $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
 });
+
     
 // Создаем новый элемент <style>
 /*var styleElem = document.createElement('style');
