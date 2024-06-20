@@ -45,6 +45,6 @@ document.head.appendChild(styleElem);
                 startPlugin();
             }
         });
-    } */
+    } 
 
 })();
