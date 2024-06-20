@@ -30,7 +30,6 @@ $(document).ready(function() {
         "font-size": "1.8em"
       });
     });
-    }
   }
 
   setFontSize();
