@@ -22,7 +22,7 @@ $(document).ready(function() {
       $(this).css({
         "font-size": "1.8em",
         "width": "110%",
-        "margin": "20px 0"
+        //"margin": "20px 0"
       });
     });
     $(".new-interface-info__details").each(function() {
