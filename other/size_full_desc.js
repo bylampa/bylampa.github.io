@@ -4,10 +4,10 @@
 
 /*function startPlugin() {
 setTimeout(function() {*/
-$(".new-interface-info__description").css({"font-size": "18px"});
+$(".new-interface-info__description").css({"font-size": "38px"});
     
 // Создаем новый элемент <style>
-var styleElem = document.createElement('style');
+/*var styleElem = document.createElement('style');
 styleElem.type = 'text/css';
 
 // Добавляем CSS-правила
@@ -18,7 +18,7 @@ styleElem.textContent = `
 `;
 
 // Добавляем элемент <style> в DOM
-document.head.appendChild(styleElem);
+document.head.appendChild(styleElem);*/
     /*}, 20);
 }
    if (window.appready) { 
