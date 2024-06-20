@@ -4,6 +4,8 @@
 
 
 $(document).ready(function() {
+  var franchiseHeading = $("h2:contains('Франшиза')");
+  franchiseHeading.css("font-size", "2em");
   // Создаем и добавляем новый элемент <style>
   var styleElem = document.createElement('style');
   styleElem.type = 'text/css';
