@@ -28,7 +28,7 @@
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
 });
 */
-    $(document).ready(function() {
+   $(document).ready(function() {
   // Создаем и добавляем новый элемент <style>
   var styleElem = document.createElement('style');
   styleElem.type = 'text/css';
@@ -37,26 +37,26 @@
   var cssRules = `
     @media (max-width: 767px) {
       .new-interface-info__description {
-        font-size: 16px;
+        font-size: 16px !important;
       }
       .full-descr__text {
-        font-size: 16px;
+        font-size: 14px !important;
       }
     }
     @media (min-width: 768px) and (max-width: 1199px) {
       .new-interface-info__description {
-        font-size: 24px;
+        font-size: 24px !important;
       }
       .full-descr__text {
-        font-size: 24px;
+        font-size: 18px !important;
       }
     }
     @media (min-width: 1200px) {
       .new-interface-info__description {
-        font-size: 28px;
+        font-size: 32px !important;
       }
       .full-descr__text {
-        font-size: 28px;
+        font-size: 22px !important;
       }
     }
   `;
@@ -79,6 +79,8 @@
 
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description, .full-descr__text", setFontSize);
+});
+
 });
 
    
