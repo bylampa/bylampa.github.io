@@ -40,7 +40,7 @@
         font-size: 16px !important;
       }
       .full-descr__text {
-        font-size: 14px !important;
+        font-size: 32px !important;
       }
     }
     @media (min-width: 768px) and (max-width: 1199px) {
@@ -48,7 +48,7 @@
         font-size: 24px !important;
       }
       .full-descr__text {
-        font-size: 18px !important;
+        font-size: 32px !important;
       }
     }
     @media (min-width: 1200px) {
@@ -56,7 +56,7 @@
         font-size: 32px !important;
       }
       .full-descr__text {
-        font-size: 22px !important;
+        font-size: 32px !important;
       }
     }
   `;
