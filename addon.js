@@ -198,25 +198,14 @@ Lampa.SettingsApi.addComponent({
 					onRender: function (item) {
 						$('.settings-param__name', item).css('color','f3d900'); hideInstall();
 						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy')
-						/*setTimeout(function() {	
+						setTimeout(function() {	
 							$('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
 								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
 							} else {
 								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);*/
-						setTimeout(function() {
-  $('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>');
-  
-  if (myResult && myResult[0].enabled) {
-    $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('active');
-  } else if (myResult && !myResult[0].enabled) {
-    $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('wait');
-  } else {
-    $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error');
-  }
-}, 100);
+						}, 100);
 					}
 		});
        
