@@ -15,7 +15,7 @@ $(document).ready(function() {
   function setFontSize() {
     $(".new-interface-info__description").each(function() {
       $(this).css({
-        "font-size": "1.6em",
+        "font-size": "1.5em",
         "width": "110%",
         "margin-top": "-10px"
       });
