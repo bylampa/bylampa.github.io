@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
-  $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
+  $(document).on("DOMSubtreeModified", ".new-interface-info__description, .new-interface-info__details", setFontSize);
 });
 
 })();
