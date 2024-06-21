@@ -197,7 +197,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onRender: function (item) {
 						$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy')
+						/*var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy')
 						setTimeout(function() {	
 							$('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -205,7 +205,27 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy');
+setTimeout(function() { 
+  $('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>');
+
+  // Проверяем, что myResult не пустой
+  if (myResult.length > 0) {
+    // Проверяем, что плагин включен (status = 1)
+    if (myResult[0].status === 1) {
+      $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('active');
+    } 
+    // Проверяем, что плагин выключен (status = 0)
+    else if (myResult[0].status === 0) {
+      $('div[data-name="TMDA"]').find('.settings-param__status').removeClass('active error wait').addClass('wait');
+    }
+  } 
+  // Если myResult пустой, значит плагин не установлен
+  else {
+    $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error');
+  }
+}, 100);
 					}
 		});
        
