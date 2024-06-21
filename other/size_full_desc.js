@@ -8,14 +8,8 @@ $(document).ready(function() {
   // Создаем и добавляем новый элемент <style>
   var styleElem = document.createElement('style');
   styleElem.type = 'text/css';
-  styleElem.textContent = `
-    .full-descr__text {
-      font-size: 1.6em;
-    }
-    .items-line__title {
-      font-size: 2.0em;
-    }
-  `;
+  styleElem.textContent = '.full-descr__text {font-size: 1.6em;}' +
+    '.items-line__title {font-size: 2.0em;}';
   document.head.appendChild(styleElem);
 
   function setFontSize() {
