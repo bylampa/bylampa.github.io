@@ -22,21 +22,13 @@ $(document).ready(function() {
     });
     $(".new-interface-info__details").each(function() {
       $(this).css({  
-        "font-size": "1.4em"
+        "font-size": "1.6em"
       });
     });
   }
 
   setFontSize();
 
- function increaseFranchiseHeadingSize() {
-     var franchiseHeading = $("h2:contains('Франшиза')");
-       franchiseHeading.css("font-size", "2em");
- }
-
-  setTimeout(function() {
-    increaseFranchiseHeadingSize();
-  }, 500); 
     
   // Регистрируем обработчик события, чтобы обновлять стиль при изменениях
   $(document).on("DOMSubtreeModified", ".new-interface-info__description", setFontSize);
