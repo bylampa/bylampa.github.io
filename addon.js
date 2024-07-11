@@ -2074,6 +2074,43 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_radio_plugin',
+					param: {
+						name: 'Radio_Soma',
+       				                type: 'select',
+                       				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                        			},
+					//default: '1',
+					},
+					field: {
+						name: 'Радио SomaFM',
+						description: 'Более 30 уникальных каналов андерграундного/альтернативного радиовещания по всему миру, поддерживаемых слушателями, без рекламы.'
+					},
+					onChange: function(value) {
+                        			if (value == '1') {
+							itemON('https://tsynik.github.io/lampa/soma.js', 'Радио SomaFM', '@tsynik', 'Radio_Soma');
+                     				}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/soma.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+                    },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://tsynik.github.io/lampa/soma.js')
+						setTimeout(function() {	
+							$('div[data-name="Radio_Soma"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_radio_plugin',
                                   param: {
