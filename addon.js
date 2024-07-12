@@ -1197,6 +1197,44 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
+            
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'setprotect',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Доступ к настройкам',
+						description: 'Плагин закрывает доступ к настройкам через введенный пароль при активации соответствующего пункта в меню настроек родительского контроля'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://193.233.134.21/plugins/setprotect', 'Доступ к настройкам', '@AndreyURL54', 'setprotect');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://193.233.134.21/plugins/setprotect";
+							deletePlugin(pluginToRemoveUrl);
+						}	
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
+						var myResult = checkPlugin('http://193.233.134.21/plugins/setprotect')
+						setTimeout(function() {	
+							$('div[data-name="setprotect"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="setprotect"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="setprotect"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
                                   param: {
