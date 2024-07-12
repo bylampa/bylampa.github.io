@@ -2231,7 +2231,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
-	       /* Lampa.SettingsApi.addParam({
+	        Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
 					param: {
 						name: 'Nyam',
@@ -2243,20 +2243,20 @@ Lampa.SettingsApi.addComponent({
 						//default: '1',
 					},
 					field: {
-						name: 'Sisi Nyam',
-						description: 'Другая версия плагина Клубничка (частично платная)'
+						name: 'Клубничка (bwa cloud)',
+						description: 'Другая версия плагина Клубничка (подходит для старых устройств и у кого не завелся основной плагин)'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://sisi.am/nyam.js', 'Sisi Nyam', '@rik', 'Nyam');
+							itemON('http://bwa-cloud.cfhttp.top/sisi.js', 'Клубничка (Bwa Cloud)', '@rik', 'Nyam');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://sisi.am/nyam.js";
+							var pluginToRemoveUrl = "http://bwa-cloud.cfhttp.top/sisi.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://sisi.am/nyam.js')
+						var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js')
 						setTimeout(function() {	
 							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2266,7 +2266,7 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);		  
 					}
-		});*/
+		});
 	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
                                   param: {
