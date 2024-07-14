@@ -139,6 +139,7 @@ Lampa.SettingsApi.addComponent({
 					$('div[data-component="add_online_plugin"]').remove();
 					$('div[data-component="add_torrent_plugin"]').remove();
 					$('div[data-component="add_tv_plugin"]').remove();
+					$('div[data-component="add_music_plugin"]').remove();
 					$('div[data-component="add_radio_plugin"]').remove();
 					$('div[data-component="add_sisi_plugin"]').remove();
 					$('div[data-component="pirate_store"]').remove();
