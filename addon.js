@@ -68,7 +68,12 @@ function itemON(sourceURL, sourceName) {
 --> */
 
 function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
-if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {	
+//if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {	
+if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {
+  Lampa.Noty.show("Плагин уже установлен!");
+} else if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').css('background-color') === 'rgb(255, 165, 0)') {
+  Lampa.Noty.show("Плагин уже установлен, но отключен в расширениях!");
+} else {	
 	// Если перезагрузки не требуется - контроль после удаления плагинов
    if (!Lampa.Storage.get('needReboot')) {
 	// Получаем список плагинов
@@ -199,7 +204,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onRender: function (item) {
 						$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy')
+						/*var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy')
 						setTimeout(function() {	
 							$('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -207,7 +212,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/tmdb-proxy') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
        
