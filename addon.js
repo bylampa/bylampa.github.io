@@ -372,7 +372,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://nb557.github.io/plugins/rating.js')
+						/*var myResult = checkPlugin('https://nb557.github.io/plugins/rating.js')
 						setTimeout(function() {	
 							$('div[data-name="Rating"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -380,7 +380,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://nb557.github.io/plugins/rating.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Rating"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://nb557.github.io/plugins/rating.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -408,7 +427,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('http://github.freebie.tom.ru/want.js')
+						/*var myResult = checkPlugin('http://github.freebie.tom.ru/want.js')
 						setTimeout(function() {	
 							$('div[data-name="Want"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -416,7 +435,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Want"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://github.freebie.tom.ru/want.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Want"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://github.freebie.tom.ru/want.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Want"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Want"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Want"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -444,7 +482,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://nb557.github.io/plugins/reset_subs.js')
+						/*var myResult = checkPlugin('https://nb557.github.io/plugins/reset_subs.js')
 						setTimeout(function() {	
 							$('div[data-name="Sub_reset"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -452,7 +490,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://nb557.github.io/plugins/reset_subs.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Sub_reset"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://nb557.github.io/plugins/reset_subs.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	         Lampa.SettingsApi.addParam({
@@ -480,7 +537,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('http://193.233.134.21/plugins/mult.js')
+						/*var myResult = checkPlugin('http://193.233.134.21/plugins/mult.js')
 						setTimeout(function() {	
 							$('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -488,7 +545,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://193.233.134.21/plugins/mult.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://193.233.134.21/plugins/mult.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
