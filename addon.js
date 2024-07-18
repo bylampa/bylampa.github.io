@@ -30,9 +30,9 @@ Lampa.Modal.open({
       buttons: [{
         name: 'Нет',
         onSelect: function onSelect() {
-          Lampa.Modal.close();
+         //Lampa.Modal.close();
           $('.modal').remove();
-	  Lampa.Controller.toggle('settings_component');
+	  Lampa.Controller.toggle('content')
         }
       }, {
         name: 'Да',
@@ -42,6 +42,138 @@ Lampa.Modal.open({
       }]
 });
 }
+
+function showLoadingBar() {
+  // Создаем элемент для полосы загрузки
+  var loadingBar = document.createElement('div');
+  loadingBar.className = 'loading-bar';
+  loadingBar.style.position = 'fixed';
+  loadingBar.style.top = '50%';
+  loadingBar.style.left = '50%';
+  loadingBar.style.transform = 'translate(-50%, -50%)'; // Центрируем по центру
+  loadingBar.style.zIndex = '9999';
+  loadingBar.style.display = 'none';
+  loadingBar.style.width = '30em';
+  loadingBar.style.height = '2.5em'; 
+  loadingBar.style.backgroundColor = '#595959';
+  loadingBar.style.borderRadius = '4em';
+
+  // Создаем элемент для индикатора загрузки
+  var loadingIndicator = document.createElement('div');
+  loadingIndicator.className = 'loading-indicator';
+  loadingIndicator.style.position = 'absolute';
+  loadingIndicator.style.left = '0';
+  loadingIndicator.style.top = '0';
+  loadingIndicator.style.bottom = '0';
+  loadingIndicator.style.width = '0';
+  loadingIndicator.style.backgroundColor = '#64e364';
+  loadingIndicator.style.borderRadius = '4em';
+
+  // Создаем элемент для отображения процента загрузки
+  var loadingPercentage = document.createElement('div');
+  loadingPercentage.className = 'loading-percentage';
+  loadingPercentage.style.position = 'absolute';
+  loadingPercentage.style.top = '50%';
+  loadingPercentage.style.left = '50%';
+  loadingPercentage.style.transform = 'translate(-50%, -50%)';
+  loadingPercentage.style.color = '#fff';
+  loadingPercentage.style.fontWeight = 'bold';
+  loadingPercentage.style.fontSize = '1.7em';
+
+  // Добавляем элементы на страницу
+  loadingBar.appendChild(loadingIndicator);
+  loadingBar.appendChild(loadingPercentage);
+  document.body.appendChild(loadingBar);
+
+  // Отображаем полосу загрузки
+  loadingBar.style.display = 'block';
+
+  // Анимация с использованием setTimeout
+  var startTime = Date.now();
+  var duration = 1000; // 1 секунда
+  var interval = setInterval(function() {
+  var elapsed = Date.now() - startTime;
+  var progress = Math.min((elapsed / duration) * 100, 100);
+
+    loadingIndicator.style.width = progress + '%';
+    loadingPercentage.textContent = Math.round(progress) + '%';
+
+    if (elapsed >= duration) {
+      clearInterval(interval);
+      setTimeout(function() {
+        loadingBar.style.display = 'none';
+        loadingBar.parentNode.removeChild(loadingBar);
+      }, 250);
+    }
+  }, 16);
+}
+
+	
+function showDeletedBar() {
+  // Создаем элемент для полосы загрузки
+  var loadingBar = document.createElement('div');
+  loadingBar.className = 'loading-bar';
+  loadingBar.style.position = 'fixed';
+  loadingBar.style.top = '50%';
+  loadingBar.style.left = '50%';
+  loadingBar.style.transform = 'translate(-50%, -50%)'; // Центрируем по центру
+  loadingBar.style.zIndex = '9999';
+  loadingBar.style.display = 'none';
+  loadingBar.style.width = '30em';
+  loadingBar.style.height = '2.5em';
+  loadingBar.style.backgroundColor = '#595959';
+  loadingBar.style.borderRadius = '4em';
+
+  // Создаем элемент для индикатора загрузки
+  var loadingIndicator = document.createElement('div');
+  loadingIndicator.className = 'loading-indicator';
+  loadingIndicator.style.position = 'absolute';
+  loadingIndicator.style.left = '0';
+  loadingIndicator.style.top = '0';
+  loadingIndicator.style.bottom = '0';
+  loadingIndicator.style.width = '0';
+  loadingIndicator.style.backgroundColor = '#ff2121';
+  loadingIndicator.style.borderRadius = '4em';
+
+  // Создаем элемент для отображения процента загрузки
+  var loadingPercentage = document.createElement('div');
+  loadingPercentage.className = 'loading-percentage';
+  loadingPercentage.style.position = 'absolute';
+  loadingPercentage.style.top = '50%';
+  loadingPercentage.style.left = '50%';
+  loadingPercentage.style.transform = 'translate(-50%, -50%)';
+  loadingPercentage.style.color = '#fff';
+  loadingPercentage.style.fontWeight = 'bold';
+  loadingPercentage.style.fontSize = '1.7em';
+
+  // Добавляем элементы на страницу
+  loadingBar.appendChild(loadingIndicator);
+  loadingBar.appendChild(loadingPercentage);
+  document.body.appendChild(loadingBar);
+
+  // Отображаем полосу загрузки
+  loadingBar.style.display = 'block';
+
+  // Анимация с использованием setTimeout
+  var startTime = Date.now();
+  var duration = 1000; // 1 секунда
+  var interval = setInterval(function() {
+  var elapsed = Date.now() - startTime;
+  var progress = 100 - Math.min((elapsed / duration) * 100, 100);
+
+    loadingIndicator.style.width = progress + '%';
+    loadingPercentage.textContent = Math.round(progress) + '%';
+
+    if (elapsed >= duration) {
+      clearInterval(interval);
+      setTimeout(function() {
+        loadingBar.style.display = 'none';
+        loadingBar.parentNode.removeChild(loadingBar);
+      }, 250);
+    }
+  }, 16);
+}
+	
 /* Следим за настройками */
 function settingsWatch() {
 	/* проверяем флаг перезагрузки и ждём выхода из настроек */
@@ -592,7 +724,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://cub.red/plugin/collections')
+						/*var myResult = checkPlugin('https://cub.red/plugin/collections')
 						setTimeout(function() {	
 							$('div[data-name="Collections"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -600,7 +732,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://cub.red/plugin/collections');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Collections"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://cub.red/plugin/collections') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -628,7 +779,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
 						setTimeout(function() {	
 							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -636,7 +787,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/weather.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/weather.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -664,7 +834,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/cub_off.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/cub_off.js')
 						setTimeout(function() {	
 							$('div[data-name="Cub_off"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -672,7 +842,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Cub_off"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/cub_off.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Cub_off"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/cub_off.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Cub_off"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Cub_off"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Cub_off"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -700,7 +889,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/interface.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/interface.js')
 						setTimeout(function() {	
 							$('div[data-name="Style_interface_fix"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -708,7 +897,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Style_interface_fix"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/interface.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Style_interface_fix"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/interface.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Style_interface_fix"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Style_interface_fix"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Style_interface_fix"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -736,7 +944,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://lampame.github.io/main/nc/nc.js')
+						/*var myResult = checkPlugin('https://lampame.github.io/main/nc/nc.js')
 						setTimeout(function() {	
 							$('div[data-name="New_cat"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -744,7 +952,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/main/nc/nc.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="New_cat"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/nc/nc.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -772,7 +999,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/source.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/source.js')
 						setTimeout(function() {	
 							$('div[data-name="New_source"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -780,7 +1007,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/source.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="New_source"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/source.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -808,7 +1054,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						var myResult = checkPlugin('https://bylampa.github.io/start.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/start.js')
 						setTimeout(function() {	
 							$('div[data-name="Start"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -816,7 +1062,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Start"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/start.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Start"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/start.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Start"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Start"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Start"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
 		  });
 	          Lampa.SettingsApi.addParam({
