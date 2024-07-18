@@ -1108,8 +1108,8 @@ Lampa.SettingsApi.addComponent({
 								deletePlugin(pluginToRemoveUrl);
 							}
 						},
-								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-							var myResult = checkPlugin('https://bazzzilius.github.io/scripts/gold_theme.js')
+						onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							/*var myResult = checkPlugin('https://bazzzilius.github.io/scripts/gold_theme.js')
 							setTimeout(function() {	
 								$('div[data-name="goldtheme"]').append('<div class="settings-param__status one"></div>')
 								if (myResult) {
@@ -1117,7 +1117,26 @@ Lampa.SettingsApi.addComponent({
 								} else {
 									$('div[data-name="goldtheme"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
-							}, 100);
+							}, 100);*/
+						var myResult = checkPlugin('https://bazzzilius.github.io/scripts/gold_theme.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="goldtheme"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bazzzilius.github.io/scripts/gold_theme.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="goldtheme"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="goldtheme"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="goldtheme"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 						}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -1140,12 +1159,12 @@ Lampa.SettingsApi.addComponent({
 								itemON('https://lampame.github.io/main/cts.js', 'Поиск Концертов', '@GwynnBleiidd', 'concert_search');
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "https://lampame.github.io/main/cts.js";
+								var pluginToRemoveUrl = "concert_search";
 								deletePlugin(pluginToRemoveUrl);
 							}
 						},
-								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-							var myResult = checkPlugin('https://lampame.github.io/main/cts.js')
+						onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							/*var myResult = checkPlugin('https://lampame.github.io/main/cts.js')
 							setTimeout(function() {	
 								$('div[data-name="concert_search"]').append('<div class="settings-param__status one"></div>')
 								if (myResult) {
@@ -1153,7 +1172,26 @@ Lampa.SettingsApi.addComponent({
 								} else {
 									$('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
-							}, 100);
+							}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/main/cts.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="concert_search"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/cts.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 						}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -1180,8 +1218,8 @@ Lampa.SettingsApi.addComponent({
 								deletePlugin(pluginToRemoveUrl);
 							}
 						},
-								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-							var myResult = checkPlugin('https://bylampa.github.io/franchise.js')
+						onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							/*var myResult = checkPlugin('https://bylampa.github.io/franchise.js')
 							setTimeout(function() {	
 								$('div[data-name="franchise"]').append('<div class="settings-param__status one"></div>')
 								if (myResult) {
@@ -1189,7 +1227,26 @@ Lampa.SettingsApi.addComponent({
 								} else {
 									$('div[data-name="franchise"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
-							}, 100);
+							}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/franchise.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="franchise"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/franchise.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="franchise"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="franchise"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="franchise"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 						}
 		});
 	        Lampa.SettingsApi.addParam({
