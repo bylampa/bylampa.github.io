@@ -223,10 +223,15 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 		var script = document.createElement ('script');
 		script.src = sourceURL;
 		document.getElementsByTagName ('head')[0].appendChild (script);
-		setTimeout(function() {
+		/*setTimeout(function() {
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
-		}, 300);
+		}, 300);*/
+	        showLoadingBar();
+	          setTimeout(function() {
+			Lampa.Settings.update();
+			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
+		  }, 1500);
 // Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	  // Lampa.Storage.set('needRebootSettingExit', true);
 	  // settingsWatch();
@@ -243,10 +248,15 @@ function deletePlugin(pluginToRemoveUrl) {
 	var updatedPlugins = plugins.filter(function(obj) {return obj.url !== pluginToRemoveUrl});
 	Lampa.Storage.set('plugins', updatedPlugins);
 	//Lampa.Storage.set('needReboot', true);
-	Lampa.Settings.update();
-	Lampa.Noty.show("Плагин успешно удален");
+	setTimeout(function() {
+	  Lampa.Settings.update();
+	  Lampa.Noty.show("Плагин успешно удален");
+	}, 1500);
+	/*Lampa.Settings.update();
+	Lampa.Noty.show("Плагин успешно удален");*/
 	Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
+	   showDeletedBar();
 };
 
 function checkPlugin(pluginToCheck) {
@@ -2033,7 +2043,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://lampa.stream/modss')
+						/*var myResult = checkPlugin('http://lampa.stream/modss')
 						setTimeout(function() {	
 							$('div[data-name="Modss"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2041,7 +2051,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('http://lampa.stream/modss');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Modss"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://lampa.stream/modss') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
         });
         
@@ -2070,7 +2099,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://nb557.github.io/plugins/online_mod.js')
+						/*var myResult = checkPlugin('https://nb557.github.io/plugins/online_mod.js')
 						setTimeout(function() {	
 							$('div[data-name="Online_Mod"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2078,7 +2107,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);			  
+						}, 100);*/
+						var myResult = checkPlugin('https://nb557.github.io/plugins/online_mod.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Online_Mod"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://nb557.github.io/plugins/online_mod.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
 					}
         });
         
@@ -2107,7 +2155,7 @@ Lampa.SettingsApi.addComponent({
 						}
                },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bwa.to/plugins/prestige.js')
+						/*var myResult = checkPlugin('https://bwa.to/plugins/prestige.js')
 						setTimeout(function() {	
 							$('div[data-name="Онлайн_Prestige"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2115,7 +2163,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);				  
+						}, 100);*/
+						var myResult = checkPlugin('https://bwa.to/plugins/prestige.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Онлайн_Prestige"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bwa.to/plugins/prestige.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);		   
 					}
         });
         
@@ -2144,7 +2211,7 @@ Lampa.SettingsApi.addComponent({
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bwa.to/o')
+						/*var myResult = checkPlugin('https://bwa.to/o')
 						setTimeout(function() {	
 							$('div[data-name="Онлайн_BWA"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2152,7 +2219,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);			  
+						}, 100);*/
+						var myResult = checkPlugin('https://bwa.to/o');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Онлайн_BWA"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bwa.to/o') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -2180,7 +2266,7 @@ Lampa.SettingsApi.addComponent({
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://bwa.to/cloud.js')
+						/*var myResult = checkPlugin('http://bwa.to/cloud.js')
 						setTimeout(function() {	
 							$('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2188,7 +2274,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);			  
+						}, 100);*/
+						var myResult = checkPlugin('http://bwa.to/cloud.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://bwa.to/cloud.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -2216,7 +2321,7 @@ Lampa.SettingsApi.addComponent({
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://showy.online/m.js')
+						/*var myResult = checkPlugin('http://showy.online/m.js')
 						setTimeout(function() {	
 							$('div[data-name="Showy"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2224,7 +2329,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);			  
+						}, 100);*/
+						var myResult = checkPlugin('http://showy.online/m.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Showy"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://showy.online/m.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	       /* Lampa.SettingsApi.addParam({
@@ -2298,7 +2422,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bylampa.github.io/jackett.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/jackett.js')
 						setTimeout(function() {	
 							$('div[data-name="Switch_Parser"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2306,7 +2430,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);			  
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/jackett.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Switch_Parser"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/jackett.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
          
@@ -2335,7 +2478,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cub.red/plugin/tracks')
+						/*var myResult = checkPlugin('http://cub.red/plugin/tracks')
 						setTimeout(function() {	
 							$('div[data-name="Tracks"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2343,7 +2486,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('http://cub.red/plugin/tracks');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Tracks"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/tracks') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 
@@ -2372,7 +2534,7 @@ Lampa.SettingsApi.addComponent({
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cub.red/plugin/etor')
+						/*var myResult = checkPlugin('http://cub.red/plugin/etor')
 						setTimeout(function() {	
 							$('div[data-name="Setting_torrents"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2380,7 +2542,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('http://cub.red/plugin/etor');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Setting_torrents"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/etor') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -2408,7 +2589,7 @@ Lampa.SettingsApi.addComponent({
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://193.233.134.21/plugins/checker.js')
+						/*var myResult = checkPlugin('http://193.233.134.21/plugins/checker.js')
 						setTimeout(function() {	
 							$('div[data-name="Check_server"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2416,7 +2597,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('http://193.233.134.21/plugins/checker.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Check_server"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://193.233.134.21/plugins/checker.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	         Lampa.SettingsApi.addParam({
@@ -2444,7 +2644,7 @@ Lampa.SettingsApi.addComponent({
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://lampame.github.io/td/td.js')
+						/*var myResult = checkPlugin('https://lampame.github.io/td/td.js')
 						setTimeout(function() {	
 							$('div[data-name="Torr_download"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2452,7 +2652,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/td/td.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Torr_download"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/td/td.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -2480,7 +2699,7 @@ Lampa.SettingsApi.addComponent({
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://github.freebie.tom.ru/torrents.js')
+						/*var myResult = checkPlugin('https://github.freebie.tom.ru/torrents.js')
 						setTimeout(function() {	
 							$('div[data-name="second_but_torrents"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2488,7 +2707,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('https://github.freebie.tom.ru/torrents.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="second_but_torrents"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://github.freebie.tom.ru/torrents.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -2516,7 +2754,7 @@ Lampa.SettingsApi.addComponent({
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bylampa.github.io/freetorr.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/freetorr.js')
 						setTimeout(function() {	
 							$('div[data-name="free_torr"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2524,7 +2762,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/freetorr.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="free_torr"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/freetorr.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	/*
@@ -2599,7 +2856,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://andreyurl54.github.io/diesel5/diesel.js')
+						/*var myResult = checkPlugin('https://andreyurl54.github.io/diesel5/diesel.js')
 						setTimeout(function() {	
 							$('div[data-name="Diesel"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2607,7 +2864,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://andreyurl54.github.io/diesel5/diesel.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Diesel"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://andreyurl54.github.io/diesel5/diesel.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 		
@@ -2636,7 +2912,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cdn.kulik.uz/cors')
+						/*var myResult = checkPlugin('http://cdn.kulik.uz/cors')
 						setTimeout(function() {	
 							$('div[data-name="Kulik"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2644,7 +2920,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://cdn.kulik.uz/cors');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Kulik"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://cdn.kulik.uz/cors') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 
@@ -2673,7 +2968,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cub.red/plugin/iptv')
+						/*var myResult = checkPlugin('http://cub.red/plugin/iptv')
 						setTimeout(function() {	
 							$('div[data-name="IPTV"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2681,7 +2976,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://cub.red/plugin/iptv');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="IPTV"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/iptv') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -2709,7 +3023,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bylampa.github.io/tv.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/tv.js')
 						setTimeout(function() {	
 							$('div[data-name="Hack_TV"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2717,7 +3031,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/tv.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Hack_TV"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/tv.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	       /* Lampa.SettingsApi.addParam({
@@ -2791,7 +3124,7 @@ Lampa.SettingsApi.addComponent({
 						}
                     },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://lampame.github.io/main/music.js')
+						/*var myResult = checkPlugin('https://lampame.github.io/main/music.js')
 						setTimeout(function() {	
 							$('div[data-name="lme_music"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2799,10 +3132,45 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="lme_music"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/main/music.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="lme_music"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/music.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="lme_music"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="lme_music"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="lme_music"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
-
+	
+                /* Lampa.SettingsApi.addParam({
+                                  component: 'add_music_plugin',
+                                  param: {
+                                         name: 'Reboot_music_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+		});*/			   
 	
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -2858,7 +3226,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://cub.red/plugin/radio')
+						/*var myResult = checkPlugin('http://cub.red/plugin/radio')
 						setTimeout(function() {	
 							$('div[data-name="Record"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2866,7 +3234,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Record"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('http://cub.red/plugin/radio');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Record"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/radio') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Record"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Record"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Record"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 		
@@ -2893,9 +3280,9 @@ Lampa.SettingsApi.addComponent({
 							var pluginToRemoveUrl = "https://lampame.github.io/main/rradio.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
-                    },
+                                        },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://lampame.github.io/main/rradio.js')
+						/*var myResult = checkPlugin('https://lampame.github.io/main/rradio.js')
 						setTimeout(function() {	
 							$('div[data-name="Record_Mod"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2903,7 +3290,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/main/rradio.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Record_Mod"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/rradio.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 
@@ -2930,9 +3336,9 @@ Lampa.SettingsApi.addComponent({
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/soma.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
-                    },
+                                        },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://tsynik.github.io/lampa/soma.js')
+						/*var myResult = checkPlugin('https://tsynik.github.io/lampa/soma.js')
 						setTimeout(function() {	
 							$('div[data-name="Radio_Soma"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -2940,7 +3346,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);
+						}, 100);*/
+						var myResult = checkPlugin('https://tsynik.github.io/lampa/soma.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Radio_Soma"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://tsynik.github.io/lampa/soma.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	       /* Lampa.SettingsApi.addParam({
@@ -3014,7 +3439,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('https://bwa.to/s')
+						/*var myResult = checkPlugin('https://bwa.to/s')
 						setTimeout(function() {	
 							$('div[data-name="Sisi"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -3022,7 +3447,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('https://bwa.to/s');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Sisi"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bwa.to/s') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -3050,7 +3494,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js')
+						/*var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js')
 						setTimeout(function() {	
 							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -3058,7 +3502,26 @@ Lampa.SettingsApi.addComponent({
 							} else {
 								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
-						}, 100);		  
+						}, 100);*/
+						var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://bwa-cloud.cfhttp.top/sisi.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
 					}
 		});
 	        /*Lampa.SettingsApi.addParam({
@@ -3078,21 +3541,21 @@ Lampa.SettingsApi.addComponent({
                                    }
 		}); */
 /* Реклама */
-Lampa.SettingsApi.addParam({
+      Lampa.SettingsApi.addParam({
 					component: 'add_plugin',
 					param: {
 						name: 'add_ads',
       		                        	type: 'title'
                         		},
 					field: {
-                                name: ads
-                        },
-              onRender: function (item) {
-                setTimeout(function() {
-           //   $('.settings-param-title').insertBefore($('.settings-param').first())
-                $('.settings-param-title').insertAfter($('.settings-param').last())
-                },0);
-                }
+                                            name: ads
+                                        },
+                                        onRender: function (item) {
+                                            setTimeout(function() {
+                                               //   $('.settings-param-title').insertBefore($('.settings-param').first())
+                                               $('.settings-param-title').insertAfter($('.settings-param').last())
+                                            },0);
+                                        }
 	
          });	
 
@@ -3129,7 +3592,10 @@ Lampa.SettingsApi.addParam({
     ym(93937344, "init", {clickmap: true,trackLinks: true,accurateTrackBounce: true})
     var METRIKA = '<noscript><div><img src="https://mc.yandex.ru/watch/93937344" style="position:absolute; left:-9999px;" alt="" /></div></noscript>';
     $('body').append(METRIKA);
+
+
 } // /* addonStart */
+
 if (!!window.appready) addonStart();
 else Lampa.Listener.follow('app', function(e){if (e.type === 'ready') addonStart()});	
 	
