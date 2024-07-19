@@ -43,6 +43,8 @@ Lampa.Modal.open({
 });
 }
 
+
+/* Функция анимации установки плагина */	
 function showLoadingBar() {
   // Создаем элемент для полосы загрузки
   var loadingBar = document.createElement('div');
@@ -108,7 +110,7 @@ function showLoadingBar() {
   }, 16);
 }
 
-	
+/* Функция анимации удаления плагина */	
 function showDeletedBar() {
   // Создаем элемент для полосы загрузки
   var loadingBar = document.createElement('div');
