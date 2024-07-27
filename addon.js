@@ -1171,7 +1171,7 @@ Lampa.SettingsApi.addComponent({
 								itemON('https://lampame.github.io/main/cts.js', 'Поиск Концертов', '@GwynnBleiidd', 'concert_search');
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "concert_search";
+								var pluginToRemoveUrl = "https://lampame.github.io/main/cts.js";
 								deletePlugin(pluginToRemoveUrl);
 							}
 						},
@@ -1316,6 +1316,63 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);
 						}
 		});
+
+                Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'Shikimori',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'LME Shikimori',
+							description: 'Отображает информацию по аниме с Shikimori, так же пытается найти по оригинальному названию на ТМДБ, если найдено множество результато в то покажет меню с выбором'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('https://lampame.github.io/main/shikimori.js', 'LME Shikimori', '@GwynnBleiidd', 'Shikimori');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "https://lampame.github.io/main/shikimori.js";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+						onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							/*var myResult = checkPlugin('')
+							setTimeout(function() {	
+								$('div[data-name="Shikimori"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="Shikimori"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="Shikimori"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/main/shikimori.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="Shikimori"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/shikimori.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="Shikimori"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="Shikimori"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="Shikimori"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						}
+		});
+	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
