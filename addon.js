@@ -1975,7 +1975,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
-	         Lampa.SettingsApi.addParam({
+	        Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
 					param: {
 						name: 'Sort_mainmenu',
@@ -2026,6 +2026,62 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Sort_mainmenu"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
                                                           $('div[data-name="Sort_mainmenu"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'bind_but',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Бинд кнопок',
+						description: 'Плагин позволяет управлять цветными кнопками с ТВ пульта фильтрами в карточке онлайна или торрентов'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://apxubatop.github.io/lmpPlugs/tvbuttontst.js', 'Бинд Кнопок', '@Juri_Z', 'bind_but');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://apxubatop.github.io/lmpPlugs/tvbuttontst.js";
+							deletePlugin(pluginToRemoveUrl);
+						}	
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
+						/*var myResult = checkPlugin('https://apxubatop.github.io/lmpPlugs/tvbuttontst.js')
+						setTimeout(function() {	
+							$('div[data-name="bind_but"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="bind_but"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="bind_but"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://apxubatop.github.io/lmpPlugs/tvbuttontst.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="bind_but"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://apxubatop.github.io/lmpPlugs/tvbuttontst.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="bind_but"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="bind_but"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="bind_but"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
 					}
