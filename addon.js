@@ -1372,6 +1372,62 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);
 						}
 		});
+
+	        Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'ts_del',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'Remove TS',
+							description: 'Плагин убирает на главном экране карточки с качеством TS'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('http://193.233.134.21/plugins/nots', 'Remove TS', '@AndreyURL54', 'ts_del');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "http://193.233.134.21/plugins/nots";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+						onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							/*var myResult = checkPlugin('')
+							setTimeout(function() {	
+								$('div[data-name="ts_del"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="ts_del"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="ts_del"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);*/
+						var myResult = checkPlugin('http://193.233.134.21/plugins/nots');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="ts_del"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://193.233.134.21/plugins/nots') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="ts_del"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="ts_del"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="ts_del"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
