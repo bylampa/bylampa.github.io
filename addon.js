@@ -272,7 +272,7 @@ function checkPlugin(pluginToCheck) {
 /* Компонент */
 Lampa.SettingsApi.addComponent({
             component: 'add_plugin',
-            name: 'Плагины',
+            name: 'Магазин плагинов',
             icon: icon_add_plugin
        });
 /* Интерфейс */
