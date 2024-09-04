@@ -2160,7 +2160,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/account.js', 'Смена Сервера', '@scabrum', 'acc_bylampa');
+						       itemON('https://bylampa.github.io/account.js', 'Аккаунт', '@bylampa', 'acc_bylampa');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/account.js";
