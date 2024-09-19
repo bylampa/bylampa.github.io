@@ -3069,6 +3069,62 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);	
 					}
 		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'visual_ts',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Визуализация загрузки TS',
+						description: 'Плагин показывает визуально загрузку TS перед запуском видео через торренты'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://plugin.rootu.top/ts-preload.js', 'Визуализация Загрузки TS', '@rootu', 'visual_ts');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://plugin.rootu.top/ts-preload.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('https://bylampa.github.io/freetorr.js')
+						setTimeout(function() {	
+							$('div[data-name="free_torr"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://plugin.rootu.top/ts-preload.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="visual_ts"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://plugin.rootu.top/ts-preload.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="visual_ts"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="visual_ts"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="visual_ts"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
+					}
+		});
 	/*
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_torrent_plugin',
