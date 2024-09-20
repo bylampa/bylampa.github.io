@@ -3411,16 +3411,16 @@ Lampa.SettingsApi.addComponent({
                                    }
 		});*/			   
                
-	        Lampa.Settings.listener.follow('open', function (e) {
+	        /*Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
 						Lampa.SettingsApi.addComponent({
 							component: 'add_music_plugin',
 							name: 'Music'
 						});
 					}
-		});
+		});*/
 /* Музыка */
-		Lampa.SettingsApi.addParam({
+		/*Lampa.SettingsApi.addParam({
 					component: 'add_plugin',
 					param: {
 						name: 'add_music_plugin',
@@ -3438,9 +3438,9 @@ Lampa.SettingsApi.addComponent({
 							}
 						});
 					}
-		});
+		});*/
 
-	        Lampa.SettingsApi.addParam({
+	        /*Lampa.SettingsApi.addParam({
 					component: 'add_music_plugin',
 					param: {
 						name: 'lme_music',
@@ -3474,7 +3474,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="lme_music"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://lampame.github.io/main/music.js');
+						/*var myResult = checkPlugin('https://lampame.github.io/main/music.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="lme_music"]').append('<div class="settings-param__status one"></div>');
@@ -3494,7 +3494,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);	
 					}
-		});
+		});*/
 	
                 /* Lampa.SettingsApi.addParam({
                                   component: 'add_music_plugin',
