@@ -2474,7 +2474,7 @@ Lampa.SettingsApi.addComponent({
 		Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
-                               			name: 'Онлайн_BWA',
+                               			name: 'online_cinema',
                    				type: 'select',
                    				values: {
 							1:	'Установить',
@@ -2483,15 +2483,15 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
                				},
 					field: {
-                                  		name: 'Онлайн BWA',
+                                  		name: 'Онлайн Cinema',
                                   		description: 'Плагин для просмотра фильмов и сериалов в онлайн'
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('https://bwa.to/o', 'Онлайн BWA', '@rik', 'Онлайн_BWA');
+						itemON('https://bylampa.github.io/cinema.js', 'Онлайн Cinema', '@cinema', 'online_cinema');
 					}
 					if (value == '2') {
-						var pluginToRemoveUrl = "https://bwa.to/o";
+						var pluginToRemoveUrl = "https://bylampa.github.io/cinema.js";
 						deletePlugin(pluginToRemoveUrl);
 					}
                 },
@@ -2505,23 +2505,23 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bwa.to/o');
+						var myResult = checkPlugin('https://bylampa.github.io/cinema.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
-                                                       $('div[data-name="Онлайн_BWA"]').append('<div class="settings-param__status one"></div>');
+                                                       $('div[data-name="online_cinema"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://bwa.to/o') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/cinema.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
                                                        }
                                                        if (myResult && pluginStatus !== 0) {
-                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                          $('div[data-name="online_cinema"]').find('.settings-param__status').removeClass('active error').addClass('active');
                                                        } else if (pluginStatus === 0) {
-                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                          $('div[data-name="online_cinema"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
-                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                          $('div[data-name="online_cinema"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
 					}
