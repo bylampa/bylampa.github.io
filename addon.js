@@ -2598,10 +2598,10 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://showy.online/m.js', 'Showy', '@showy', 'Showy');
+						itemON('https://bylampa.github.io/m.js', 'Showy', '@showy', 'Showy');
 					}
 					if (value == '2') {
-						var pluginToRemoveUrl = "http://showy.online/m.js";
+						var pluginToRemoveUrl = "https://bylampa.github.io/m.js";
 						deletePlugin(pluginToRemoveUrl);
 					}
                 },
@@ -2615,13 +2615,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://showy.online/m.js');
+						var myResult = checkPlugin('https://bylampa.github.io/m.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Showy"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://showy.online/m.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/m.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
