@@ -2977,10 +2977,10 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://lampame.github.io/td/td.js', 'Закачка Торрентов', '@feliks', 'Torr_download');
+							itemON('https://lampame.github.io/main/torrentmanager/torrentmanager.js', 'Закачка Торрентов', '@feliks', 'Torr_download');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://lampame.github.io/td/td.js";
+							var pluginToRemoveUrl = "https://lampame.github.io/main/torrentmanager/torrentmanager.js";
 							deletePlugin(pluginToRemoveUrl);
                                                 }
 					},
@@ -2994,13 +2994,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://lampame.github.io/td/td.js');
+						var myResult = checkPlugin('https://lampame.github.io/main/torrentmanager/torrentmanager.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Torr_download"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://lampame.github.io/td/td.js') {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/torrentmanager/torrentmanager.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
