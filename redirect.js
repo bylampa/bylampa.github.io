@@ -25,7 +25,7 @@ function startMe() {
 	$('#REDIRECT').on('hover:enter hover:click hover:touch', function() {
 		window.location.href = server_protocol + Lampa.Storage.get('location_server')
 	});
-  } 
+ 
   
   Lampa.SettingsApi.addComponent({
             component: 'location_redirect',
@@ -68,14 +68,23 @@ function startMe() {
 			},
 			field: {
 				name: 'Постоянный редирект',
-				description: 'Внимание!!! Если вы включите этот параметр, вернуться на старый сервер сможете только сбросом плагинов или отключением этого плагина через CUB' 
-			},	
+				description: 'Чтобы отключить постоянный редирект зажмите клавишу ВНИЗ при загрузке приложения' 
+			}
    });
-	 
-	
-	if(Lampa.Storage.field('const_redirect') == true) {
-	   window.location.href = server_protocol + Lampa.Storage.get('location_server');
-	}
+
+        Lampa.Keypad.listener.follow("keydown", function (e) {
+             if (e.code === 40 || e.code === 29461) {
+                Lampa.Storage.set('const_redirect', false);
+             } 
+        });
+
+	setTimeout(function () {
+          if(Lampa.Storage.field('const_redirect') == true) {
+	     window.location.href = server_protocol + Lampa.Storage.get('location_server');
+	  }
+        }, 300);
+
+  }
 	
 	if(window.appready) startMe();
 	else {
