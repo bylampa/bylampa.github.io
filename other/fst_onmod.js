@@ -14,6 +14,7 @@ function button() {
           $onmodButton.prependTo($parent);
         }
       });
+     Lampa.Controller.toggle('full_start');
     }, 10);
   }
  });
