@@ -3994,7 +3994,7 @@ Lampa.SettingsApi.addComponent({
                                    }
 		}); */
 /* Реклама */
-      Lampa.SettingsApi.addParam({
+    /*  Lampa.SettingsApi.addParam({
 					component: 'add_plugin',
 					param: {
 						name: 'add_ads',
@@ -4010,9 +4010,9 @@ Lampa.SettingsApi.addComponent({
                                             },0);
                                         }
 	
-         });	
+         });	*/
 
-	  Lampa.Settings.listener.follow('open', function(e) {
+	  /*Lampa.Settings.listener.follow('open', function(e) {
 	    if (e.name == 'add_plugin') {
                 setTimeout(function() {
                     // убираем артефакты после входа в Расширения, надпись "Редактировать" / "Ещё" / "История" / "Статус"
@@ -4027,7 +4027,7 @@ Lampa.SettingsApi.addComponent({
                 }, 0);
             }
 	    
-        });
+        });*/
 /* Счётчик Яндекса */    
 	(function(m, e, t, r, i, k, a) {
                        m[i] = m[i] || function() {
