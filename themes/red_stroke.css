@@ -1,0 +1,129 @@
+:root {
+    --main-color: #e40c2b;
+    --background-color: #1d1f20; 
+    --text-color: #fff;
+    --transparent-white: rgba(255,255,255,0.2);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.menu__ico {
+    color: #000;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+}
+
+.lang,
+.console,
+.settings__content,
+.settings-input__content,
+.selectbox__content,
+.modal__content,
+.extensions {
+    background: #262829;
+}
+
+.console__line.focus,
+.console__tab.focus,
+.menu__item.focus,
+.menu__item.traverse,
+.menu__item.hover,
+.full-person.focus,
+.full-start__button.focus,
+.full-descr__tag.focus,
+.simple-button.focus,
+.iptv-list__item.focus,
+.iptv-menu__list-item.focus,
+.head__action.focus,
+.head__action.hover,
+.player-panel .button.focus,
+.search-source.active {
+    background: #e40c2b;
+    color: var(--text-color);
+}
+
+.settings-folder.focus,
+.settings-param.focus,
+.selectbox-item.focus,
+.selectbox-item.hover {
+    background: #e40c2b;
+}
+
+.settings-input__links {
+    background-color: var(--transparent-white);
+}
+
+.online-prestige.focus::after,
+.radio-item.focus .radio-item__imgbox:after,
+.iptv-channel.focus::before, .iptv-channel.last--focus::before{
+    border-color: #e40c2b !important;
+}
+
+.card.focus .card__view::after,
+.card.hover .card__view::after,
+.extensions__item.focus:after,
+.torrent-item.focus::after,
+.extensions__block-add.focus:after,
+.time-line > div,
+.player-panel__position,
+.player-panel__position > div:after {
+    border-color: #e40c2b;
+}
+
+.extensions__item,
+.extensions__block-add {
+    background-color: var(--background-color);
+}
+
+.torrent-item__size,
+.torrent-item__exe,
+.torrent-item__viewed,
+.torrent-serial__size {
+    background-color: var(--text-color);
+    color: #000;
+}
+
+.torrent-serial {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.torrent-file.focus,
+.torrent-serial.focus {
+    background-color: rgba(255,255,255,0.36);
+}
+
+.broadcast__device.focus {
+    background-color:  #e40c2b;
+  }
+
+.loader:after, .iframe__body:after, .activity__loader:after {
+    -webkit-box-shadow: 0 4px #e40c2b inset;
+            box-shadow: 0 4px #e40c2b inset;
+  }
+
+.card:hover .card__img, .card.focus .card__img {
+    border-color: #e40c2b;
+  }
+
+  .noty {
+    background: #e40c2b;
+    color: var(--text-color);
+  }
+  
+  body.glass--style .selectbox-item.focus,
+  body.glass--style .settings-folder.focus,
+  body.glass--style .settings-param.focus {
+      background-color: #e40c2b;
+      color: var(--text-color);
+  }
+
+  .radio-player.focus {
+    background-color: #e40c2b;
+    color: var(--text-color);
+  }
+  .explorer-card__head-img.focus::after {
+    border: 0.3em solid  #e40c2b;
+}
