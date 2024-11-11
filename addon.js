@@ -1034,7 +1034,7 @@ Lampa.SettingsApi.addComponent({
                                                        if (myResult && pluginStatus !== 0) {
                                                           $('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error').addClass('active');
                                                        } else if (pluginStatus === 0) {
-                                                          $('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                          $('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
                                                           $('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
