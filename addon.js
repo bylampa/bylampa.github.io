@@ -1710,6 +1710,118 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);
 					}
 		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'cardify',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Cardify',
+						description: 'Плагин преобразует привычный вид карточек, предлагая обновленный интерфейс — более яркий, красочный и привлекательный'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/cardify.js', 'Cardify', '@lampa', 'cardify');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/cardify.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/logo_title.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/cardify.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="cardify"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/cardify.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="cardify"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="cardify"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="cardify"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'two_lines',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Заголовок в две строки',
+						description: 'Расширяет заголовок в карточке, разбивая его с одной строки на две'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://cub.red/plugin/twolines', 'Заголовок В Две Строки', '@lampa', 'two_lines');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://cub.red/plugin/twolines";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/logo_title.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://cub.red/plugin/twolines');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="two_lines"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://cub.red/plugin/twolines') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="two_lines"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="two_lines"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="two_lines"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
@@ -2480,6 +2592,62 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);
 					}
 		});
+
+                Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'infuse_save',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Infuse save',
+                                    		description: 'Плагин для сохранения торрентов, через Torrserver в Infuse. Поставляется как есть, настроек нет. Вызывается долгим тапом в списке файлов'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://lampame.github.io/main/infuseSave.js', 'Infuse Save', '@lme', 'infuse_save');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://lampame.github.io/main/infuseSave.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('https://bylampa.github.io/redirect.js')
+						setTimeout(function() {	
+							$('div[data-name="Redirect"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://lampame.github.io/main/infuseSave.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="infuse_save"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/infuseSave.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="infuse_save"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="infuse_save"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="infuse_save"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
@@ -2527,7 +2695,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
                  
-		Lampa.SettingsApi.addParam({
+		/*Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
 						name: 'Modss',
@@ -2581,7 +2749,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);
 					}
-        });
+        });*/
         
 		Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
