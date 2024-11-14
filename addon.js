@@ -2729,7 +2729,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://lampa.stream/modss');
+						/*var myResult = checkPlugin('http://lampa.stream/modss');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Modss"]').append('<div class="settings-param__status one"></div>');
