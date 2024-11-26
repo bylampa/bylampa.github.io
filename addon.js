@@ -339,10 +339,10 @@ Lampa.SettingsApi.addComponent({
                             },
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.red/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB');
+							itemON('https://bylampa.github.io/tmdb-proxy.js', 'TMDB Proxy', '@lampa', 'TMDB');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://cub.red/plugin/tmdb-proxy";
+							var pluginToRemoveUrl = "https://bylampa.github.io/tmdb-proxy.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -357,13 +357,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy');
+						var myResult = checkPlugin('https://bylampa.github.io/tmdb-proxy.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/tmdb-proxy') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/tmdb-proxy.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
