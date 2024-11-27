@@ -10,7 +10,10 @@ function button() {
         var $onmodButton = $(this);
         var $parent = $onmodButton.parent();
         var $firstChild = $parent.children().first();
-
+            
+         // Переместить .view--torrent в конец
+        $parent.find('.view--torrent').appendTo($parent);
+            
         if (!$onmodButton.is($firstChild)) {
           $onmodButton.prependTo($parent);
         }
