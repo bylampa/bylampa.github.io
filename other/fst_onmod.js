@@ -11,8 +11,8 @@ function button() {
         var $parent = $onmodButton.parent();
         var $firstChild = $parent.children().first();
             
-         // Переместить .view--torrent в конец
-        $parent.find('.view--torrent').appendTo($parent);
+        // Переместить элементы .view--torrent перед .button--book
+        $parent.find('.view--torrent').insertBefore($parent.find('.button--book'));
             
         if (!$onmodButton.is($firstChild)) {
           $onmodButton.prependTo($parent);
