@@ -3,7 +3,7 @@
 
   function black_set_cont() {                            					
 	  Lampa.Settings.listener.follow('open', function (e) {
-		  if (e.name == 'add_plugin') {
+		  if (e.name == 'main') {
 		      setTimeout(function() {
 			  $('div[data-component="add_sisi_plugin"]').remove();
 			      e.body.find('[data-component="add_sisi_plugin"]').remove();
