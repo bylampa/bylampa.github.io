@@ -4,7 +4,7 @@
   function black_set_cont() {                            					
 	  Lampa.Settings.listener.follow('open', function (e) {
 		  if (e.name == 'add_plugin') {
-			  e.body.find('[data-name="add_sisi_plugin"]').remove();
+			  $('div[data-component="add_sisi_plugin"]').remove();
 		  }
     });		
   }
