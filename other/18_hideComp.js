@@ -6,7 +6,7 @@
 		  if (e.name == 'add_plugin') {
 		      setTimeout(function() {
 			  $('div[data-component="add_sisi_plugin"]').remove();
-		      }, 0)
+		      }, 1000)
 		  }
     });		
   }
