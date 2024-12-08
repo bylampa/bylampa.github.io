@@ -13,7 +13,8 @@
 	  Lampa.Settings.listener.follow('open', function (e) {
     if (e.name == 'add_plugin') {
         const interval = setInterval(function() {
-            const component = $('div[data-component="add_sisi_plugin"]');
+            // Используем более общий селектор для поиска элемента
+            const component = $('.settings-param:has(.settings-param__name:contains("18+"))'); // Предположим, "18+" уникален
             if (component.length) {
                 component.remove();
                 clearInterval(interval); // Остановить повторные попытки
