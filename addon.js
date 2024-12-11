@@ -1767,10 +1767,10 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
-	      /*  Lampa.SettingsApi.addParam({
+	        Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
 					param: {
-						name: 'two_lines',
+						name: 'back_menu',
 						type: 'select',
 						values: {
 							1:	'Установить',
@@ -1779,15 +1779,15 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 						},
 					field: {
-						name: 'Заголовок в две строки',
-						description: 'Расширяет заголовок в карточке, разбивая его с одной строки на две'
+						name: 'Меню выход',
+						description: 'Плагин подменяет меню выхода из приложения, на свое со своими пунктами, которые можно включать или отключать в настройках приложения (раздел остальное, пункт Меню Выход)'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://cub.red/plugin/twolines', 'Заголовок В Две Строки', '@lampa', 'two_lines');
+						       itemON('https://bylampa.github.io/backmenu.js', 'Меню Выход', '@bylampa', 'back_menu');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://cub.red/plugin/twolines";
+							var pluginToRemoveUrl = "https://bylampa.github.io/backmenu.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -1801,27 +1801,83 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						/*var myResult = checkPlugin('https://cub.red/plugin/twolines');
+						var myResult = checkPlugin('https://bylampa.github.io/backmenu.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
-                                                       $('div[data-name="two_lines"]').append('<div class="settings-param__status one"></div>');
+                                                       $('div[data-name="back_menu"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://cub.red/plugin/twolines') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/backmenu.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
                                                        }
                                                        if (myResult && pluginStatus !== 0) {
-                                                          $('div[data-name="two_lines"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                          $('div[data-name="back_menu"]').find('.settings-param__status').removeClass('active error').addClass('active');
                                                        } else if (pluginStatus === 0) {
-                                                          $('div[data-name="two_lines"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                          $('div[data-name="back_menu"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
-                                                          $('div[data-name="two_lines"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                          $('div[data-name="back_menu"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
 					}
-		});*/
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'my_themes',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Мои темы',
+						description: 'Плагин изменяет палитру элементов приложения. Для установки темы нужно зайти в настройки интерфейса приложения и выбрать пункт Мои Темы. Чтобы вернуться на стандартный интерфейс достаточно удалить любую из тем'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/themes.js', 'Мои Темы', '@bylampa', 'my_themes');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/themes.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/logo_title.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/themes.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="my_themes"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/themes.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="my_themes"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="my_themes"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="my_themes"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
