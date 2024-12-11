@@ -1,0 +1,192 @@
+:root {
+    --main-color: #7d3780;
+    --background-color: #1d1f20; 
+    --text-color: #fff;
+    --transparent-white: rgba(255,255,255,0.2);
+}
+
+/*body {
+    background-color: #1d1f20;
+    color: #fff;
+}*/
+
+.menu__ico {
+    color: #000;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+}
+
+.activity__loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: url(https://bylampa.github.io/themes/loader/loader_violet_stroke.svg) no-repeat 50% 50%;
+}
+
+.modal-loading {
+  height: 6em;
+  background: url(https://bylampa.github.io/themes/loader/loader_violet_stroke.svg) no-repeat 50% 50%;
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+}
+
+/*.lang,
+.console,
+.settings__content,
+.settings-input__content,
+.selectbox__content,
+.modal__content,
+.extensions {
+    background: #262829;
+}*/
+
+.console__tab.focus,
+.menu__item.focus,
+.menu__item.traverse,
+.menu__item.hover,
+.full-person.focus,
+.full-start__button.focus,
+.full-descr__tag.focus,
+.simple-button.focus,
+.head__action.focus,
+.head__action.hover,
+.player-panel .button.focus,
+.search-source.active {
+    background: #7d3780;
+    color: #fff;
+}
+
+.navigation-tabs__button.focus,
+.time-line > div,
+.player-panel__position,
+.player-panel__position > div:after {
+     background-color: #7d3780;
+     color: #fff;
+}
+
+.iptv-menu__list-item.focus,
+.iptv-program__timeline>div {
+      background-color: #7d3780 !important;
+      color: #fff !important;
+}
+
+.radio-item.focus,
+.lang__selector-item.focus,
+.simple-keyboard .hg-button.focus,
+.modal__button.focus,
+.search-history-key.focus,
+.simple-keyboard-mic.focus,
+.torrent-serial__progress,
+.full-review-add.focus,
+.full-review.focus,
+.tag-count.focus,
+.settings-folder.focus,
+.settings-param.focus,
+.selectbox-item.focus,
+.selectbox-item.hover {
+    background: #7d3780;
+    color: #fff;
+}
+
+/*.settings-input__links {
+    background-color: rgba(255,255,255,0.2);
+}*/
+
+.online.focus {
+   box-shadow: 0 0 0 0.2em #7d3780;
+}
+
+.online_modss.focus::after,
+.online-prestige.focus::after,
+.radio-item.focus .radio-item__imgbox:after,
+.iptv-channel.focus::before, .iptv-channel.last--focus::before {
+    border-color: #7d3780 !important;
+}
+
+.card-more.focus .card-more__box::after {
+        border: 0.3em solid #7d3780;
+}
+
+.simple-button--filter > div {
+       background-color: rgba(255,255,255,0.1);
+}
+
+.iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
+    border-color: #7d3780 !important;
+}
+
+.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
+.card-episode.focus .full-episode::after,
+.register.focus::after,
+.season-episode.focus::after,
+.full-episode.focus::after,
+.full-review-add.focus::after,
+.card.focus .card__view::after,
+.card.hover .card__view::after,
+.extensions__item.focus:after,
+.torrent-item.focus::after,
+.extensions__block-add.focus:after {
+    border-color: #7d3780;
+}
+
+/*.extensions__item,
+.extensions__block-add {
+    background-color: #1d1f20;
+}*/
+
+/*.torrent-item__size,
+.torrent-item__exe,
+.torrent-item__viewed,*/
+.torrent-serial__size {
+    background-color: #fff;
+    color: #000;
+}
+
+/*.torrent-serial {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.torrent-file.focus,
+.torrent-serial.focus {
+    background-color: rgba(255,255,255,0.36);
+}*/
+
+.broadcast__scan > div,
+.broadcast__device.focus {
+    background-color:  #7d3780;
+    color: #fff;
+  }
+
+/*.loader:after, .iframe__body:after, .activity__loader:after {
+    -webkit-box-shadow: 0 4px #7d3780 inset;
+            box-shadow: 0 4px #7d3780 inset;
+  }*/
+
+.card:hover .card__img, .card.focus .card__img {
+    border-color: #7d3780;
+  }
+
+  .noty {
+    background: #7d3780;
+    color: #fff;
+  }
+  
+ /* body.glass--style .selectbox-item.focus,
+  body.glass--style .settings-folder.focus,
+  body.glass--style .settings-param.focus {
+      background-color: #7d3780;
+      color: #fff;
+  }*/
+
+  .radio-player.focus {
+    background-color: #7d3780;
+    color: #fff;
+  }
+  .explorer-card__head-img.focus::after {
+    border: 0.3em solid  #7d3780;
+}

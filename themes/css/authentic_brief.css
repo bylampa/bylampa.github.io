@@ -1,0 +1,253 @@
+:root {
+    --main-color: #5ebec4;
+    --background-color: #3b2b35; 
+    --text-color: #fff;
+    --transparent-white: rgba(255,255,255,0.2);
+}
+
+body {
+    background-color: #fff1cc;
+    color: #000;
+}
+
+.simple-keyboard-input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.5);
+}
+
+.extensions__item,
+.extensions__block-add {
+    background-color: #fff1cc;
+}
+
+.empty__img,
+.search-history-key:before,
+.torrent-item__ffprobe > div.m-channels::before,
+.torrent-item__ffprobe > div.m-video::before,
+.torrent-item__ffprobe > div.m-subtitle::before,
+.torrent-item__ffprobe > div.m-audio::before,
+.settings-folder__icon,
+.head__logo-icon {
+    color: #fff;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+}
+
+.search-source.focus {
+  background: rgba(221, 221, 221, 0.3);
+  opacity: 1;
+  -webkit-box-shadow: inset 0 0 0 0.15em #000;
+     -moz-box-shadow: inset 0 0 0 0.15em #000;
+          box-shadow: inset 0 0 0 0.15em #000;
+  color: #000;
+}
+
+.search-source__count {
+   background-color: rgba(0,0,0,1);
+}
+   
+.extensions__item-included {
+   background-color: #000;
+}
+
+.extensions__item-disabled,
+.extensions__item-code,
+.extensions__cub {
+   background-color: #fff;
+}
+
+.extensions__item-author,
+.extensions__item-status,
+.search-history-empty,
+.simple-keyboard-input,
+.simple-keyboard-input.focus,
+.simple-keyboard,
+.search-looking__text,
+.torrent-item__seeds,
+.torrent-item__grabs,
+.torrent-item__bitrate,
+.torrent-item__tracker,
+.torrent-item__date,
+.torrent-item__bitrate > span, .torrent-item__grabs > span, .torrent-item__seeds > span,
+.menu__item,
+.full-start-new__head span,
+.torent-item__details,
+.full-start-new__head,
+.full-start-new__details {
+     color: #000;
+}
+
+.explorer-card__head-age,
+.full-start__pg,
+.full-start__status {
+    border-color: #000;
+}
+
+.activity__loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: url(https://bylampa.github.io/themes/loader/loader_authentic_brief.svg) no-repeat 50% 50%;
+}
+
+.modal-loading {
+  height: 6em;
+  background: url(https://bylampa.github.io/themes/loader/loader_authentic_brief.svg) no-repeat 50% 50%;
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+}
+
+.navigation-bar__body,
+.lang,
+.console,
+.settings__content,
+.settings-input__content,
+.selectbox__content,
+.modal__content,
+.extensions {
+    background: #fdf5df;
+}
+
+.console__tab.focus,
+.menu__item.focus,
+.menu__item.traverse,
+.menu__item.hover,
+.full-person.focus,
+.full-start__button.focus,
+.full-descr__tag.focus,
+.simple-button.focus,
+.head__action.focus,
+.head__action.hover,
+.player-panel .button.focus,
+.search-source.active {
+    background: #5ebec4;
+    color: #000;
+}
+
+.navigation-tabs__button.focus,
+.time-line > div,
+.player-panel__position,
+.player-panel__position > div:after {
+     background-color: #5ebec4;
+     color: #000;
+}
+
+.iptv-menu__list-item.focus,
+.iptv-program__timeline>div {
+      background-color: #5ebec4 !important;
+      color: #fff !important;
+}
+
+.radio-item.focus,
+.lang__selector-item.focus,
+.simple-keyboard .hg-button.focus,
+.modal__button.focus,
+.search-history-key.focus,
+.simple-keyboard-mic.focus,
+.torrent-serial__progress,
+.full-review-add.focus,
+.full-review.focus,
+.tag-count.focus,
+.settings-folder.focus,
+.settings-param.focus,
+.selectbox-item.focus,
+.selectbox-item.hover {
+    background: #5ebec4;
+    color: #000;
+}
+
+.online.focus {
+   box-shadow: 0 0 0 0.2em #5ebec4;
+}
+
+.online_modss.focus::after,
+.online-prestige.focus::after,
+.radio-item.focus .radio-item__imgbox:after,
+.iptv-channel.focus::before, .iptv-channel.last--focus::before {
+    border-color: #5ebec4 !important;
+}
+
+.card-more.focus .card-more__box::after {
+        border: 0.3em solid #5ebec4;
+}
+
+.simple-button--filter > div {
+       background-color: rgba(0,0,0,0.1);
+}
+
+.iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
+   border-color: #5ebec4 !important;
+}
+
+.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after, 
+.card-episode.focus .full-episode::after,
+.register.focus::after,
+.season-episode.focus::after,
+.full-episode.focus::after,
+.full-review-add.focus::after,
+.card.focus .card__view::after,
+.card.hover .card__view::after,
+.extensions__item.focus:after,
+.torrent-item.focus::after,
+.extensions__block-add.focus:after {
+    border-color: #5ebec4;
+}
+
+/*.torrent-item__size,
+.torrent-item__exe,
+.torrent-item__viewed,*/
+.torrent-serial__episode,
+.torrent-serial__size {
+    background-color: #fff;
+    color: #000;
+}
+
+.settings-input__links,
+.search-history-key,
+.search-source,
+.console__tab,
+.torrent-serial {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.console__tab > span {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.console__line.focus {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.tracks-metainfo__info>div.focus,
+.torrent-file.focus,
+.torrent-serial.focus {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.broadcast__scan > div,
+.broadcast__device.focus {
+    background-color:  #5ebec4;
+    color: #000;
+  }
+
+.card:hover .card__img, .card.focus .card__img {
+    border-color: #5ebec4;
+  }
+
+  .noty {
+    background: #5ebec4;
+    color: #000;
+  }
+
+  .radio-player.focus {
+    background-color: #5ebec4;
+    color: #000;
+  }
+  
+  .explorer-card__head-img.focus::after {
+    border: 0.3em solid  #5ebec4;
+}
