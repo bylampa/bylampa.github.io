@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Copenhagen",
+    "logo": "https://bylampa.github.io/themes/logo/copenhagen.png",
+    "css": "https://bylampa.github.io/themes/css/copenhagen.css"
+  },
+  {
+    "title": "Authentic Brief",
+    "logo": "https://bylampa.github.io/themes/logo/authentic_brief.png",
+    "css": "https://bylampa.github.io/themes/css/authentic_brief.css"
+  },
+  {
+    "title": "Immersive Garden",
+    "logo": "https://bylampa.github.io/themes/logo/immersive_garden.png",
+    "css": "https://bylampa.github.io/themes/css/immersive_garden.css"
+  }
+]

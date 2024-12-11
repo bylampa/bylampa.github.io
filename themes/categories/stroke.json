@@ -1,0 +1,32 @@
+﻿[
+  {
+    "title": "Красная",
+    "logo": "https://bylampa.github.io/themes/logo/red_stroke.png",
+    "css": "https://bylampa.github.io/themes/css/red_stroke.css"
+  },
+  {
+    "title": "Зелёная",
+    "logo": "https://bylampa.github.io/themes/logo/green_stroke.png",
+    "css": "https://bylampa.github.io/themes/css/green_stroke.css"
+  },
+  {
+    "title": "Фиолетовая",
+    "logo": "https://bylampa.github.io/themes/logo/violet_stroke.png",
+    "css": "https://bylampa.github.io/themes/css/violet_stroke.css"
+  },
+  {
+    "title": "Синяя",
+    "logo": "https://bylampa.github.io/themes/logo/dark_blue_stroke.png",
+    "css": "https://bylampa.github.io/themes/css/dark_blue_stroke.css"
+  },
+  {
+    "title": "Оранжевая",
+    "logo": "https://bylampa.github.io/themes/logo/orange_stroke.png",
+    "css": "https://bylampa.github.io/themes/css/orange_stroke.css"
+  },
+  {
+    "title": "Розовая",
+    "logo": "https://bylampa.github.io/themes/logo/pink_stroke.png",
+    "css": "https://bylampa.github.io/themes/css/pink_stroke.css"
+  }
+]
