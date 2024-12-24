@@ -4370,6 +4370,63 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);	
 					}
 		});
+
+                Lampa.SettingsApi.addParam({
+					component: 'add_sisi_plugin',
+					param: {
+						name: 'sisi_durex',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+						//default: '1',
+					},
+					field: {
+						name: 'Клубничка Durex',
+						description: 'Замена Клубнички BWA'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://durex.monster/sisi.js', 'Клубничка Durex', '@rik', 'sisi_durex');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://durex.monster/sisi.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js')
+						setTimeout(function() {	
+							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('http://durex.monster/sisi.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="sisi_durex"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://durex.monster/sisi.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="sisi_durex"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="sisi_durex"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="sisi_durex"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
+					}
+		});
+	
 	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
                                   param: {
