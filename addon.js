@@ -3084,6 +3084,63 @@ Lampa.SettingsApi.addComponent({
                                                     }, 100);	
 					}
 		});
+
+                Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                               			name: 'durex_online',
+                   				type: 'select',
+                   				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                   				},
+					//default: '1',
+               				},
+					field: {
+                                  		name: 'Онлайн Durex',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн, замена BWA'
+					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('http://durex.monster/online.js', 'Онлайн Durex', '@rik', 'durex_online');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "http://durex.monster/online.js";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('http://bwa.to/cloud.js')
+						setTimeout(function() {	
+							$('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('http://durex.monster/online.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="durex_online"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://durex.monster/online.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="durex_online"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="durex_online"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="durex_online"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
+					}
+		});
+	
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
                                   param: {
