@@ -2008,10 +2008,10 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/old_card_style.js', 'Статус На Старой Карточке', '@bylampa', 'old_cards_status');
+						       itemON('https://bylampa.github.io/old_card_status.js', 'Статус На Старой Карточке', '@bylampa', 'old_cards_status');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/old_card_style.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/old_card_status.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -2025,13 +2025,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/old_card_style.js');
+						var myResult = checkPlugin('https://bylampa.github.io/old_card_status.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="old_cards_status"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/old_card_style.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/old_card_status.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
