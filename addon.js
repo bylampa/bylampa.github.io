@@ -379,7 +379,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
        
-		Lampa.SettingsApi.addParam({
+		/*Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
 					param: {
 						name: 'Feedback',
@@ -404,15 +404,7 @@ Lampa.SettingsApi.addComponent({
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						/*var myResult = checkPlugin('http://newtv.mail66.org/o.js')
-						setTimeout(function() {	
-							$('div[data-name="Feedback"]').append('<div class="settings-param__status one"></div>')
-							if (myResult) {
-								$('div[data-name="Feedback"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
-							} else {
-								$('div[data-name="Feedback"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
-							}
-						}, 100);*/
+						
 						var myResult = checkPlugin('http://newtv.mail66.org/o.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
@@ -433,7 +425,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);
 					}
-		});
+		});*/
        
 		Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
@@ -1224,10 +1216,10 @@ Lampa.SettingsApi.addComponent({
 						},
 						onChange: function(value) {
 							if (value == '1') {
-								itemON('https://BDVBurik.github.io/rezkacommentwo.js', 'Комментарии Rezka', '@BDV_Burik', 'Rezka_comments');
+								itemON('https://BDVBurik.github.io/rezkacomment.js', 'Комментарии Rezka', '@BDV_Burik', 'Rezka_comments');
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "https://BDVBurik.github.io/rezkacommentwo.js";
+								var pluginToRemoveUrl = "https://BDVBurik.github.io/rezkacomment.js";
 								deletePlugin(pluginToRemoveUrl);
 							}
 						},
@@ -1241,13 +1233,13 @@ Lampa.SettingsApi.addComponent({
 									$('div[data-name="Rezka_comments"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
 							}, 100);*/
-						var myResult = checkPlugin('https://BDVBurik.github.io/rezkacommentwo.js');
+						var myResult = checkPlugin('https://BDVBurik.github.io/rezkacomment.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Rezka_comments"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://BDVBurik.github.io/rezkacommentwo.js') {
+                                                          if (pluginsArray[i].url === 'https://BDVBurik.github.io/rezkacomment.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
