@@ -3302,7 +3302,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
-                Lampa.SettingsApi.addParam({
+              /*  Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                                			name: 'durex_online',
@@ -3326,7 +3326,7 @@ Lampa.SettingsApi.addComponent({
 						deletePlugin(pluginToRemoveUrl);
 					}
                 },
-					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();*/
 						/*var myResult = checkPlugin('http://bwa.to/cloud.js')
 						setTimeout(function() {	
 							$('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>')
@@ -3336,7 +3336,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://durex.monster/online.js');
+						/*var myResult = checkPlugin('http://durex.monster/online.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="durex_online"]').append('<div class="settings-param__status one"></div>');
@@ -3356,7 +3356,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);	
 					}
-		});
+		});*/
 	
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
@@ -4588,7 +4588,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
-                Lampa.SettingsApi.addParam({
+                /*Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
 					param: {
 						name: 'sisi_durex',
@@ -4612,7 +4612,7 @@ Lampa.SettingsApi.addComponent({
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
-					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();*/
 						/*var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js')
 						setTimeout(function() {	
 							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
@@ -4622,7 +4622,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://durex.monster/sisi.js');
+						/*var myResult = checkPlugin('http://durex.monster/sisi.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="sisi_durex"]').append('<div class="settings-param__status one"></div>');
@@ -4642,7 +4642,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);	
 					}
-		});
+		});*/
 	
 	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
