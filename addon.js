@@ -3092,12 +3092,12 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 					},
 					field: {
-						name: 'Онлайн Prestige',
-						description: 'Аналог плагина Online от разработчика приложения Lampa, но с новым информативным интерфейсом для просмотра фильмов и сериалов в онлайн'
+						name: 'Онлайн Filmix',
+						description: 'Онлайн плагин с одним источником Filmix (работает со своим аккаунтом)'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bwa.to/plugins/prestige.js', 'Онлайн Prestige', '@lampa', 'Онлайн_Prestige');
+							itemON('https://bwa.to/plugins/prestige.js', 'Онлайн Filmix', '@rik', 'Онлайн_Prestige');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bwa.to/plugins/prestige.js";
