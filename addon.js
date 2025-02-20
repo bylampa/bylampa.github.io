@@ -3533,10 +3533,10 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.red/plugin/etor', 'Настройка Торрентов', '@lampa', 'Setting_torrents');
+							itemON('https://bylampa.github.io/etor.js', 'Настройка Торрентов', '@lampa', 'Setting_torrents');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://cub.red/plugin/etor";
+							var pluginToRemoveUrl = "https://bylampa.github.io/etor.js";
 							deletePlugin(pluginToRemoveUrl);
                                                 }
 					},
@@ -3550,13 +3550,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://cub.red/plugin/etor');
+						var myResult = checkPlugin('https://bylampa.github.io/etor.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Setting_torrents"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/etor') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/etor.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
