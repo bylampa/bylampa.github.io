@@ -3477,10 +3477,10 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.red/plugin/tracks', 'Tracks', '@lampa', 'Tracks');
+							itemON('https://bylampa.github.io/tracks.js', 'Tracks', '@lampa', 'Tracks');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://cub.red/plugin/tracks";
+							var pluginToRemoveUrl = "https://bylampa.github.io/tracks.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -3494,13 +3494,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://cub.red/plugin/tracks');
+						var myResult = checkPlugin('https://bylampa.github.io/tracks.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Tracks"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/tracks') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/tracks.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
