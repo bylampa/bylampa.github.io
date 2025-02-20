@@ -2199,7 +2199,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
        
-		Lampa.SettingsApi.addParam({
+		/*Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
 					param: {
 						name: 'New_Version',
@@ -2233,7 +2233,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="New_Version"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://nemiroff.github.io/lampa/updater.js');
+						/*var myResult = checkPlugin('https://nemiroff.github.io/lampa/updater.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="New_Version"]').append('<div class="settings-param__status one"></div>');
@@ -2253,7 +2253,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);
 					}
-		});
+		});*/
        
 		Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
