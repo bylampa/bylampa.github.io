@@ -2328,10 +2328,10 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.red/plugin/dlna', 'DLNA', '@lampa', 'DLNA');
+							itemON('https://bylampa.github.io/dlna.js', 'DLNA', '@lampa', 'DLNA');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://cub.red/plugin/dlna";
+							var pluginToRemoveUrl = "https://bylampa.github.io/dlna.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -2345,13 +2345,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="DLNA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://cub.red/plugin/dlna');
+						var myResult = checkPlugin('https://bylampa.github.io/dlna.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="DLNA"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://cub.red/plugin/dlna') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/dlna.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
