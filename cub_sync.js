@@ -178,7 +178,7 @@
 
         Lampa.SettingsApi.addComponent({
             component: 'bookmarks_sync',
-            name: 'Bookmarks',
+            name: 'Импорт закладок с CUB',
             icon: '<svg fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50px" width="50px" version="1.1" id="Capa_1" viewBox="0 0 56 56" xml:space="preserve"><g><path d="M52.199,44.02c-0.549-0.105-1.069,0.241-1.18,0.781C49.903,50.303,45.574,54,40.249,54c-5.028,0-9.446-3.3-10.948-8H34v-2 h-8v8h2v-3.848C30.169,52.833,34.915,56,40.249,56c6.304,0,11.42-4.341,12.731-10.801C53.09,44.657,52.74,44.13,52.199,44.02z"/><path d="M52,32v4.308C49.75,31.855,45.296,29,40.249,29c-6.109,0-11.541,3.997-13.209,9.721c-0.154,0.53,0.15,1.085,0.681,1.239 c0.531,0.157,1.086-0.15,1.239-0.681C30.358,34.482,35.105,31,40.249,31c4.565,0,8.562,2.766,10.33,7H46v2h8v-8H52z"/><polygon points="36,11 36,0 19,0 2,0 2,11 19,11 "/><path d="M36,26.382V13H19H2v41.443C2,55.302,2.699,56,3.559,56c0.412,0,0.801-0.162,1.091-0.452L19,41l4.259,4.317 C23.1,44.4,23,43.462,23,42.5C23,34.604,28.579,27.993,36,26.382z"/></g></svg>'
         });
 
@@ -189,8 +189,8 @@
                 type: 'static',
             },
             field: {
-                name: 'Sync',
-                description: 'Synchronizes bookmarks and history with CUB service profile'
+                name: 'Синхронизация',
+                description: 'Синхронизация CUB закладок и истории'
             },
             onRender: function (item) {
                 item.on('hover:enter', function () {
