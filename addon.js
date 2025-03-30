@@ -2319,6 +2319,230 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'tr_rutube',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Трейлеры Rutube',
+						description: 'Плагин позволяет из карточки смотреть трейлеры с Rutube'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://plugin.rootu.top/rutube.js', 'Трейлеры Rutube', '@rootu', 'tr_rutube');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://plugin.rootu.top/rutube.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://plugin.rootu.top/rutube.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="tr_rutube"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://plugin.rootu.top/rutube.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="tr_rutube"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="tr_rutube"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="tr_rutube"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'surs',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Aviamovie Surs',
+						description: 'Плагин создает уникальные подборки фильмов и сериалов на главной странице по жанрам, стримингам, популярности, просмотрам и кассовым сборам'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://aviamovie.github.io/surs.js', 'Aviamovie Surs', '@pilot_valliko', 'surs');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://aviamovie.github.io/surs.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://aviamovie.github.io/surs.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="surs"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://aviamovie.github.io/surs.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="surs"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="surs"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="surs"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
+
+                Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'size',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Фиксированный размер',
+						description: 'Плагин меняет размеры интерфейса'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nb557.github.io/plugins/fix_size.js', 'Фиксированный Размер', '@t_anton', 'size');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/fix_size.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://nb557.github.io/plugins/fix_size.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="size"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://nb557.github.io/plugins/fix_size.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="size"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="size"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="size"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'stat',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Статистика',
+						description: 'Плагин для ведения статистики просмотра фильмов в приложении, а в конце года - генерация странички с итогами года'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://and7ey.github.io/lampa/stats.js', 'Статистика', '@alukyanov', 'stat');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://and7ey.github.io/lampa/stats.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://and7ey.github.io/lampa/stats.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="stat"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://and7ey.github.io/lampa/stats.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="stat"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="stat"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="stat"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+					}
+		});
+	
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
