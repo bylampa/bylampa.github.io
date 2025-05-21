@@ -120,7 +120,7 @@
     border-color: linear-gradient(to right, #ff0000, #ffff00) !important;
 }
 
-.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
+/*.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
 .card-episode.focus .full-episode::after,
 .register.focus::after,
 .season-episode.focus::after,
@@ -131,9 +131,51 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-   /* border-color: linear-gradient(to right, #ff0000, #ffff00);*/
-    border-color: none;
-    background: linear-gradient(to right, #ff0000, #ffff00);
+    border-color: linear-gradient(to right, #ff0000, #ffff00);
+}*/
+
+.ad-bot.focus .ad-botcontent, 
+.ad-bot.hover .ad-botcontent,
+.card-episode.focus .full-episode, 
+.register.focus,
+.season-episode.focus,
+.full-episode.focus,
+.full-review-add.focus,
+.card.focus .card__view, 
+.card.hover .card__view,
+.extensions__item.focus,
+.torrent-item.focus,
+.extensions__block-add.focus {
+    position: relative; /* Убедитесь, что что-то произошло */
+    background: white; /* Цвет фона самого элемента */
+    z-index: 1; /* Установить z-index выше псевдоэлемента */
+    border-radius: 1.4em; /* Радиус углов для основного элемента */
+}
+
+.ad-bot.focus .ad-botcontent::after, 
+.ad-bot.hover .ad-botcontent::after,
+.card-episode.focus .full-episode::after,
+.register.focus::after,
+.season-episode.focus::after,
+.full-episode.focus::after,
+.full-review-add.focus::after,
+.card.focus .card__view::after,
+.card.hover .card__view::after,
+.extensions__item.focus::after,
+.torrent-item.focus::after,
+.extensions__block-add.focus::after {
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    top: -0.3em; /* Установите свойства, чтобы градиент выглядел как граница */
+    left: -0.3em; 
+    right: -0.3em; 
+    bottom: -0.3em; 
+    
+    background: linear-gradient(to right, #ff0000, #ffff00); /* Градиентный фон для бордера */
+    border-radius: 1.4em; /* Радиус углов, чтобы они совпадали */
+    
+    z-index: -1; /* Псевдоэлемент ниже основного элемента */
+    pointer-events: none; /* Запретить взаимодействие */
 }
 
 /*.extensions__item,
