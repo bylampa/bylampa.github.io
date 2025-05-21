@@ -141,6 +141,7 @@
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
     border-color: #ff0000;
+    background: linear-gradient(to right, #ff0000, #ffff00);
 }
 
 
