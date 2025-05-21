@@ -98,18 +98,18 @@
 }*/
 
 .online.focus {
-   box-shadow: 0 0 0 0.2em #e40c2b;
+   box-shadow: 0 0 0 0.2em linear-gradient(to right, #ff0000, #ffff00);
 }
 
 .online_modss.focus::after,
 .online-prestige.focus::after,
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
-    border-color: #e40c2b !important;
+    border-color: linear-gradient(to right, #ff0000, #ffff00) !important;
 }
 
 .card-more.focus .card-more__box::after {
-        border: 0.3em solid #e40c2b;
+        border: 0.3em solid linear-gradient(to right, #ff0000, #ffff00);
 }
 
 .simple-button--filter > div {
@@ -117,7 +117,7 @@
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
-    border-color: #e40c2b !important;
+    border-color: linear-gradient(to right, #ff0000, #ffff00) !important;
 }
 
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
@@ -131,7 +131,7 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #e40c2b;
+    border-color: linear-gradient(to right, #ff0000, #ffff00);
 }
 
 /*.extensions__item,
@@ -158,8 +158,8 @@
 
 .broadcast__scan > div,
 .broadcast__device.focus {
-    background-color:  #e40c2b;
-    color: #fff;
+    background-color: linear-gradient(to right, #ff0000, #ffff00);
+    color: #000;
   }
 
 /*.loader:after, .iframe__body:after, .activity__loader:after {
@@ -168,12 +168,12 @@
   }*/
 
 .card:hover .card__img, .card.focus .card__img {
-    border-color: #e40c2b;
+    border-color: linear-gradient(to right, #ff0000, #ffff00);
   }
 
   .noty {
-    background: #e40c2b;
-    color: #fff;
+    background: linear-gradient(to right, #ff0000, #ffff00);
+    color: #000;
   }
   
  /* body.glass--style .selectbox-item.focus,
@@ -184,9 +184,9 @@
   }*/
 
   .radio-player.focus {
-    background-color: #e40c2b;
-    color: #fff;
+    background-color: linear-gradient(to right, #ff0000, #ffff00);
+    color: #000;
   }
   .explorer-card__head-img.focus::after {
-    border: 0.3em solid  #e40c2b;
+    border: 0.3em solid  linear-gradient(to right, #ff0000, #ffff00);
   }
