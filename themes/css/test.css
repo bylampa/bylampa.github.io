@@ -91,6 +91,7 @@
 .selectbox-item.hover {
     background: linear-gradient(to right, #ff0000, #ffff00);
     color: #000;
+    border-radius: 1.4em;
 }
 
 /*.settings-input__links {
@@ -119,8 +120,8 @@
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
     border-color: linear-gradient(to right, #ff0000, #ffff00) !important;
 }
-
-/*.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
+/*
+.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
 .card-episode.focus .full-episode::after,
 .register.focus::after,
 .season-episode.focus::after,
@@ -150,33 +151,34 @@
     background: white; /* Убедитесь, что у вас есть основной цвет фона */
     border-radius: 1.4em; /* Углы основного элемента */
     z-index: 1; /* Поднимаем основной элемент выше псевдоэлемента */
+    border: 0.3em solid transparent; /* Добавляем бордер, чтобы обозначить место */
+    background-clip: padding-box; /* Убирает эффект бордер от фона */
 }
 
-.ad-bot.focus .ad-botcontent::after, 
-.ad-bot.hover .ad-botcontent::after,
-.card-episode.focus .full-episode::after,
-.register.focus::after,
-.season-episode.focus::after,
-.full-episode.focus::after,
-.full-review-add.focus::after,
-.card.focus .card__view::after,
-.card.hover .card__view::after,
-.extensions__item.focus::after,
-.torrent-item.focus::after,
-.extensions__block-add.focus::after {
-    content: '';
+.ad-bot.focus .ad-botcontent::before, 
+.ad-bot.hover .ad-botcontent::before,
+.card-episode.focus .full-episode::before,
+.register.focus::before,
+.season-episode.focus::before,
+.full-episode.focus::before,
+.full-review-add.focus::before,
+.card.focus .card__view::before,
+.card.hover .card__view::before,
+.extensions__item.focus::before,
+.torrent-item.focus::before,
+.extensions__block-add.focus::before {
+    content: "";
     position: absolute; /* Абсолютное позиционирование для псевдоэлемента */
-    top: -0.3em; /* Сдвиги для создания эффекта "бордера" */
-    left: -0.3em; 
-    right: -0.3em; 
-    bottom: -0.3em; 
+    top: 0; /* Убедитесь, что верхняя часть совпадает */
+    left: 0; /* Убедитесь, что левая часть совпадает */
+    right: 0; /* Убедитесь, что правая часть совпадает */
+    bottom: 0; /* Убедитесь, что нижняя часть совпадает */
     
     background: linear-gradient(to right, #ff0000, #ffff00); /* Градиентный фон */
-    border-radius: 1.4em; /* Округление углов */
-    
-    z-index: -1; /* Псевдоэлемент находится за основным элементом */
-    pointer-events: none; /* Запретить взаимодействие с псевдоэлементом */
+    border-radius: 1.4em; /* Общий радиус для несоответствий */
+    z-index: -1; /* Помещаем псевдоэлемент за основным элементом */
 }
+
 
 /*.extensions__item,
 .extensions__block-add {
