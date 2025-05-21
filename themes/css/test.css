@@ -10,11 +10,11 @@
     color: #fff;
 }*/
 
-/*.menu__ico {
+.settings-folder__icon, {
     color: #fff;
     -webkit-filter: invert(1);
             filter: invert(1);
-}*/
+}
 
 .activity__loader {
   position: absolute;
