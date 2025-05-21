@@ -10,14 +10,11 @@
     color: #fff;
 }*/
 
-.selectbox-item.selected:not(.nomark)::after, .selectbox-item.picked::after {
-    border-right: 0.2em solid #000;
-  border-bottom: 0.2em solid #000;
+.selected.focus::after {
+  color: #000;
 }
 
 
-
-.selectbox-item--checked .selectbox-item__checkbox,
 .settings-folder.focus .settings-folder__icon {
     color: #fff;
     -webkit-filter: invert(1);
@@ -140,7 +137,8 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #ff0000;
+   /* border-color: #ff0000;*/
+    border-color: rgba(255,255,255,0);
     background: linear-gradient(to right, #ff0000, #ffff00);
 }
 
