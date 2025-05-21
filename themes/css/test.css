@@ -57,7 +57,7 @@
 .head__action.hover,
 .player-panel .button.focus,
 .search-source.active {
-    background: linear-gradient(to right, #ff0000, #ffff00);
+    background: linear-gradient(to right, #ff7f7f, #fffacd);
     color: #fff;
 }
 
@@ -65,13 +65,13 @@
 .time-line > div,
 .player-panel__position,
 .player-panel__position > div:after {
-     background-color: linear-gradient(to right, #ff0000, #ffff00);
+     background-color: linear-gradient(to right, #ff7f7f, #fffacd);
      color: #fff;
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
-      background-color: linear-gradient(to right, #e40c2b, #ffb700) !important;
+      background-color: linear-gradient(to right, #ff7f7f, #fffacd) !important;
       color: #fff !important;
 }
 
