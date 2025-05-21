@@ -10,8 +10,9 @@
     color: #fff;
 }*/
 
-.selectbox-item--checked .selectbox-item__checkbox {
-    border-color: #000;
+.selectbox-item.selected:not(.nomark)::after, .selectbox-item.picked::after {
+    border-right: 0.2em solid #000;
+  border-bottom: 0.2em solid #000;
 }
 .settings-folder.focus .settings-folder__icon {
     color: #fff;
