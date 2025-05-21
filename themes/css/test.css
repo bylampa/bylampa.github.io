@@ -10,6 +10,10 @@
     color: #fff;
 }*/
 
+.selectbox-item--checked.focus .selectbox-item__checkbox.focus {
+   border-color: #000;
+}   
+
 .selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
   border-bottom: 0.2em solid #000;
