@@ -10,7 +10,7 @@
     color: #fff;
 }*/
 
-.settings-folder__icon, {
+.settings-folder__icon {
     color: #fff;
     -webkit-filter: invert(1);
             filter: invert(1);
