@@ -131,7 +131,8 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: linear-gradient(to right, #ff0000, #ffff00);
+   /* border-color: linear-gradient(to right, #ff0000, #ffff00);*/
+    background: linear-gradient(to right, #ff0000, #ffff00);
 }
 
 /*.extensions__item,
