@@ -89,8 +89,8 @@
 .settings-param.focus,
 .selectbox-item.focus,
 .selectbox-item.hover {
-    background: #e40c2b;
-    color: #fff;
+    background: linear-gradient(to right, #ff0000, #ffff00);
+    color: #000;
 }
 
 /*.settings-input__links {
