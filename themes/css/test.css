@@ -11,7 +11,7 @@
 }*/
 
 .menu__ico {
-    color: #000;
+    color: #fff;
     -webkit-filter: invert(1);
             filter: invert(1);
 }
@@ -57,22 +57,22 @@
 .head__action.hover,
 .player-panel .button.focus,
 .search-source.active {
-    background: linear-gradient(to right, #ff7f7f, #fffacd);
-    color: #fff;
+    background: linear-gradient(to right, #ff0000, #ffff00);
+    color: #000;
 }
 
 .navigation-tabs__button.focus,
 .time-line > div,
 .player-panel__position,
 .player-panel__position > div:after {
-     background-color: linear-gradient(to right, #ff7f7f, #fffacd);
-     color: #fff;
+     background-color: linear-gradient(to right, #ff0000, #ffff00);
+     color: #000;
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
-      background-color: linear-gradient(to right, #ff7f7f, #fffacd) !important;
-      color: #fff !important;
+      background-color: linear-gradient(to right, #ff0000, #ffff00) !important;
+      color: #000 !important;
 }
 
 .radio-item.focus,
