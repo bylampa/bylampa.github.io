@@ -23,12 +23,12 @@
   width: 100%;
   height: 100%;
   display: none;
-  background: url(https://bylampa.github.io/themes/loader/loader_red_stroke.svg) no-repeat 50% 50%;
+  background: url(https://bylampa.github.io/themes/loader/loader_test.svg) no-repeat 50% 50%;
 }
 
 .modal-loading {
   height: 6em;
-  background: url(https://bylampa.github.io/themes/loader/loader_red_stroke.svg) no-repeat 50% 50%;
+  background: url(https://bylampa.github.io/themes/loader/test.svg) no-repeat 50% 50%;
   -webkit-background-size: contain;
      -moz-background-size: contain;
        -o-background-size: contain;
@@ -118,7 +118,7 @@
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
-    border-color: linear-gradient(to right, #ff0000, #ffff00) !important;
+    border-color: #ff8000 !important;
 }
 
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
@@ -160,7 +160,7 @@
 
 .broadcast__scan > div,
 .broadcast__device.focus {
-    background-color: linear-gradient(to right, #ff0000, #ffff00);
+    background-color: #ff8000;
     color: #000;
   }
 
@@ -170,7 +170,7 @@
   }*/
 
 .card:hover .card__img, .card.focus .card__img {
-    border-color: linear-gradient(to right, #ff0000, #ffff00);
+    border-color: #ff8000;
   }
 
   .noty {
