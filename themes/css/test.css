@@ -10,6 +10,9 @@
     color: #fff;
 }*/
 
+.selectbox-item--checked .selectbox-item__checkbox {
+    border-color: #000;
+}
 .settings-folder.focus .settings-folder__icon {
     color: #fff;
     -webkit-filter: invert(1);
