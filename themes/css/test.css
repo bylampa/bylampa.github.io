@@ -146,10 +146,10 @@
 .extensions__item.focus,
 .torrent-item.focus,
 .extensions__block-add.focus {
-    position: relative; /* Убедитесь, что что-то произошло */
-    background: white; /* Цвет фона самого элемента */
-    z-index: 1; /* Установить z-index выше псевдоэлемента */
-    border-radius: 1.4em; /* Радиус углов для основного элемента */
+    position: relative; /* Убедитесь, что это определено */
+    background: white; /* Убедитесь, что у вас есть основной цвет фона */
+    border-radius: 1.4em; /* Углы основного элемента */
+    z-index: 1; /* Поднимаем основной элемент выше псевдоэлемента */
 }
 
 .ad-bot.focus .ad-botcontent::after, 
@@ -165,17 +165,17 @@
 .torrent-item.focus::after,
 .extensions__block-add.focus::after {
     content: '';
-    position: absolute; /* Абсолютное позиционирование */
-    top: -0.3em; /* Установите свойства, чтобы градиент выглядел как граница */
+    position: absolute; /* Абсолютное позиционирование для псевдоэлемента */
+    top: -0.3em; /* Сдвиги для создания эффекта "бордера" */
     left: -0.3em; 
     right: -0.3em; 
     bottom: -0.3em; 
     
-    background: linear-gradient(to right, #ff0000, #ffff00); /* Градиентный фон для бордера */
-    border-radius: 1.4em; /* Радиус углов, чтобы они совпадали */
+    background: linear-gradient(to right, #ff0000, #ffff00); /* Градиентный фон */
+    border-radius: 1.4em; /* Округление углов */
     
-    z-index: -1; /* Псевдоэлемент ниже основного элемента */
-    pointer-events: none; /* Запретить взаимодействие */
+    z-index: -1; /* Псевдоэлемент находится за основным элементом */
+    pointer-events: none; /* Запретить взаимодействие с псевдоэлементом */
 }
 
 /*.extensions__item,
