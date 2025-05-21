@@ -10,7 +10,7 @@
     color: #fff;
 }*/
 
-.selectbox-item.selected:not(.nomark)::after {
+.selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
   border-bottom: 0.2em solid #000;
 }
