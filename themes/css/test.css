@@ -91,7 +91,7 @@
 .selectbox-item.hover {
     background: linear-gradient(to right, #ff0000, #ffff00);
     color: #000;
-    border-radius: 1.4em;
+    border-radius: 1.2em;
 }
 
 /*.settings-input__links {
