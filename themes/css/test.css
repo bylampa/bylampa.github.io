@@ -95,7 +95,7 @@
 .settings-param.focus,
 .selectbox-item.focus,
 .selectbox-item.hover {
-    background: radial-gradient(circle, #ff0000, #ffff00);
+    background: radial-gradient(circle, #ffff00, #ff0000);
     color: #000;
     border-radius: 1.2em;
 }
@@ -140,7 +140,7 @@
 .extensions__block-add.focus:after {
    /* border-color: #ff0000;*/
     border-color: rgba(0,0,0,0);
-    background: radial-gradient(circle, #ff0000, #ffff00);
+    background: radial-gradient(circle, #ffff00, #ff0000);
 }
 
 
