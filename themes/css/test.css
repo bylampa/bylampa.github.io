@@ -99,18 +99,18 @@
 }*/
 
 .online.focus {
-   box-shadow: 0 0 0 0.2em linear-gradient(to right, #ff0000, #ffff00);
+   box-shadow: 0 0 0 0.2em #ff0000
 }
 
 .online_modss.focus::after,
 .online-prestige.focus::after,
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
-    border-color: linear-gradient(to right, #ff0000, #ffff00) !important;
+    border-color: #ff0000 !important;
 }
 
 .card-more.focus .card-more__box::after {
-        border: 0.3em solid linear-gradient(to right, #ff0000, #ffff00);
+        border: 0.3em solid #ff0000;
 }
 
 .simple-button--filter > div {
@@ -118,7 +118,7 @@
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
-    border-color: #ff8000 !important;
+    border-color: #ff0000 !important;
 }
 
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
@@ -132,7 +132,7 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #ff8000;
+    border-color: #ff0000;
 }
 
 
@@ -160,7 +160,7 @@
 
 .broadcast__scan > div,
 .broadcast__device.focus {
-    background-color: #ff8000;
+    background-color: linear-gradient(to right, #ff0000, #ffff00);
     color: #000;
   }
 
@@ -170,7 +170,7 @@
   }*/
 
 .card:hover .card__img, .card.focus .card__img {
-    border-color: #ff8000;
+    border-color: #ff0000;
   }
 
   .noty {
@@ -190,5 +190,5 @@
     color: #000;
   }
   .explorer-card__head-img.focus::after {
-    border: 0.3em solid  linear-gradient(to right, #ff0000, #ffff00);
+    border: 0.3em solid #ff0000;
   }
