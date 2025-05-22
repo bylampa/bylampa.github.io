@@ -143,7 +143,7 @@
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
     border-color: #ff0000;
-    box-shadow: 0 0 0 0.02em #ffff00;
+    box-shadow: 0 0 0 0.1em #ffff00;
    /* border-color: none;
     background: radial-gradient(circle, #ffff00, #ff0000);*/
 }
