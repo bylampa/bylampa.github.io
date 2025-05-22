@@ -10,7 +10,7 @@
     color: #fff;
 }*/
 
-.selectbox-item--checked .selectbox-item__checkbox.focus {
+.selectbox-item--checked.focus .selectbox-item__checkbox {
    border-color: #000;
 }   
 
@@ -143,7 +143,7 @@
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
     border-color: #ff0000;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Эффект тени */
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.7); /* Мягкая желтая тень */
    /* border-color: none;
     background: radial-gradient(circle, #ffff00, #ff0000);*/
 }
