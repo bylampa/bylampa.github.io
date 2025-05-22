@@ -10,7 +10,8 @@
     color: #fff;
 }*/
 
-.selectbox-item--checked.focus .selectbox-item__checkbox.focus {
+.selectbox-item--checked.focus, 
+.selectbox-item--checkbox.focus {
    border-color: #000;
 }   
 
@@ -142,9 +143,10 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-   /* border-color: #ff0000;*/
-    border-color: none;
-    background: radial-gradient(circle, #ffff00, #ff0000);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Эффект тени */
+   /* border-color: none;
+    background: radial-gradient(circle, #ffff00, #ff0000);*/
 }
 
 
