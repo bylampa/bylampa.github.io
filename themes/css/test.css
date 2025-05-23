@@ -68,7 +68,7 @@
 .player-panel .button.focus,
 .search-source.active {
     /*background: linear-gradient(to right, #ff0000, #ffff00);*/
-      background: radial-gradient(circle, #ff69b4, #ff1493);
+      background: radial-gradient(circle, #ffff00, #ff0000);
     color: #000;
 }
 
