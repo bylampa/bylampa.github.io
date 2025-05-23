@@ -144,7 +144,7 @@
 .extensions__block-add.focus:after {
     border-color: #ff0000;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
-    box-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 1), 0 0 30px rgba(255, 255, 0, 0.5);
    /* border-color: none;
     background: radial-gradient(circle, #ffff00, #ff0000);*/
 }
