@@ -97,7 +97,11 @@
 .torrent-serial__progress,
 .full-review-add.focus,
 .full-review.focus,
-.tag-count.focus,
+.tag-count.focus {
+    background: radial-gradient(circle, #ffff00, #ff0000);
+    color: #000;
+}
+
 .settings-folder.focus,
 .settings-param.focus,
 .selectbox-item.focus,
@@ -151,8 +155,8 @@
 .extensions__block-add.focus:after {
     border-color: #ff0000;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
-   /* box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);*/
-    box-shadow: 0 0 0 0.2em #ffff00;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
+   /* box-shadow: 0 0 0 0.2em #ffff00;*/
    /* border-color: none;
     background: radial-gradient(circle, #ffff00, #ff0000);*/
 }
