@@ -85,6 +85,7 @@
 .iptv-program__timeline>div {
       background-color: #ff0000 !important;
       color: #000 !important;
+      box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 .radio-item.focus,
@@ -111,7 +112,8 @@
 }*/
 
 .online.focus {
-   box-shadow: 0 0 0 0.2em #ff0000;
+  /* box-shadow: 0 0 0 0.2em #ff0000; */
+   box-shadow: 0 0 0 0.2em rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 .online_modss.focus::after,
@@ -119,6 +121,7 @@
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
     border-color: #ff0000 !important;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 .card-more.focus .card-more__box::after {
@@ -132,6 +135,7 @@
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
     border-color: #ff0000 !important;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
@@ -179,6 +183,7 @@
 .broadcast__device.focus {
     background-color: #ff0000;
     color: #000;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
   }
 
 /*.loader:after, .iframe__body:after, .activity__loader:after {
@@ -188,10 +193,11 @@
 
 .card:hover .card__img, .card.focus .card__img {
     border-color: #ff0000;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
   }
 
   .noty {
-    background: linear-gradient(to right, #ff0000, #ffff00);
+    background: radial-gradient(circle, #ff69b4, #ff1493);
     color: #000;
   }
   
@@ -205,7 +211,9 @@
   .radio-player.focus {
     background-color: #ff0000;
     color: #000;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
   }
   .explorer-card__head-img.focus::after {
     border: 0.3em solid #ff0000;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
   }
