@@ -100,13 +100,13 @@
 .torrent-serial__progress,
 .full-review-add.focus,
 .full-review.focus,
-.tag-count.focus,
-.selectbox-item.focus,
-.selectbox-item.hover {
+.tag-count.focus {
     background: radial-gradient(circle, #ffff00, #ff0000);
     color: #000;
 }
 
+.selectbox-item.focus,
+.selectbox-item.hover,
 .settings-folder.focus,
 .settings-param.focus {
     background: radial-gradient(circle, #ffff00, #ff0000);
