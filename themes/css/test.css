@@ -10,14 +10,31 @@
     color: #fff;
 }*/
 
+/*@media screen and (min-width: 481px) {
+  .settings__content {
+    border-radius: 1.2em; 
+    top: 3em;                  
+    right: 3em;                
+    bottom: 3em;               
+  }
+}*/
+
 @media screen and (min-width: 481px) {
   .settings__content {
-    border-radius: 1.2em; /* Скругление углов для больших экранов */
-    top: 3em;                  /* Отступ сверху */
-    right: 3em;                /* отступ справа */
-    bottom: 3em;               /* отступ снизу */
+    border-radius: 1em;        /* скругление углов */
+    top: 2em;                  /* отступ сверху */
+    right: 2em;                /* отступ справа */
+    bottom: 2em;               /* отступ снизу */
+    left: auto;                /* отключить слева */
+    position: fixed;           /* фиксированное позиционирование */
+    width: 35%;                /* ширина */
+    max-height: calc(100vh - 4em); /* избегать переполнения */
+    overflow-y: auto;          /* прокрутка при необходимости */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* тень */
+    z-index: 1000;             /* поверх всего */
   }
 }
+
 
 .selectbox-item--checked.focus .selectbox-item__checkbox {
    border-color: #000;
