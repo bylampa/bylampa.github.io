@@ -28,10 +28,11 @@
     bottom: 3em;               /* отступ снизу */
     width: 35%;                /* ширина */
     max-height: calc(100vh - 4em); /* ограничение высоты */
+    padding-bottom: 1.5em;          /* внутренний отступ снизу */
     overflow-y: auto;          /* скролл, если нужно */
 
     border-radius: 1.2em;        /* скругление углов */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* тень */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
     z-index: 1000;
 
     /* Обновление: скрываем изначально смещая вправо */
@@ -189,7 +190,7 @@
 .extensions__block-add.focus:after {
     border-color: #ff0000;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
-    box-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);
    /* box-shadow: 0 0 0 0.2em #ffff00;*/
    /* border-color: none;
     background: radial-gradient(circle, #ffff00, #ff0000);*/
