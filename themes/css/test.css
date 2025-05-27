@@ -10,6 +10,12 @@
     color: #fff;
 }*/
 
+@media screen and (min-width: 481px) {
+  .settings__content {
+    border-radius: 1em; /* Скругление углов для больших экранов */
+  }
+}
+
 .selectbox-item--checked.focus .selectbox-item__checkbox {
    border-color: #000;
 }   
