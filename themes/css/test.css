@@ -13,6 +13,8 @@
 @media screen and (min-width: 481px) {
   .settings__content {
     border-radius: 1em; /* Скругление углов для больших экранов */
+    top: 2em;                  /* Отступ сверху */
+    right: 2em;
   }
 }
 
