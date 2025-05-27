@@ -22,16 +22,16 @@
 @media screen and (min-width: 481px) {
   .settings__content {
     position: fixed;            /* фиксированное позиционирование */
-    top: 2em;                  /* отступ сверху */
-    right: 2em;                /* отступ справа */
+    top: 3em;                  /* отступ сверху */
+   /* right: 2em;  */              /* отступ справа */
     left: auto;                /* сброс левого отступа */
-    bottom: 2em;               /* отступ снизу */
+    bottom: 3em;               /* отступ снизу */
     width: 35%;                /* ширина */
     max-height: calc(100vh - 4em); /* ограничение высоты */
     overflow-y: auto;          /* скролл, если нужно */
 
-    border-radius: 1em;        /* скругление углов */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* тень */
+    border-radius: 1.2em;        /* скругление углов */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* тень */
     z-index: 1000;
 
     /* Обновление: скрываем изначально смещая вправо */
