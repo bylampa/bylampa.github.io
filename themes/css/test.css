@@ -21,18 +21,22 @@
 
 @media screen and (min-width: 481px) {
   .settings__content {
-    border-radius: 1em;        /* скругление углов */
+    position: fixed;            /* фиксированное позиционирование */
     top: 2em;                  /* отступ сверху */
     right: 2em;                /* отступ справа */
-    left: 2em;
+    left: auto;                /* сброс левого отступа */
     bottom: 2em;               /* отступ снизу */
-    position: fixed;           /* фиксированное позиционирование */
     width: 35%;                /* ширина */
-    max-height: calc(100vh - 4em); /* избегать переполнения */
-    overflow-y: auto;          /* прокрутка при необходимости */
+    max-height: calc(100vh - 4em); /* ограничение высоты */
+    overflow-y: auto;          /* скролл, если нужно */
+
+    border-radius: 1em;        /* скругление углов */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* тень */
-    z-index: 1000;             /* поверх всего */
-    
+    z-index: 1000;
+
+    /* Обновление: скрываем изначально смещая вправо */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 }
 
