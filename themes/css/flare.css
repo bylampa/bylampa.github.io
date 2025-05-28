@@ -47,6 +47,10 @@
     border: 0.3em solid rgba(255, 255, 255, 0.8);
 }  
 
+.selectbox-item__lock > svg {
+    color: #000;
+}
+
 .selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
   border-bottom: 0.2em solid #000;
