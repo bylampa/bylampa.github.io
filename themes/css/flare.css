@@ -44,10 +44,10 @@
 }   
 
 .selectbox-item--checkbox.focus .selectbox-item__checkbox {
-    border: 0.3em solid rgba(0, 0, 0, 0.2);
+    border: 0.3em solid rgba(0, 0, 0, 0.5);
 }  
 
-.selectbox-item--checkbox.focus .selectbox-item__lock.focus > svg {
+.selectbox-item.focus .selectbox-item__lock > svg {
     color: #000;
 }
 
