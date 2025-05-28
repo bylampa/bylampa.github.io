@@ -43,13 +43,13 @@
    border-color: #000;
 }   
 
-.selectbox-item__checkbox.focus {
+.selectbox-item__checkbox {
     border: 0.3em solid rgba(0, 0, 0, 0.8);
 }  
 
-.selectbox-item__lock.focus > svg {
+/*.selectbox-item__lock.focus > svg {
     color: #000;
-}
+}*/
 
 .selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
