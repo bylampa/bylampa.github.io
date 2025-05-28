@@ -81,8 +81,8 @@
 .simple-button.focus,
 .player-panel .button.focus,
 .search-source.active {
-    /*background: linear-gradient(to right, #ff0000, #ffff00);*/
-      background: radial-gradient(circle, #a8ff78, #78ffd6);
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+    /*  background: radial-gradient(circle, #a8ff78, #78ffd6);*/
     color: #000;
 }
 
@@ -117,7 +117,7 @@
 .full-review-add.focus,
 .full-review.focus,
 .tag-count.focus {
-    background: radial-gradient(circle, #a8ff78, #78ffd6);
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
     color: #000;
 }
 
@@ -125,7 +125,7 @@
 .selectbox-item.hover,
 .settings-folder.focus,
 .settings-param.focus {
-    background: radial-gradient(circle, #a8ff78, #78ffd6);
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
     color: #000;
     border-radius: 1.2em;
 }
