@@ -12,6 +12,8 @@
 
 @media screen and (min-width: 481px) {
   .settings__content {
+    display: flex;
+    flex-direction: column;
     /*top: 3em;   */               /* отступ сверху */
     left: 98%;                /* сброс левого отступа */
    /* max-height: calc(100vh - 4em);*/ /* ограничение высоты */
@@ -24,7 +26,10 @@
     transition: transform 0.3s ease;
   }
 
-
+   /* Создайте spacer */
+.settings__content .spacer {
+    flex-grow: 1;
+}
 
   .selectbox__content {
     position: fixed;            /* фиксированное позиционирование */
