@@ -14,7 +14,7 @@
   .settings__content {
     top: 1em;                  /* отступ сверху */
     left: 98%;                /* сброс левого отступа */
-    max-height: calc(100vh - 2em);*/ /* ограничение высоты */
+    max-height: calc(100vh - 2em); /* ограничение высоты */
     overflow-y: auto;          /* скролл, если нужно */
     border-radius: 1.2em;        /* скругление углов */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
@@ -27,7 +27,7 @@
   .selectbox__content {
     top: 1em;                  /* отступ сверху */
     left: 98%;                /* сброс левого отступа */
-    max-height: calc(100vh - 2em);*/ /* ограничение высоты */
+    max-height: calc(100vh - 2em); /* ограничение высоты */
     overflow-y: auto;          /* скролл, если нужно */
     border-radius: 1.2em;        /* скругление углов */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
@@ -44,10 +44,10 @@
 }   
 
 .selectbox-item__checkbox.focus {
-    border: 0.3em solid rgba(255, 255, 255, 0.8);
+    border: 0.3em solid rgba(0, 0, 0, 0.8);
 }  
 
-.selectbox-item__lock > svg {
+.selectbox-item__lock.focus > svg {
     color: #000;
 }
 
