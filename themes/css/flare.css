@@ -38,18 +38,17 @@
   }
 }
 
+.selectbox-item--checkbox.focus .selectbox-item__checkbox {
+    border: 0.3em solid rgba(0, 0, 0, 0.6);
+}  
 
 .selectbox-item--checked.focus .selectbox-item__checkbox {
    border-color: #000;
 }   
 
-.selectbox-item--checkbox.focus .selectbox-item__checkbox {
-    border: 0.3em solid rgba(0, 0, 0, 0.6);
-}  
-
-.selectbox-item--checkbox.focus .selectbox-item__lock > svg {
+/*.selectbox-item--checkbox.focus .selectbox-item__lock > svg {
     color: #000;
-}
+}*/
 
 .selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
