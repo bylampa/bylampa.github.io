@@ -45,7 +45,7 @@
   pointer-events: none;
   }
 
-@media screen and (min-width: 481px) {
+/*@media screen and (min-width: 481px) {*/
   .selectbox__content {
     position: fixed;            /* фиксированное позиционирование */
     top: 3em;                  /* отступ сверху */
