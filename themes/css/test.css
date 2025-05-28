@@ -28,7 +28,6 @@
     bottom: 3em;               /* отступ снизу */
     width: 35%;                /* ширина */
     max-height: calc(100vh - 3em); /* ограничение высоты */
-    padding-bottom: 1.5em;          /* внутренний отступ снизу */
     overflow-y: auto;          /* скролл, если нужно */
 
     border-radius: 1.2em;        /* скругление углов */
@@ -39,11 +38,6 @@
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
-  .settings__content::after {
-  content: "";
-  display: block;
-  height: 3em; /* высота буфера снизу */
-}
 
 @media screen and (min-width: 481px) {
   .selectbox__content {
@@ -54,7 +48,6 @@
     bottom: 3em;               /* отступ снизу */
     width: 35%;                /* ширина */
     max-height: calc(100vh - 3em); /* ограничение высоты */
-    padding-bottom: 1.5em;          /* внутренний отступ снизу */
     overflow-y: auto;          /* скролл, если нужно */
 
     border-radius: 1.2em;        /* скругление углов */
