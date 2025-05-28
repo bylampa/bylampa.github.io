@@ -195,7 +195,8 @@
   }
 
   .noty {
-    background: linear-gradient(to right, #0099f7, #f11712);
+    /*background: linear-gradient(to right, #0099f7, #f11712);*/
+    background: radial-gradient(circle, #0099f7, #f11712); 
     color: #000;
   }
 
