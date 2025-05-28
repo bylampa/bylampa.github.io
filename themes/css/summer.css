@@ -1,22 +1,6 @@
-:root {
-    --main-color: linear-gradient(to right, #ff0000, #ffff00);
-    --background-color: #1d1f20; 
-    --text-color: #fff;
-    --transparent-white: rgba(255,255,255,0.2);
-}
-
 /*body {
     background-color: #1d1f20;
     color: #fff;
-}*/
-
-/*@media screen and (min-width: 481px) {
-  .settings__content {
-    border-radius: 1.2em; 
-    top: 3em;                  
-    right: 3em;                
-    bottom: 3em;               
-  }
 }*/
 
 @media screen and (min-width: 481px) {
@@ -87,16 +71,6 @@
           background-size: contain;
 }
 
-/*.lang,
-.console,
-.settings__content,
-.settings-input__content,
-.selectbox__content,
-.modal__content,
-.extensions {
-    background: #262829;
-}*/
-
 .console__tab.focus,
 .menu__item.focus,
 .menu__item.traverse,
@@ -156,10 +130,6 @@
     border-radius: 1.2em;
 }
 
-/*.settings-input__links {
-    background-color: rgba(255,255,255,0.2);
-}*/
-
 .online.focus {
   /* box-shadow: 0 0 0 0.2em #ff0000; */
    box-shadow: 0 0 0 0.2em rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
@@ -179,7 +149,7 @@
 }
 
 .simple-button--filter > div {
-       background-color: rgba(255,255,255,0.1);
+       background-color: rgba(255,255,255,0.4);
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
@@ -206,28 +176,10 @@
     background: radial-gradient(circle, #ffff00, #ff0000);*/
 }
 
-
-/*.extensions__item,
-.extensions__block-add {
-    background-color: #1d1f20;
-}*/
-
-/*.torrent-item__size,
-.torrent-item__exe,
-.torrent-item__viewed,*/
 .torrent-serial__size {
     background-color: #fff;
     color: #000;
 }
-
-/*.torrent-serial {
-    background-color: rgba(255,255,255,0.1);
-}
-
-.torrent-file.focus,
-.torrent-serial.focus {
-    background-color: rgba(255,255,255,0.36);
-}*/
 
 .broadcast__scan > div,
 .broadcast__device.focus {
@@ -236,10 +188,6 @@
     box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
   }
 
-/*.loader:after, .iframe__body:after, .activity__loader:after {
-    -webkit-box-shadow: 0 4px #e40c2b inset;
-            box-shadow: 0 4px #e40c2b inset;
-  }*/
 
 .card:hover .card__img, .card.focus .card__img {
     border-color: #a8ff78;
@@ -250,13 +198,6 @@
     background: radial-gradient(circle, #a8ff78, #78ffd6);
     color: #000;
   }
-  
- /* body.glass--style .selectbox-item.focus,
-  body.glass--style .settings-folder.focus,
-  body.glass--style .settings-param.focus {
-      background-color: #e40c2b;
-      color: #fff;
-  }*/
 
   .radio-player.focus {
     background-color: #a8ff78;
