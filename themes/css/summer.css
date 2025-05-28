@@ -1,0 +1,284 @@
+:root {
+    --main-color: linear-gradient(to right, #ff0000, #ffff00);
+    --background-color: #1d1f20; 
+    --text-color: #fff;
+    --transparent-white: rgba(255,255,255,0.2);
+}
+
+/*body {
+    background-color: #1d1f20;
+    color: #fff;
+}*/
+
+/*@media screen and (min-width: 481px) {
+  .settings__content {
+    border-radius: 1.2em; 
+    top: 3em;                  
+    right: 3em;                
+    bottom: 3em;               
+  }
+}*/
+
+@media screen and (min-width: 481px) {
+  .settings__content {
+  /*  position: fixed;   */         /* фиксированное позиционирование */
+    top: 3em;                  /* отступ сверху */
+   /* right: 2em; */               /* отступ справа */
+    left: 95%;                /* сброс левого отступа */
+    /*bottom: 3em;    */           /* отступ снизу */
+   /* width: 35%;   */             /* ширина */
+    max-height: calc(100vh - 6em); /* ограничение высоты */
+    overflow-y: auto;          /* скролл, если нужно */
+    border-radius: 1.2em;        /* скругление углов */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
+   /* z-index: 1000;*/
+
+    /* Обновление: скрываем изначально смещая вправо */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .settings__content::after {
+  content: "";
+  display: block;
+  height: 2.5em; /* запас снизу для прокрутки */
+  pointer-events: none;
+  }
+
+/*@media screen and (min-width: 481px) {*/
+  .selectbox__content {
+    position: fixed;            /* фиксированное позиционирование */
+    top: 3em;                  /* отступ сверху */
+   /* right: 2em; */               /* отступ справа */
+    left: 98%;                /* сброс левого отступа */
+    bottom: 3em;               /* отступ снизу */
+    width: 35%;                /* ширина */
+    max-height: calc(100vh - 3em); /* ограничение высоты */
+    overflow-y: auto;          /* скролл, если нужно */
+
+    border-radius: 1.2em;        /* скругление углов */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
+    z-index: 1000;
+
+    /* Обновление: скрываем изначально смещая вправо */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+}
+
+
+.selectbox-item--checked.focus .selectbox-item__checkbox {
+   border-color: #000;
+}   
+
+.selectbox-item.selected.focus:not(.nomark)::after {
+  border-right: 0.2em solid #000;
+  border-bottom: 0.2em solid #000;
+}
+
+
+.settings-folder.focus .settings-folder__icon {
+    color: #fff;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+}
+
+.activity__loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: url(https://bylampa.github.io/themes/loader/loader_summer.svg) no-repeat 50% 50%;
+}
+
+.modal-loading {
+  height: 6em;
+  background: url(https://bylampa.github.io/themes/loader/loader_summer.svg) no-repeat 50% 50%;
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+}
+
+/*.lang,
+.console,
+.settings__content,
+.settings-input__content,
+.selectbox__content,
+.modal__content,
+.extensions {
+    background: #262829;
+}*/
+
+.console__tab.focus,
+.menu__item.focus,
+.menu__item.traverse,
+.menu__item.hover,
+.full-person.focus,
+.full-start__button.focus,
+.full-descr__tag.focus,
+.simple-button.focus,
+.player-panel .button.focus,
+.search-source.active {
+    /*background: linear-gradient(to right, #ff0000, #ffff00);*/
+      background: radial-gradient(circle, #a8ff78, #78ffd6);
+    color: #000;
+}
+
+.head__action.focus,
+.head__action.hover {
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+}   
+
+.navigation-tabs__button.focus,
+.time-line > div,
+.player-panel__position,
+.player-panel__position > div:after {
+     background-color: #a8ff78;
+     color: #000;
+     box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+}
+
+.iptv-menu__list-item.focus,
+.iptv-program__timeline>div {
+      background-color: #a8ff78 !important;
+      color: #000 !important;
+      box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+}
+
+.radio-item.focus,
+.lang__selector-item.focus,
+.simple-keyboard .hg-button.focus,
+.modal__button.focus,
+.search-history-key.focus,
+.simple-keyboard-mic.focus,
+.torrent-serial__progress,
+.full-review-add.focus,
+.full-review.focus,
+.tag-count.focus {
+    background: radial-gradient(circle, #a8ff78, #78ffd6);
+    color: #000;
+}
+
+.selectbox-item.focus,
+.selectbox-item.hover,
+.settings-folder.focus,
+.settings-param.focus {
+    background: radial-gradient(circle, #a8ff78, #78ffd6);
+    color: #000;
+    border-radius: 1.2em;
+}
+
+/*.settings-input__links {
+    background-color: rgba(255,255,255,0.2);
+}*/
+
+.online.focus {
+  /* box-shadow: 0 0 0 0.2em #ff0000; */
+   box-shadow: 0 0 0 0.2em rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+}
+
+.online_modss.focus::after,
+.online-prestige.focus::after,
+.radio-item.focus .radio-item__imgbox:after,
+.iptv-channel.focus::before, .iptv-channel.last--focus::before {
+    border-color: #a8ff78 !important;
+    box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+}
+
+.card-more.focus .card-more__box::after {
+        border: 0.3em solid #a8ff78;
+        box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+}
+
+.simple-button--filter > div {
+       background-color: rgba(255,255,255,0.1);
+}
+
+.iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
+    border-color: #a8ff78 !important;
+    box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+}
+
+.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
+.card-episode.focus .full-episode::after,
+.register.focus::after,
+.season-episode.focus::after,
+.full-episode.focus::after,
+.full-review-add.focus::after,
+.card.focus .card__view::after,
+.card.hover .card__view::after,
+.extensions__item.focus:after,
+.torrent-item.focus::after,
+.extensions__block-add.focus:after {
+    border-color: #a8ff78;
+   /* box-shadow: 0 0 0 0.1em #ffff00;*/
+    box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+   /* box-shadow: 0 0 0 0.2em #ffff00;*/
+   /* border-color: none;
+    background: radial-gradient(circle, #ffff00, #ff0000);*/
+}
+
+
+/*.extensions__item,
+.extensions__block-add {
+    background-color: #1d1f20;
+}*/
+
+/*.torrent-item__size,
+.torrent-item__exe,
+.torrent-item__viewed,*/
+.torrent-serial__size {
+    background-color: #fff;
+    color: #000;
+}
+
+/*.torrent-serial {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.torrent-file.focus,
+.torrent-serial.focus {
+    background-color: rgba(255,255,255,0.36);
+}*/
+
+.broadcast__scan > div,
+.broadcast__device.focus {
+    background-color: #a8ff78;
+    color: #000;
+    box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+  }
+
+/*.loader:after, .iframe__body:after, .activity__loader:after {
+    -webkit-box-shadow: 0 4px #e40c2b inset;
+            box-shadow: 0 4px #e40c2b inset;
+  }*/
+
+.card:hover .card__img, .card.focus .card__img {
+    border-color: #a8ff78;
+   /* box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);*/
+  }
+
+  .noty {
+    background: radial-gradient(circle, #a8ff78, #78ffd6);
+    color: #000;
+  }
+  
+ /* body.glass--style .selectbox-item.focus,
+  body.glass--style .settings-folder.focus,
+  body.glass--style .settings-param.focus {
+      background-color: #e40c2b;
+      color: #fff;
+  }*/
+
+  .radio-player.focus {
+    background-color: #a8ff78;
+    color: #000;
+    box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+  }
+  .explorer-card__head-img.focus::after {
+    border: 0.3em solid #a8ff78;
+    box-shadow: 0 0 8px rgba(120, 255, 214, 1), 0 0 15px rgba(120, 255, 214, 0.5);
+  }
