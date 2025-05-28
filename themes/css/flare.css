@@ -43,7 +43,7 @@
    border-color: #000;
 }   
 
-.selectbox-item__checkbox::after {
+.selectbox-item--checkbox.focus {
     border: 0.3em solid rgba(0, 0, 0, 0.8);
 }  
 
