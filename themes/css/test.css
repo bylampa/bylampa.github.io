@@ -28,7 +28,7 @@
     /*bottom: 3em;    */           /* отступ снизу */
    /* width: 35%;   */             /* ширина */
     max-height: calc(100vh - 6em); /* ограничение высоты */
-  /*  overflow-y: auto;    */      /* скролл, если нужно */
+    overflow-y: auto;          /* скролл, если нужно */
     border-radius: 1.2em;        /* скругление углов */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
    /* z-index: 1000;*/
