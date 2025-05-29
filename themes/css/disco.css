@@ -94,14 +94,14 @@
 .time-line > div,
 .player-panel__position,
 .player-panel__position > div:after {
-     background-color: #4ecdc4;
+     background-color: #519D9E;
      color: #fff;
      box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
-      background-color: #4ecdc4 !important;
+      background-color: #519D9E !important;
       color: #fff !important;
       box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
 }
@@ -138,12 +138,12 @@
 .online-prestige.focus::after,
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
-    border-color: #4ecdc4 !important;
+    border-color: #519D9E !important;
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
 }
 
 .card-more.focus .card-more__box::after {
-        border: 0.3em solid #4ecdc4;
+        border: 0.3em solid #519D9E;
         box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
 }
 
@@ -152,7 +152,7 @@
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
-    border-color: #4ecdc4 !important;
+    border-color: #519D9E !important;
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
 }
 
@@ -167,7 +167,7 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #4ecdc4;
+    border-color: #519D9E;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
    /* box-shadow: 0 0 0 0.2em #ffff00;*/
@@ -182,7 +182,7 @@
 
 .broadcast__scan > div,
 .broadcast__device.focus {
-    background-color: #4ecdc4;
+    background-color: #519D9E;
     color: #fff;
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
   }
@@ -200,11 +200,11 @@
   }
 
   .radio-player.focus {
-    background-color: #4ecdc4;
+    background-color: #519D9E;
     color: #fff;
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
   }
   .explorer-card__head-img.focus::after {
-    border: 0.3em solid #4ecdc4;
+    border: 0.3em solid #519D9E;
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
   }
