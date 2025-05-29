@@ -96,14 +96,14 @@
 .player-panel__position > div:after {
      background-color: #519D9E;
      color: #fff;
-     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+     box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
       background-color: #519D9E !important;
       color: #fff !important;
-      box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+      box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
 .radio-item.focus,
@@ -131,7 +131,7 @@
 
 .online.focus {
   /* box-shadow: 0 0 0 0.2em #ff0000; */
-   box-shadow: 0 0 0 0.2em rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+   box-shadow: 0 0 0 0.2em rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
 .online_modss.focus::after,
@@ -139,12 +139,12 @@
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
     border-color: #519D9E !important;
-    box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+    box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
 .card-more.focus .card-more__box::after {
         border: 0.3em solid #519D9E;
-        box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+        box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
 .simple-button--filter > div {
@@ -153,7 +153,7 @@
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
     border-color: #519D9E !important;
-    box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+    box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
@@ -169,7 +169,7 @@
 .extensions__block-add.focus:after {
     border-color: #519D9E;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
-    box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+    box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
    /* box-shadow: 0 0 0 0.2em #ffff00;*/
    /* border-color: none;
     background: radial-gradient(circle, #ffff00, #ff0000);*/
@@ -184,7 +184,7 @@
 .broadcast__device.focus {
     background-color: #519D9E;
     color: #fff;
-    box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+    box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
   }
 
 
@@ -202,9 +202,9 @@
   .radio-player.focus {
     background-color: #519D9E;
     color: #fff;
-    box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+    box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
   }
   .explorer-card__head-img.focus::after {
     border: 0.3em solid #519D9E;
-    box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
+    box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
   }
