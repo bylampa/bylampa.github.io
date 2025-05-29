@@ -10,7 +10,7 @@
     color: #fff;
 }*/
 
-.menu__ico.focus {
+.menu__ico {
     color: #000;
     -webkit-filter: invert(1);
             filter: invert(1);
