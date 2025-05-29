@@ -31,7 +31,7 @@
   }
 }
 
-.selectbox-item--checkbox.focus .selectbox-item__checkbox {
+/*.selectbox-item--checkbox.focus .selectbox-item__checkbox {
     border: 0.3em solid rgba(0, 0, 0, 0.5);
 }  
 
@@ -43,7 +43,7 @@
 .selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
   border-bottom: 0.2em solid #000;
-}
+}*/
 
 
 .settings-folder.focus .settings-folder__icon {
@@ -81,29 +81,29 @@
 .simple-button.focus,
 .player-panel .button.focus,
 .search-source.active {
-    background: linear-gradient(to right, #4ecdc4, #556270);
-    /*  background: radial-gradient(circle, #a8ff78, #78ffd6);*/
-    color: #000;
+    background: linear-gradient(to right, #556270, #4ecdc4);
+    /*  background: radial-gradient(circle, #4ecdc4, #556270);*/
+    color: #fff;
 }
 
 .head__action.focus,
 .head__action.hover {
-    background: linear-gradient(to right, #4ecdc4, #556270);
+    background: linear-gradient(to right, #556270, #4ecdc4);
 }   
 
 .navigation-tabs__button.focus,
 .time-line > div,
 .player-panel__position,
 .player-panel__position > div:after {
-     background-color: #ffafbd;
-     color: #000;
+     background-color: #556270;
+     color: #fff;
      box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
-      background-color: #ffafbd !important;
-      color: #000 !important;
+      background-color: #556270 !important;
+      color: #fff !important;
       box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
 }
 
@@ -117,16 +117,16 @@
 .full-review-add.focus,
 .full-review.focus,
 .tag-count.focus {
-    background: linear-gradient(to right, #4ecdc4, #556270);
-    color: #000;
+    background: linear-gradient(to right, #556270, #4ecdc4);
+    color: #fff;
 }
 
 .selectbox-item.focus,
 .selectbox-item.hover,
 .settings-folder.focus,
 .settings-param.focus {
-    background: linear-gradient(to right, #4ecdc4, #556270);
-    color: #000;
+    background: linear-gradient(to right, #556270, #4ecdc4);
+    color: #fff;
     border-radius: 1.2em;
 }
 
@@ -139,12 +139,12 @@
 .online-prestige.focus::after,
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
-    border-color: #ffafbd !important;
+    border-color: #556270 !important;
     box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
 }
 
 .card-more.focus .card-more__box::after {
-        border: 0.3em solid #ffafbd;
+        border: 0.3em solid #556270;
         box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
 }
 
@@ -153,7 +153,7 @@
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
-    border-color: #ffafbd !important;
+    border-color: #556270 !important;
     box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
 }
 
@@ -168,7 +168,7 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #ffafbd;
+    border-color: #556270;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
     box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
    /* box-shadow: 0 0 0 0.2em #ffff00;*/
@@ -183,29 +183,29 @@
 
 .broadcast__scan > div,
 .broadcast__device.focus {
-    background-color: #ffafbd;
-    color: #000;
+    background-color: #556270;
+    color: #fff;
     box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
   }
 
 
 .card:hover .card__img, .card.focus .card__img {
-    border-color: #ffafbd;
+    border-color: #556270;
    /* box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);*/
   }
 
   .noty {
     /*background: linear-gradient(to right, #0099f7, #f11712);*/
-    background: radial-gradient(circle, #4ecdc4, #556270); 
-    color: #000;
+    background: radial-gradient(circle, #556270, #4ecdc4); 
+    color: #fff;
   }
 
   .radio-player.focus {
-    background-color: #ffafbd;
-    color: #000;
+    background-color: #556270;
+    color: #fff;
     box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
   }
   .explorer-card__head-img.focus::after {
-    border: 0.3em solid #ffafbd;
+    border: 0.3em solid #556270;
     box-shadow: 0 0 5px rgba(255, 195, 160, 1), 0 0 10px rgba(255, 195, 160, 0.5);
   }
