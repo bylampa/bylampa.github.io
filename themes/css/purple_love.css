@@ -57,12 +57,12 @@
   width: 100%;
   height: 100%;
   display: none;
-  background: url(https://bylampa.github.io/themes/loader/loader_disco.svg) no-repeat 50% 50%;
+  background: url(https://bylampa.github.io/themes/loader/loader_purple_love.svg) no-repeat 50% 50%;
 }
 
 .modal-loading {
   height: 6em;
-  background: url(https://bylampa.github.io/themes/loader/loader_disco.svg) no-repeat 50% 50%;
+  background: url(https://bylampa.github.io/themes/loader/loader_purple_love.svg) no-repeat 50% 50%;
   -webkit-background-size: contain;
      -moz-background-size: contain;
        -o-background-size: contain;
