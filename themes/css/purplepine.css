@@ -46,8 +46,8 @@
 }*/
 
 
-.settings-folder.focus .settings-folder__icon {
-    color: #fff;
+.menu__ico {
+    color: #000;
     -webkit-filter: invert(1);
             filter: invert(1);
 }
