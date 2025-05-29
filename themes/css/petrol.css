@@ -94,14 +94,14 @@
 .time-line > div,
 .player-panel__position,
 .player-panel__position > div:after {
-     background-color: #519D9E;
+     background-color: #869d9d;
      color: #fff;
      box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
-      background-color: #519D9E !important;
+      background-color: #869d9d !important;
       color: #fff !important;
       box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
 }
@@ -138,12 +138,12 @@
 .online-prestige.focus::after,
 .radio-item.focus .radio-item__imgbox:after,
 .iptv-channel.focus::before, .iptv-channel.last--focus::before {
-    border-color: #519D9E !important;
+    border-color: #869d9d !important;
     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
 }
 
 .card-more.focus .card-more__box::after {
-        border: 0.3em solid #519D9E;
+        border: 0.3em solid #869d9d;
         box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
 }
 
@@ -152,7 +152,7 @@
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
-    border-color: #519D9E !important;
+    border-color: #869d9d !important;
     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
 }
 
@@ -167,7 +167,7 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #536976;
+    border-color: #869d9d;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
    /* box-shadow: 0 0 0 0.2em #ffff00;*/
@@ -182,14 +182,14 @@
 
 .broadcast__scan > div,
 .broadcast__device.focus {
-    background-color: #519D9E;
+    background-color: #869d9d;
     color: #fff;
     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
   }
 
 
 .card:hover .card__img, .card.focus .card__img {
-    border-color: #519D9E;
+    border-color: #869d9d;
    /* box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);*/
   }
 
@@ -200,11 +200,11 @@
   }
 
   .radio-player.focus {
-    background-color: #519D9E;
+    background-color: #869d9d;
     color: #fff;
     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
   }
   .explorer-card__head-img.focus::after {
-    border: 0.3em solid #519D9E;
+    border: 0.3em solid #869d9d;
     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
   }
