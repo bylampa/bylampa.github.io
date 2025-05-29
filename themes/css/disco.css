@@ -167,7 +167,7 @@
 .extensions__item.focus:after,
 .torrent-item.focus::after,
 .extensions__block-add.focus:after {
-    border-color: #556270;
+    border-color: #4ecdc4;
    /* box-shadow: 0 0 0 0.1em #ffff00;*/
     box-shadow: 0 0 5px rgba(85, 98, 112, 1), 0 0 10px rgba(85, 98, 112, 0.5);
    /* box-shadow: 0 0 0 0.2em #ffff00;*/
