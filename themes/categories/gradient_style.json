@@ -28,5 +28,10 @@
     "title": "Petrol",
     "logo": "https://bylampa.github.io/themes/logo/petrol.png",
     "css": "https://bylampa.github.io/themes/css/petrol.css"
+  },
+  {
+    "title": "Purple Love",
+    "logo": "https://bylampa.github.io/themes/logo/purple_love.png",
+    "css": "https://bylampa.github.io/themes/css/purple_love.css"
   }
 ]
