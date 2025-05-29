@@ -120,7 +120,7 @@
 .iptv-program__timeline>div {
       background-color: #ff0000 !important;
       color: #000 !important;
-      box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+      box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
 .radio-item.focus,
@@ -154,7 +154,7 @@
 
 .online.focus {
   /* box-shadow: 0 0 0 0.2em #ff0000; */
-   box-shadow: 0 0 0 0.2em rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+   box-shadow: 0 0 0 0.2em rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
 .online_modss.focus::after,
@@ -167,7 +167,7 @@
 
 .card-more.focus .card-more__box::after {
         border: 0.3em solid #ff0000;
-        box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+        box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
 .simple-button--filter > div {
@@ -176,7 +176,7 @@
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
     border-color: #ff0000 !important;
-    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
 }
 
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
@@ -225,7 +225,7 @@
 .broadcast__device.focus {
     background-color: #ff0000;
     color: #000;
-    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
   }
 
 /*.loader:after, .iframe__body:after, .activity__loader:after {
@@ -253,9 +253,9 @@
   .radio-player.focus {
     background-color: #ff0000;
     color: #000;
-    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
   }
   .explorer-card__head-img.focus::after {
     border: 0.3em solid #ff0000;
-    box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 0.5);
   }
