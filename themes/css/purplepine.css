@@ -3,7 +3,7 @@
     color: #fff;
 }*/
 
-@media screen and (min-width: 481px) {
+/*@media screen and (min-width: 481px) {
   .settings__content {
     top: 1em;                  /* отступ сверху */
     left: 98%;                /* сброс левого отступа */
@@ -29,7 +29,7 @@
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
-}
+}*/
 
 /*.selectbox-item--checkbox.focus .selectbox-item__checkbox {
     border: 0.3em solid rgba(0, 0, 0, 0.5);
