@@ -89,6 +89,7 @@
 .head__action.focus,
 .head__action.hover {
     background: linear-gradient(to right, #556270, #4ecdc4);
+    color: #fff;
 }   
 
 .navigation-tabs__button.focus,
