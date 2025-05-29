@@ -23,5 +23,10 @@
     "title": "Disco",
     "logo": "https://bylampa.github.io/themes/logo/disco.png",
     "css": "https://bylampa.github.io/themes/css/disco.css"
+  },
+  {
+    "title": "Petrol",
+    "logo": "https://bylampa.github.io/themes/logo/petrol.png",
+    "css": "https://bylampa.github.io/themes/css/petrol.css"
   }
 ]
