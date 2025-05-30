@@ -33,5 +33,10 @@
     "title": "Purple Love",
     "logo": "https://bylampa.github.io/themes/logo/purple_love.png",
     "css": "https://bylampa.github.io/themes/css/purple_love.css"
+  },
+  {
+    "title": "Mojito",
+    "logo": "https://bylampa.github.io/themes/logo/mojito.png",
+    "css": "https://bylampa.github.io/themes/css/mojito.css"
   }
 ]
