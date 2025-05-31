@@ -38,5 +38,10 @@
     "title": "Mojito",
     "logo": "https://bylampa.github.io/themes/logo/mojito.png",
     "css": "https://bylampa.github.io/themes/css/mojito.css"
+  },
+  {
+    "title": "Dark Skies",
+    "logo": "https://bylampa.github.io/themes/logo/dark_skies.png",
+    "css": "https://bylampa.github.io/themes/css/dark_skies.css"
   }
 ]
