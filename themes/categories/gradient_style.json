@@ -43,5 +43,10 @@
     "title": "Dark Skies",
     "logo": "https://bylampa.github.io/themes/logo/dark_skies.png",
     "css": "https://bylampa.github.io/themes/css/dark_skies.css"
+  },
+  {
+    "title": "Sulphur",
+    "logo": "https://bylampa.github.io/themes/logo/sulphur.png",
+    "css": "https://bylampa.github.io/themes/css/sulphur.css"
   }
 ]
