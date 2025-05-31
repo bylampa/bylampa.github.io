@@ -1,0 +1,210 @@
+/*body {
+    background-color: #1d1f20;
+    color: #fff;
+}*/
+
+@media screen and (min-width: 481px) {
+  .settings__content {
+    top: 1em;                  
+    left: 98%;                
+    max-height: calc(100vh - 2em); 
+    overflow-y: auto;          
+    border-radius: 1.2em;        
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
+    padding: 0.5em;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .selectbox__content {
+    top: 1em;                  
+    left: 98%;                
+    max-height: calc(100vh - 2em); 
+    overflow-y: auto;          
+    border-radius: 1.2em;        
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
+    padding: 0.5em;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+}
+
+/*.selectbox-item--checkbox.focus .selectbox-item__checkbox {
+    border: 0.3em solid rgba(0, 0, 0, 0.5);
+}  
+
+.selectbox-item--checked.focus .selectbox-item__checkbox {
+   border-color: #000;
+}   
+
+
+.selectbox-item.selected.focus:not(.nomark)::after {
+  border-right: 0.2em solid #000;
+  border-bottom: 0.2em solid #000;
+}*/
+
+
+.menu__ico {
+    color: #000;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+}
+
+.activity__loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: url(https://bylampa.github.io/themes/loader/loader_dark_skies.svg) no-repeat 50% 50%;
+}
+
+.modal-loading {
+  height: 6em;
+  background: url(https://bylampa.github.io/themes/loader/loader_dark_skies.svg) no-repeat 50% 50%;
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+}
+
+.console__tab.focus,
+.menu__item.focus,
+.menu__item.traverse,
+.menu__item.hover,
+.full-person.focus,
+.full-start__button.focus,
+.full-descr__tag.focus,
+.simple-button.focus,
+.player-panel .button.focus,
+.search-source.active {
+    background: linear-gradient(to right, #283e51, #4b79a1);
+    /*  background: radial-gradient(circle, #4ecdc4, #556270);*/
+    color: #fff;
+}
+
+.head__action.focus,
+.head__action.hover {
+    background: linear-gradient(to right, #283e51, #4b79a1);
+    color: #fff;
+}   
+
+.navigation-tabs__button.focus,
+.time-line > div,
+.player-panel__position,
+.player-panel__position > div:after {
+     background-color: #3a5d7b;
+     color: #fff;
+     box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+}
+
+.iptv-menu__list-item.focus,
+.iptv-program__timeline>div {
+      background-color: #3a5d7b !important;
+      color: #fff !important;
+      box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+}
+
+.radio-item.focus,
+.lang__selector-item.focus,
+.simple-keyboard .hg-button.focus,
+.modal__button.focus,
+.search-history-key.focus,
+.simple-keyboard-mic.focus,
+.torrent-serial__progress,
+.full-review-add.focus,
+.full-review.focus,
+.tag-count.focus {
+    background: linear-gradient(to right, #283e51, #4b79a1);
+    color: #fff;
+}
+
+.selectbox-item.focus,
+.selectbox-item.hover,
+.settings-folder.focus,
+.settings-param.focus {
+    background: linear-gradient(to right, #283e51, #4b79a1);
+    color: #fff;
+    border-radius: 1.2em;
+}
+
+.online.focus {
+  /* box-shadow: 0 0 0 0.2em #ff0000; */
+   box-shadow: 0 0 0 0.2em rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+}
+
+.online_modss.focus::after,
+.online-prestige.focus::after,
+.radio-item.focus .radio-item__imgbox:after,
+.iptv-channel.focus::before, .iptv-channel.last--focus::before {
+    border-color: #3a5d7b !important;
+    box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+}
+
+.card-more.focus .card-more__box::after {
+        border: 0.3em solid #3a5d7b;
+        box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+}
+
+.simple-button--filter > div {
+       background-color: rgba(255,255,255,0.4);
+}
+
+.iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
+    border-color: #3a5d7b !important;
+    box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+}
+
+.ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
+.card-episode.focus .full-episode::after,
+.register.focus::after,
+.season-episode.focus::after,
+.full-episode.focus::after,
+.full-review-add.focus::after,
+.card.focus .card__view::after,
+.card.hover .card__view::after,
+.extensions__item.focus:after,
+.torrent-item.focus::after,
+.extensions__block-add.focus:after {
+    border-color: #3a5d7b;
+   /* box-shadow: 0 0 0 0.1em #ffff00;*/
+    box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+   /* box-shadow: 0 0 0 0.2em #ffff00;*/
+   /* border-color: none;
+    background: radial-gradient(circle, #ffff00, #ff0000);*/
+}
+
+.torrent-serial__size {
+    background-color: #fff;
+    color: #000;
+}
+
+.broadcast__scan > div,
+.broadcast__device.focus {
+    background-color: #3a5d7b;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+  }
+
+
+.card:hover .card__img, .card.focus .card__img {
+    border-color: #3a5d7b;
+   /* box-shadow: 0 0 8px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 0, 0, 0.5);*/
+  }
+
+  .noty {
+    /*background: linear-gradient(to right, #0099f7, #f11712);*/
+    background: radial-gradient(circle, #4b79a1, #283e51); 
+    color: #fff;
+  }
+
+  .radio-player.focus {
+    background-color: #3a5d7b;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+  }
+  .explorer-card__head-img.focus::after {
+    border: 0.3em solid #3a5d7b;
+    box-shadow: 0 0 5px rgba(187, 210, 197, 1), 0 0 10px rgba(187, 210, 197, 0.5);
+  }
