@@ -48,5 +48,10 @@
     "title": "Sulphur",
     "logo": "https://bylampa.github.io/themes/logo/sulphur.png",
     "css": "https://bylampa.github.io/themes/css/sulphur.css"
+  },
+  {
+    "title": "Dirty Fog",
+    "logo": "https://bylampa.github.io/themes/logo/dirty_fog.png",
+    "css": "https://bylampa.github.io/themes/css/dirty_fog.css"
   }
 ]
