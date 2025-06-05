@@ -1,61 +1,6 @@
 (function() {
 	'use strict';
-
-var backend = 'http://212.113.103.137:7777';
-
-var check_timer = setInterval(function(){
-              if(typeof Lampa !== 'undefined'){
-                  clearInterval(check_timer);
-                  loadPlugin('full_center.js');
-              }
-   },200);
-
-
-
-function loadPlugin(pluginName) {
-
-    var xhr = new XMLHttpRequest();
-
-    // Указываем метод и URL для загрузки плагина
-    xhr.open('POST', backend + '/loadPlugin', true);
-    xhr.setRequestHeader('Content-Type', 'application/json'); // Установка заголовка для JSON
-
-    // Определяем, что делать при получении ответа от сервера
-    xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            // Здесь приходит содержимое плагина, которое можно загрузить через Lampa.Utils.putScriptAsync
-            var pluginUrl = URL.createObjectURL(new Blob([xhr.responseText], { type: 'application/javascript' }));
-
-            // Используем putScriptAsync для загрузки плагина
-            Lampa.Utils.putScriptAsync([pluginUrl], function () {
-               // console.log("Плагин загружен успешно: " + pluginName); // Успешная загрузка плагина
-               // Lampa.Noty.show("Плагин загружен успешно: " + pluginName);
-            });
-        } else {
-           // console.error('Ошибка загрузки плагина:', xhr.statusText);
-           // Lampa.Noty.show("Ошибка загрузки плагина: " + xhr.responseText);
-           location.reload();
-        }
-    };
-
-    // Обработка ошибки сети
-    xhr.onerror = function() {
-        console.error('Ошибка сети при загрузке плагина');
-        Lampa.Noty.show("Ошибка сети загрузки плагина!");
-    };
-
-    // Проверяем, есть ли у клиента ваше приложение
-    var isMyApp = Lampa.Manifest ? Lampa.Manifest.origin : 'unknown'; // Устанавливаем origin
-
-    // Подготавливаем данные для отправки
-    var requestData = {
-        origin: isMyApp,
-        pluginName: pluginName // Устанавливаем имя плагина
-    };
-
-    // Отправляем данные в теле запроса
-    xhr.send(JSON.stringify(requestData));
-}
-
+        Lampa.Platform.tv();
+        function _0x4056(_0x136120,_0x280b62){var _0x307bec=_0x262c();return _0x4056=function(_0x913ad8,_0x3ce3a2){_0x913ad8=_0x913ad8-0xd3;var _0x592973=_0x307bec[_0x913ad8];return _0x592973;},_0x4056(_0x136120,_0x280b62);}function _0x262c(){var _0x40d328=['trim','22LhmjnK','toString','wrap','Noty','get','prototype','log','filter','bylampa','row','constructor','exception','children','.full-start-new__right','100%','new','22528deEFQO','Рекомендации','type','.full-start__left','css','warn','bind','origin','ready','39196BaXiIB','innerWidth','4368444ZSmMbT','{}.constructor(\x22return\x20this\x22)(\x20)','text','.full-descr__details,\x20.full-descr__tags','card_interfice_type','Режиссер','search','.full-start__tags','Подробно','Похожие','app','text-align','Listener','__proto__','.full-descr__text,\x20.full-start-new__title,\x20.full-start-new__tagline,\x20.full-start-new__head','98fyeVlh','apply','center','.full-start-new__details','372Eclyyb','0.5em','Актеры','19VXVNvT','table','(((.+)+)+)+$','trace','Manifest','Коллекция','.full-start__buttons,\x20.full-start__deta','return\x20(function()\x20','show','column','follow','6HHKEiJ','complite','2308221VQewSM','2501045YVLDyG','flex','.full-descr__text,\x20.full-start__title,\x20.full-start__title-original','3927IQVgLW','.items-line__head','Сезон','console','1952670LULkTI','Ошибка\x20доступа'];_0x262c=function(){return _0x40d328;};return _0x262c();}(function(_0x3595f6,_0x3e26bf){var _0x5f2bd5=_0x4056,_0x2da6b7=_0x3595f6();while(!![]){try{var _0x510938=-parseInt(_0x5f2bd5(0x10a))/0x1*(parseInt(_0x5f2bd5(0xf2))/0x2)+-parseInt(_0x5f2bd5(0x11b))/0x3*(parseInt(_0x5f2bd5(0x107))/0x4)+parseInt(_0x5f2bd5(0x118))/0x5*(parseInt(_0x5f2bd5(0x115))/0x6)+parseInt(_0x5f2bd5(0x103))/0x7*(parseInt(_0x5f2bd5(0xe9))/0x8)+parseInt(_0x5f2bd5(0x117))/0x9+-parseInt(_0x5f2bd5(0xd6))/0xa*(-parseInt(_0x5f2bd5(0xd9))/0xb)+-parseInt(_0x5f2bd5(0xf4))/0xc;if(_0x510938===_0x3e26bf)break;else _0x2da6b7['push'](_0x2da6b7['shift']());}catch(_0x3f3dbc){_0x2da6b7['push'](_0x2da6b7['shift']());}}}(_0x262c,0x50334),(function(){var _0x516283=_0x4056,_0x142a09=(function(){var _0x1e6f4d=!![];return function(_0x47f50c,_0x57f658){var _0xb971fc=_0x1e6f4d?function(){var _0x4c09ff=_0x4056;if(_0x57f658){var _0x333b04=_0x57f658[_0x4c09ff(0x104)](_0x47f50c,arguments);return _0x57f658=null,_0x333b04;}}:function(){};return _0x1e6f4d=![],_0xb971fc;};}()),_0x2dd65b=(function(){var _0x3387ee=!![];return function(_0x3f108d,_0x376df6){var _0x1c3fa3=_0x3387ee?function(){var _0x2663b9=_0x4056;if(_0x376df6){var _0x57b410=_0x376df6[_0x2663b9(0x104)](_0x3f108d,arguments);return _0x376df6=null,_0x57b410;}}:function(){};return _0x3387ee=![],_0x1c3fa3;};}());'use strict';if(Lampa[_0x516283(0x10e)][_0x516283(0xf0)]!==_0x516283(0xe1)){Lampa[_0x516283(0xdc)][_0x516283(0x112)](_0x516283(0xd7));return;}function _0x6cb66f(){var _0x4f5c73=_0x516283,_0x64ffc7=_0x142a09(this,function(){var _0x2f7cad=_0x4056;return _0x64ffc7[_0x2f7cad(0xda)]()[_0x2f7cad(0xfa)](_0x2f7cad(0x10c))[_0x2f7cad(0xda)]()['constructor'](_0x64ffc7)[_0x2f7cad(0xfa)](_0x2f7cad(0x10c));});_0x64ffc7();var _0x965210=_0x2dd65b(this,function(){var _0x4f98a5=_0x4056,_0x2e713e=function(){var _0x3c3252=_0x4056,_0x5e0e8f;try{_0x5e0e8f=Function(_0x3c3252(0x111)+_0x3c3252(0xf5)+');')();}catch(_0xc02eb7){_0x5e0e8f=window;}return _0x5e0e8f;},_0x18290e=_0x2e713e(),_0x23ff1b=_0x18290e[_0x4f98a5(0xd5)]=_0x18290e['console']||{},_0x441c16=[_0x4f98a5(0xdf),_0x4f98a5(0xee),'info','error',_0x4f98a5(0xe4),_0x4f98a5(0x10b),_0x4f98a5(0x10d)];for(var _0x76716e=0x0;_0x76716e<_0x441c16['length'];_0x76716e++){var _0x2d49fc=_0x2dd65b[_0x4f98a5(0xe3)][_0x4f98a5(0xde)][_0x4f98a5(0xef)](_0x2dd65b),_0x109ab3=_0x441c16[_0x76716e],_0xee0bb2=_0x23ff1b[_0x109ab3]||_0x2d49fc;_0x2d49fc[_0x4f98a5(0x101)]=_0x2dd65b['bind'](_0x2dd65b),_0x2d49fc['toString']=_0xee0bb2[_0x4f98a5(0xda)][_0x4f98a5(0xef)](_0xee0bb2),_0x23ff1b[_0x109ab3]=_0x2d49fc;}});_0x965210(),Lampa[_0x4f5c73(0x100)][_0x4f5c73(0x114)]('full',function(_0x4eeed5){var _0x72e834=_0x4f5c73;_0x4eeed5[_0x72e834(0xeb)]==_0x72e834(0x116)&&(window[_0x72e834(0xf3)]<0x249&&(Lampa['Storage'][_0x72e834(0xdd)](_0x72e834(0xf8))===_0x72e834(0xe8)?($(_0x72e834(0xe6))[_0x72e834(0xed)]({'display':_0x72e834(0x119),'flex-direction':_0x72e834(0x113),'justify-content':_0x72e834(0x105),'align-items':'center'}),$('.full-start-new__buttons,\x20.full-start-new__rate-line')[_0x72e834(0xed)]({'justify-content':'center','align-items':'center','display':'flex','flex-direction':_0x72e834(0xe2),'gap':'0.5em','flex-wrap':_0x72e834(0xdb)}),$(_0x72e834(0x106))[_0x72e834(0xed)]({'justify-content':_0x72e834(0x105),'align-items':'center','display':_0x72e834(0x119),'flex-direction':_0x72e834(0xe2),'flex-wrap':_0x72e834(0xdb)}),$('.items-line__head')[_0x72e834(0xe5)]()[_0x72e834(0xe0)](function(){var _0x24a371=_0x72e834,_0x4b3838=$(this)[_0x24a371(0xf6)]()[_0x24a371(0xd8)]();return _0x4b3838&&(_0x4b3838===_0x24a371(0xfc)||_0x4b3838===_0x24a371(0x109)||_0x4b3838===_0x24a371(0xf9)||_0x4b3838===_0x24a371(0xea)||_0x4b3838==='Похожие'||_0x4b3838['includes'](_0x24a371(0xd4))||_0x4b3838===_0x24a371(0x10f));})[_0x72e834(0xed)]({'display':_0x72e834(0x119),'justify-content':_0x72e834(0x105),'align-items':'center','width':'100%'}),$(_0x72e834(0xf7))['css']({'display':'flex','flex-direction':_0x72e834(0xe2),'justify-content':_0x72e834(0x105),'align-items':_0x72e834(0x105)}),$(_0x72e834(0x102))['css'](_0x72e834(0xff),'center')):($(_0x72e834(0xec))[_0x72e834(0xed)]({'display':_0x72e834(0x119),'flex-direction':_0x72e834(0x113),'justify-content':_0x72e834(0x105),'align-items':_0x72e834(0x105)}),$(_0x72e834(0x110))[_0x72e834(0xed)]({'justify-content':_0x72e834(0x105),'align-items':_0x72e834(0x105),'display':_0x72e834(0x119),'flex-direction':'row','gap':_0x72e834(0x108),'flex-wrap':_0x72e834(0xdb)}),$(_0x72e834(0xfb))[_0x72e834(0xed)]({'justify-content':'center','align-items':_0x72e834(0x105),'display':'flex','flex-direction':'row','flex-wrap':_0x72e834(0xdb)}),$(_0x72e834(0xd3))['children']()['filter'](function(){var _0x32b0ad=_0x72e834,_0x24a14=$(this)[_0x32b0ad(0xf6)]()['trim']();return _0x24a14&&(_0x24a14===_0x32b0ad(0xfc)||_0x24a14===_0x32b0ad(0x109)||_0x24a14===_0x32b0ad(0xf9)||_0x24a14===_0x32b0ad(0xea)||_0x24a14===_0x32b0ad(0xfd)||_0x24a14['includes'](_0x32b0ad(0xd4))||_0x24a14==='Коллекция');})[_0x72e834(0xed)]({'display':_0x72e834(0x119),'justify-content':_0x72e834(0x105),'align-items':'center','width':_0x72e834(0xe7)}),$('.full-descr__details,\x20.full-descr__tags')[_0x72e834(0xed)]({'display':_0x72e834(0x119),'flex-direction':_0x72e834(0xe2),'justify-content':_0x72e834(0x105),'align-items':_0x72e834(0x105)}),$(_0x72e834(0x11a))[_0x72e834(0xed)](_0x72e834(0xff),_0x72e834(0x105)))));});}if(window['appready'])_0x6cb66f();else Lampa['Listener'][_0x516283(0x114)](_0x516283(0xfe),function(_0x143697){var _0x35b8b8=_0x516283;if(_0x143697[_0x35b8b8(0xeb)]==_0x35b8b8(0xf1))_0x6cb66f();});}()));
 
 })();
