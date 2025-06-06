@@ -2667,12 +2667,12 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 						},
 					field: {
-						name: 'ByLAMPA Source',
+						name: 'Источник ByLAMPA',
 						description: 'Плагин добавляет источник ByLAMPA, в котором можно сортировать/изменять отображение разделов под свой вкус'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/bylampa_source.js', 'ByLAMPA Source', '@bylampa', 'bylampa_source');
+						       itemON('https://bylampa.github.io/bylampa_source.js', 'Источник ByLAMPA', '@bylampa', 'bylampa_source');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/bylampa_source.js";
