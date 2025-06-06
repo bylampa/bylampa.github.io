@@ -53,5 +53,10 @@
     "title": "Dirty Fog",
     "logo": "https://bylampa.github.io/themes/logo/dirty_fog.png",
     "css": "https://bylampa.github.io/themes/css/dirty_fog.css"
+  },
+  {
+    "title": "Reef",
+    "logo": "https://bylampa.github.io/themes/logo/reef.png",
+    "css": "https://bylampa.github.io/themes/css/reef.css"
   }
 ]
