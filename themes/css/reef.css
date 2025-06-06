@@ -5,31 +5,33 @@
 
 @media screen and (min-width: 481px) {
   .settings__content {
-    top: 1em;                  
-    left: 98%;                
-    max-height: calc(100vh - 2em); 
-    overflow-y: auto;          
-    border-radius: 1.2em;        
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
+    top: 1em;                  /* отступ сверху */
+    left: 98%;                /* сброс левого отступа */
+    max-height: calc(100vh - 2em); /* ограничение высоты */
+    overflow-y: auto;          /* скролл, если нужно */
+    border-radius: 1.2em;        /* скругление углов */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
     padding: 0.5em;
+    /* Скрываем изначально смещая вправо */
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
 
   .selectbox__content {
-    top: 1em;                  
-    left: 98%;                
-    max-height: calc(100vh - 2em); 
-    overflow-y: auto;          
-    border-radius: 1.2em;        
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
+    top: 1em;                  /* отступ сверху */
+    left: 98%;                /* сброс левого отступа */
+    max-height: calc(100vh - 2em); /* ограничение высоты */
+    overflow-y: auto;          /* скролл, если нужно */
+    border-radius: 1.2em;        /* скругление углов */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
     padding: 0.5em;
+    /* Скрываем изначально смещая вправо */
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
 }
 
-/*.selectbox-item--checkbox.focus .selectbox-item__checkbox {
+.selectbox-item--checkbox.focus .selectbox-item__checkbox {
     border: 0.3em solid rgba(0, 0, 0, 0.5);
 }  
 
@@ -41,11 +43,11 @@
 .selectbox-item.selected.focus:not(.nomark)::after {
   border-right: 0.2em solid #000;
   border-bottom: 0.2em solid #000;
-}*/
+}
 
 
-.menu__ico {
-    color: #000;
+.settings-folder.focus .settings-folder__icon {
+    color: #fff;
     -webkit-filter: invert(1);
             filter: invert(1);
 }
@@ -80,14 +82,13 @@
 .player-panel .button.focus,
 .search-source.active {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
-    /*  background: radial-gradient(circle, #4ecdc4, #556270);*/
-    color: #fff;
+    /*  background: radial-gradient(circle, #a8ff78, #78ffd6);*/
+    color: #000;
 }
 
 .head__action.focus,
 .head__action.hover {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
-    color: #fff;
 }   
 
 .navigation-tabs__button.focus,
@@ -95,14 +96,14 @@
 .player-panel__position,
 .player-panel__position > div:after {
      background-color: #3a7bd5;
-     color: #fff;
+     color: #000;
      box-shadow: 0 0 5px rgba(0, 210, 255, 1), 0 0 10px rgba(0, 210, 255, 0.5);
 }
 
 .iptv-menu__list-item.focus,
 .iptv-program__timeline>div {
       background-color: #3a7bd5 !important;
-      color: #fff !important;
+      color: #000 !important;
       box-shadow: 0 0 5px rgba(0, 210, 255, 1), 0 0 10px rgba(0, 210, 255, 0.5);
 }
 
@@ -117,7 +118,7 @@
 .full-review.focus,
 .tag-count.focus {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
-    color: #fff;
+    color: #000;
 }
 
 .selectbox-item.focus,
@@ -125,7 +126,7 @@
 .settings-folder.focus,
 .settings-param.focus {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
-    color: #fff;
+    color: #000;
     border-radius: 1.2em;
 }
 
@@ -183,7 +184,7 @@
 .broadcast__scan > div,
 .broadcast__device.focus {
     background-color: #3a7bd5;
-    color: #fff;
+    color: #000;
     box-shadow: 0 0 5px rgba(0, 210, 255, 1), 0 0 10px rgba(0, 210, 255, 0.5);
   }
 
@@ -194,14 +195,13 @@
   }
 
   .noty {
-    /*background: linear-gradient(to right, #0099f7, #f11712);*/
-    background: radial-gradient(circle, #3a7bd5, #00d2ff); 
-    color: #fff;
+    background: radial-gradient(circle, #00d2ff, #3a7bd5);
+    color: #000;
   }
 
   .radio-player.focus {
     background-color: #3a7bd5;
-    color: #fff;
+    color: #000;
     box-shadow: 0 0 5px rgba(0, 210, 255, 1), 0 0 10px rgba(0, 210, 255, 0.5);
   }
   .explorer-card__head-img.focus::after {
