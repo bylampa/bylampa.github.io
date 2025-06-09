@@ -269,13 +269,8 @@
   Lampa.Utils.putScript(['https://levende.github.io/lampa-plugins/listener-extensions.js'], function () {
     Lampa.Listener.follow('card', function (event) {
       if (event.type === 'build') {
-        // Проверяем наличие imdb_rating
-        if (event.object.data.imdb_rating) {
-          console.log('IMDB Rating found:', event.object.data.imdb_rating); // Логируем наличие imdb_rating
-          $('.card__vote', event.object.card).text(event.object.data.imdb_rating);
-        } else {
-          Lampa.Noty.show('IMDB Rating not found'); // Логируем, если imdb_rating отсутствует
-        }
+        // Предполагаем, что event.object.data содержит данные о рейтингах
+        _showRating(event.object.data); // Передаем данные в функцию _showRating
       }
     });
   });
