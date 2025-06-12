@@ -2,7 +2,7 @@
     'use strict';
 
     var network = new Lampa.Reguest();
-    var base_url = 'https://api.themoviedb.org/3';
+    var base_url = 'http://tmdbapi.bylampa.online/3';
 
     function getInterfaceLanguage() {
         var lang = Lampa.Storage.get('language', 'ru');
