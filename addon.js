@@ -4029,6 +4029,118 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
+                Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                               			name: 'smotret_ru',
+                   				type: 'select',
+                   				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                   				},
+					//default: '1',
+               				},
+					field: {
+                                  		name: 'Смотреть RU',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн, используется один стабильный источник. Больше подходит кому ближе РФ'
+					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('http://smotret24.ru/online.js', 'Смотреть RU', '@showy', 'smotret_ru');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "http://smotret24.ru/online.js";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('http://showy.online/m.js')
+						setTimeout(function() {	
+							$('div[data-name="Showy"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('http://smotret24.ru/online.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="smotret_ru"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://smotret24.ru/online.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="smotret_ru"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="smotret_ru"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="smotret_ru"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
+					}
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                               			name: 'smotret_eu',
+                   				type: 'select',
+                   				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                   				},
+					//default: '1',
+               				},
+					field: {
+                                  		name: 'Смотреть EU',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн, используется один стабильный источник. Больше подходит кому ближе Нидерланды'
+					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('http://smotret24.com/online.js', 'Смотреть EU', '@showy', 'smotret_eu');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "http://smotret24.com/online.js";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('http://showy.online/m.js')
+						setTimeout(function() {	
+							$('div[data-name="Showy"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('http://smotret24.com/online.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="smotret_eu"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'http://smotret24.com/online.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="smotret_eu"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="smotret_eu"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="smotret_eu"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);	
+					}
+		});
+	
               /*  Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
