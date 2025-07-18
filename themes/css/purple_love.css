@@ -5,6 +5,7 @@
 
 @media screen and (min-width: 481px) {
   .settings__content {
+    box-sizing: border-box; /* Переключает расчет на внутренние параметры */
     top: 1em;                  
     left: 98%;                
     max-height: calc(100vh - 2em); 
