@@ -7,7 +7,7 @@
   .settings__content {
     top: 1em;                  
     left: 98%;                
-    max-height: calc(100vh - 1em); 
+    max-height: calc(100vh - 1.5em); 
     overflow-y: auto;          
     border-radius: 1.2em;        
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
