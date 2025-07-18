@@ -5,7 +5,7 @@
 
 @media screen and (min-width: 481px) {
   .settings__content {
-    top: 2em;                  
+    top: 1em;                  
     left: 98%;                
     max-height: calc(100vh - 1.5em); 
     overflow-y: auto;          
