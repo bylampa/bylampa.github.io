@@ -3,20 +3,6 @@
     color: #fff;
 }*/
 
-.noty {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background: #65eaa7;
-  color: #000;
-  border-radius: 10px; /* Скругление углов */
-  transform: translateY(110%); /* Приподнятие элемента */
-  transition: opacity 0.3s, transform 0.3s;
-  opacity: 0;
-}
-
 @media screen and (min-width: 481px) {
   .settings__content {
     top: 1em;                  
