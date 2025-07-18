@@ -14,6 +14,7 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
     padding: 2.5em;
     transform: translateX(100%);
+    margin-bottom: 2em;
     transition: transform 0.3s ease;
   }
 
