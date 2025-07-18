@@ -13,7 +13,7 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); 
     padding: 0.5em;
     transform: translateX(100%);
-    padding-bottom: 5em;
+    height: 5em;
     transition: transform 0.3s ease;
   }
 
