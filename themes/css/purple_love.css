@@ -198,6 +198,7 @@
     background: radial-gradient(circle, #753a88, #cc2b5e); 
     color: #fff;
     border-radius: 1.2em;
+    bottom: 20px;
   }
 
   .radio-player.focus {
