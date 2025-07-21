@@ -4,6 +4,17 @@ body {
     color: #fff;
 }
 
+.navigation-bar__body,
+.lang,
+.console,
+.settings__content,
+.settings-input__content,
+.selectbox__content,
+.modal__content,
+.extensions {
+    background: rgba(30, 60, 107, 0.96);
+}
+
 @media screen and (min-width: 481px) {
   .settings__content {
     top: 1em;                  
