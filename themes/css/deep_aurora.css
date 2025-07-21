@@ -12,7 +12,7 @@ body {
 .selectbox__content,
 .modal__content,
 .extensions {
-    background: rgba(30, 60, 107, 1);
+    background: rgba(25, 51, 91, 1);
 }
 
 @media screen and (min-width: 481px) {
