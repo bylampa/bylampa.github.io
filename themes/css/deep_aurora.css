@@ -1,6 +1,6 @@
 body {
    /* background-color: #1d1f20;*/
-    background-color: rgba(18, 34, 59);
+    background-color: rgba(18, 34, 59, 1);
     color: #fff;
 }
 
@@ -12,7 +12,7 @@ body {
 .selectbox__content,
 .modal__content,
 .extensions {
-    background: rgba(30, 60, 107);
+    background: rgba(30, 60, 107, 1);
 }
 
 @media screen and (min-width: 481px) {
