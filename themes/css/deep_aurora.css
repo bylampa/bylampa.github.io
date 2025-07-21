@@ -1,7 +1,8 @@
-/*body {
-    background-color: #1d1f20;
+body {
+   /* background-color: #1d1f20;*/
+    background-color: rgba(18, 34, 59, 0.96);
     color: #fff;
-}*/
+}
 
 @media screen and (min-width: 481px) {
   .settings__content {
