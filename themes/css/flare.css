@@ -14,7 +14,7 @@
   .settings__content {
     top: 1em;                  /* отступ сверху */
     left: 98%;                /* сброс левого отступа */
-    max-height: calc(100vh - 2em); /* ограничение высоты */
+    max-height: calc(100vh - 1.5em); /* ограничение высоты */
     overflow-y: auto;          /* скролл, если нужно */
     border-radius: 1.2em;        /* скругление углов */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
@@ -27,7 +27,7 @@
   .selectbox__content {
     top: 1em;                  /* отступ сверху */
     left: 98%;                /* сброс левого отступа */
-    max-height: calc(100vh - 2em); /* ограничение высоты */
+    max-height: calc(100vh - 1.5em); /* ограничение высоты */
     overflow-y: auto;          /* скролл, если нужно */
     border-radius: 1.2em;        /* скругление углов */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); /* тень */
@@ -241,6 +241,9 @@
   .noty {
     background: radial-gradient(circle, #ffff00, #ff0000);
     color: #000;
+    border-radius: 1.2em 1.2em 0 0;
+   /* bottom: 1.2em;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);*/
   }
   
  /* body.glass--style .selectbox-item.focus,
