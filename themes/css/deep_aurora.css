@@ -164,11 +164,11 @@ body {
 }
 
 .simple-button--filter > div {
-       background-color: rgba(255,255,255,0.4);
+       background-color: rgba(255,255,255,0.3);
 }
 
 .explorer__files .torrent-filter .simple-button:not(.focus) {
-       background-color: rgba(0,0,0,0.3);
+       background-color: rgba(0,0,0,0.2);
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
