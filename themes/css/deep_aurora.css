@@ -16,8 +16,7 @@ body {
 }
 
 .torrent-serial.focus {
-   /* background-color: rgba(126, 126, 217, 1);*/
-    background-color: radial-gradient(circle, #2c6fc1, #7e7ed9);
+    background-color: rgba(126, 126, 217, 0.5);
 }
 
 @media screen and (min-width: 481px) {
@@ -165,7 +164,7 @@ body {
 }
 
 .simple-button--filter > div {
-       background-color: rgba(255,255,255,0.8);
+       background-color: rgba(0,0,0,0.4);
 }
 
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
