@@ -18,7 +18,7 @@ body {
 .torrent-serial.focus {
   /*  background-color: rgba(126, 126, 217, 0.4);*/
   /*  background-color: rgba(255,255,255,0.15);*/
-   background-color: #6b6b6b;
+   background-color: #5d5d5d;
 }
 
 @media screen and (min-width: 481px) {
