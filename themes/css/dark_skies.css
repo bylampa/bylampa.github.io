@@ -151,6 +151,10 @@
        background-color: rgba(255,255,255,0.4);
 }
 
+.explorer__files .torrent-filter .simple-button:not(.focus) {
+       background-color: rgba(0,0,0,0.2);
+}
+
 .iptv-playlist-item.focus::after, .iptv-playlist-item.hover::after {
     border-color: #3a5d7b !important;
     box-shadow: 0 0 5px rgba(75, 121, 161, 1), 0 0 10px rgba(75, 121, 161, 0.5);
