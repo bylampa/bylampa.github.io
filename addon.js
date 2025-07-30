@@ -284,8 +284,10 @@ function focus_back() {
                 // Учитываем, что nth-child принимает 1-based индекс
                 var nthChild = index + 1;
 		var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChild + ")")
-                Lampa.Controller.focus(F);
-                Lampa.Controller.toggle('settings_component');
+                setTimeout(function() {
+	           Lampa.Controller.focus(F);
+                   Lampa.Controller.toggle('settings_component');
+		}, 2000);
 }
 	
 /* Компонент */
@@ -1015,9 +1017,6 @@ Lampa.SettingsApi.addComponent({
 					onChange: function(value) {
 						if (value == '1') {
 						       itemON('https://bylampa.github.io/source.js', 'Дополнительные Источники', '@scabrum', 'New_source');
-							setTimeout(function() {
-						           focus_back();
-							}, 2000);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/source.js";
@@ -1128,6 +1127,7 @@ Lampa.SettingsApi.addComponent({
 						onChange: function(value) {
 							if (value == '1') {
 								itemON('https://bazzzilius.github.io/scripts/gold_theme.js', 'Золотая Тема', '@BazZziliuS', 'goldtheme');
+							focus_back();
 							}
 							if (value == '2') {
 								var pluginToRemoveUrl = "https://bazzzilius.github.io/scripts/gold_theme.js";
