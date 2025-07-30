@@ -233,6 +233,19 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	          setTimeout(function() {
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
+			var targetElement = event.target; // Здесь мы берем объект события
+
+                // Находим родительский элемент
+                var parentElement = targetElement.parentElement;
+
+                // Получаем список всех дочерних элементов
+                var children = Array.from(parentElement.children);
+
+                // Находим индекс (0-based) текущего элемента
+                var index = children.indexOf(targetElement);
+
+                // Учитываем, что nth-child принимает 1-based индекс
+                var nthChild = index + 1;
 			var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChild + ")")
                         Lampa.Controller.focus(F);
                         Lampa.Controller.toggle('settings_component');
