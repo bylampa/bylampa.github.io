@@ -287,7 +287,8 @@ function focus_back() {
                 setTimeout(function() {
 	           Lampa.Controller.focus(F);
                    Lampa.Controller.toggle('settings_component');
-		}, 2000);
+		   console.log("Установлен фокус на элемент:", F.outerHTML);
+		}, 3000);
 }
 	
 /* Компонент */
