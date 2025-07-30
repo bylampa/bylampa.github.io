@@ -233,22 +233,6 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	          setTimeout(function() {
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
-			var targetElement = event.target; // Здесь мы берем объект события
-
-                // Находим родительский элемент
-                var parentElement = targetElement.parentElement;
-
-                // Получаем список всех дочерних элементов
-                var children = Array.from(parentElement.children);
-
-                // Находим индекс (0-based) текущего элемента
-                var index = children.indexOf(targetElement);
-
-                // Учитываем, что nth-child принимает 1-based индекс
-                var nthChild = index + 1;
-			var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChild + ")")
-                        Lampa.Controller.focus(F);
-                        Lampa.Controller.toggle('settings_component');
 		  }, 1500);
 // Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	  // Lampa.Storage.set('needRebootSettingExit', true);
@@ -284,6 +268,25 @@ function checkPlugin(pluginToCheck) {
 	console.log('search', 'pluginToCheck: ' + pluginToCheck);
 	if (JSON.stringify(checkResult) !== '[]') {return true} else {return false}
 };
+
+function focus_back() {
+	       var targetElement = event.target; // Здесь мы берем объект события
+
+                // Находим родительский элемент
+                var parentElement = targetElement.parentElement;
+
+                // Получаем список всех дочерних элементов
+                var children = Array.from(parentElement.children);
+
+                // Находим индекс (0-based) текущего элемента
+                var index = children.indexOf(targetElement);
+
+                // Учитываем, что nth-child принимает 1-based индекс
+                var nthChild = index + 1;
+		var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChild + ")")
+                Lampa.Controller.focus(F);
+                Lampa.Controller.toggle('settings_component');
+}
 	
 /* Компонент */
 Lampa.SettingsApi.addComponent({
@@ -1012,6 +1015,7 @@ Lampa.SettingsApi.addComponent({
 					onChange: function(value) {
 						if (value == '1') {
 						       itemON('https://bylampa.github.io/source.js', 'Дополнительные Источники', '@scabrum', 'New_source');
+						       focus_back();
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/source.js";
