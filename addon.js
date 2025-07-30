@@ -1136,6 +1136,7 @@ Lampa.SettingsApi.addComponent({
 						},
 						onRender: function (item) {
 						item.on("hover:enter", function (event) {
+							console.log("hover:enter сработал");
 							focus_back();
 						});
 						$('.settings-param__name', item).css('color','f3d900'); hideInstall()
