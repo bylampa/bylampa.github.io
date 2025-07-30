@@ -231,7 +231,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 		}, 300);*/
 	        showLoadingBar();
 	          setTimeout(function() {
-			Lampa.Settings.update();
+			//Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		  }, 1500);
 // Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
