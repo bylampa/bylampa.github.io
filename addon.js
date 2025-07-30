@@ -231,8 +231,11 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 		}, 300);*/
 	        showLoadingBar();
 	          setTimeout(function() {
-			//Lampa.Settings.update();
+			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
+			var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChild + ")")
+                        Lampa.Controller.focus(F);
+                        Lampa.Controller.toggle('settings_component');
 		  }, 1500);
 // Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	  // Lampa.Storage.set('needRebootSettingExit', true);
