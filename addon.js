@@ -1015,7 +1015,9 @@ Lampa.SettingsApi.addComponent({
 					onChange: function(value) {
 						if (value == '1') {
 						       itemON('https://bylampa.github.io/source.js', 'Дополнительные Источники', '@scabrum', 'New_source');
-						       focus_back();
+							setTimeout(function() {
+						           focus_back();
+							}, 2000);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/source.js";
