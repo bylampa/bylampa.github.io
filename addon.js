@@ -243,7 +243,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
                         Lampa.Controller.toggle('settings_component');
                        // console.log("Установлен фокус на элемент:", F.outerHTML);
                     } else {
-                       // console.error("Ошибка: Элемент с индексом nth-child " + nthChildIndex + " не найден.");
+                        console.error("Ошибка: Элемент с индексом nth-child " + nthChildIndex + " не найден.");
                     }
                   }, 2000);
 // Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
@@ -273,7 +273,7 @@ function deletePlugin(pluginToRemoveUrl) {
                         Lampa.Controller.toggle('settings_component');
                        // console.log("Установлен фокус на элемент:", F.outerHTML);
                     } else {
-                       // console.error("Ошибка: Элемент с индексом nth-child " + nthChildIndex + " не найден.");
+                        console.error("Ошибка: Элемент с индексом nth-child " + nthChildIndex + " не найден.");
                     }
          }, 2000);
 	/*Lampa.Settings.update();
