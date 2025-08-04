@@ -3083,11 +3083,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://tsynik.github.io/lampa/e.js', 'Выход', '@tsynik', 'Exit_Menu');
+							itemON('https://tsynik.github.io/lampa/e.js', 'Выход', '@tsynik', 'Exit_Menu', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/e.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3119,6 +3121,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Exit_Menu"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
        
@@ -3195,11 +3200,13 @@ Lampa.SettingsApi.addComponent({
                             		},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nnmdd.github.io/lampa_hotkeys/hotkeys.js', 'Горячие Кнопки', '@nnmd', 'Hot_Buttons');
+							itemON('https://nnmdd.github.io/lampa_hotkeys/hotkeys.js', 'Горячие Кнопки', '@nnmd', 'Hot_Buttons', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nnmdd.github.io/lampa_hotkeys/hotkeys.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3231,6 +3238,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Hot_Buttons"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
        
@@ -3251,11 +3261,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/dlna.js', 'DLNA', '@lampa', 'DLNA');
+							itemON('https://bylampa.github.io/dlna.js', 'DLNA', '@lampa', 'DLNA', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/dlna.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3287,6 +3299,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="DLNA"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -3306,11 +3321,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://nemiroff.github.io/lampa/select_weapon.js', 'Тип Управления', '@nemiroff', 'Select_Weapon');
+						       itemON('https://nemiroff.github.io/lampa/select_weapon.js', 'Тип Управления', '@nemiroff', 'Select_Weapon', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/select_weapon.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3342,6 +3359,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Select_Weapon"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -3361,11 +3381,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://nb557.github.io/plugins/not_mobile.js', 'Выключение Тача', '@t_anton', 'Touch_off');
+						       itemON('https://nb557.github.io/plugins/not_mobile.js', 'Выключение Тача', '@t_anton', 'Touch_off', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/not_mobile.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3397,6 +3419,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Touch_off"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -3416,11 +3441,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('http://plugin.rootu.top/wsoff.js', 'Wsoff', '@rootu', 'Wsoff');
+						       itemON('http://plugin.rootu.top/wsoff.js', 'Wsoff', '@rootu', 'Wsoff', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://plugin.rootu.top/wsoff.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3452,6 +3479,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Wsoff"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -3471,11 +3501,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/redirect.js', 'Смена Сервера', '@scabrum', 'Redirect');
+						       itemON('https://bylampa.github.io/redirect.js', 'Смена Сервера', '@scabrum', 'Redirect', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/redirect.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3507,6 +3539,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	       /* Lampa.SettingsApi.addParam({
@@ -3582,11 +3617,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://193.233.134.21/plugins/setprotect', 'Доступ к настройкам', '@AndreyURL54', 'setprotect');
+							itemON('http://193.233.134.21/plugins/setprotect', 'Доступ к настройкам', '@AndreyURL54', 'setprotect', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://193.233.134.21/plugins/setprotect";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}	
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
@@ -3618,6 +3655,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="setprotect"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -3638,11 +3678,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://193.233.134.21/plugins/menusort', 'Сортировка Главного Меню', '@AndreyURL54', 'Sort_mainmenu');
+							itemON('http://193.233.134.21/plugins/menusort', 'Сортировка Главного Меню', '@AndreyURL54', 'Sort_mainmenu', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://193.233.134.21/plugins/menusort";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}	
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
@@ -3674,6 +3716,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Sort_mainmenu"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -3694,11 +3739,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://apxubatop.github.io/lmpPlugs/tvbuttontst.js', 'Бинд Кнопок', '@Juri_Z', 'bind_but');
+							itemON('https://apxubatop.github.io/lmpPlugs/tvbuttontst.js', 'Бинд Кнопок', '@Juri_Z', 'bind_but', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://apxubatop.github.io/lmpPlugs/tvbuttontst.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}	
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
@@ -3730,6 +3777,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="bind_but"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -3750,11 +3800,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/account.js', 'Аккаунт', '@bylampa', 'acc_bylampa');
+						       itemON('https://bylampa.github.io/account.js', 'Аккаунт', '@bylampa', 'acc_bylampa', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/account.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3786,6 +3838,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="acc_bylampa"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -3806,11 +3861,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://lampame.github.io/main/infuseSave.js', 'Infuse Save', '@lme', 'infuse_save');
+						       itemON('https://lampame.github.io/main/infuseSave.js', 'Infuse Save', '@lme', 'infuse_save', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://lampame.github.io/main/infuseSave.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3842,6 +3899,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="infuse_save"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -3862,11 +3922,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/cub_sync.js', 'CUB Sync', '@levende', 'cub_sync');
+						       itemON('https://bylampa.github.io/cub_sync.js', 'CUB Sync', '@levende', 'cub_sync', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/cub_sync.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -3898,6 +3960,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="cub_sync"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	
@@ -4020,11 +4085,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton', 'Online_Mod');
+							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton', 'Online_Mod', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/online_mod.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4056,6 +4123,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
         });
         
@@ -4076,11 +4146,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bwa.to/plugins/prestige.js', 'Онлайн Filmix', '@rik', 'Онлайн_Prestige');
+							itemON('https://bwa.to/plugins/prestige.js', 'Онлайн Filmix', '@rik', 'Онлайн_Prestige', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bwa.to/plugins/prestige.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
                },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4111,7 +4183,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);		   
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
         });
         
@@ -4132,11 +4207,13 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('https://bylampa.github.io/cinema.js', 'Онлайн Cinema', '@cinema', 'online_cinema');
+						itemON('https://bylampa.github.io/cinema.js', 'Онлайн Cinema', '@cinema', 'online_cinema', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "https://bylampa.github.io/cinema.js";
-						deletePlugin(pluginToRemoveUrl);
+						deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4167,7 +4244,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="online_cinema"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -4187,11 +4267,13 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://bwa.to/cloud.js', 'Онлайн BWA Cloud', '@rik', 'Онлайн_BWA_Cloud');
+						itemON('http://bwa.to/cloud.js', 'Онлайн BWA Cloud', '@rik', 'Онлайн_BWA_Cloud', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://bwa.to/cloud.js";
-						deletePlugin(pluginToRemoveUrl);
+						deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4223,6 +4305,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -4242,11 +4327,13 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://showwwy.com/m.js', 'Showy', '@showy', 'Showy');
+						itemON('http://showwwy.com/m.js', 'Showy', '@showy', 'Showy', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://showwwy.com/m.js";
-						deletePlugin(pluginToRemoveUrl);
+						deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4278,6 +4365,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -4298,11 +4388,13 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://smotret24.ru/online.js', 'Смотреть RU', '@showy', 'smotret_ru');
+						itemON('http://smotret24.ru/online.js', 'Смотреть RU', '@showy', 'smotret_ru', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://smotret24.ru/online.js";
-						deletePlugin(pluginToRemoveUrl);
+						deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4333,7 +4425,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="smotret_ru"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -4354,11 +4449,13 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://smotret24.com/online.js', 'Смотреть EU', '@showy', 'smotret_eu');
+						itemON('http://smotret24.com/online.js', 'Смотреть EU', '@showy', 'smotret_eu', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://smotret24.com/online.js";
-						deletePlugin(pluginToRemoveUrl);
+						deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4390,6 +4487,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="smotret_eu"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+					            item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -4410,11 +4510,13 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://smotretk.com/online.js', 'Смотреть 4K', '@showy', 'smotret_4k');
+						itemON('http://smotretk.com/online.js', 'Смотреть 4K', '@showy', 'smotret_4k', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://smotretk.com/online.js";
-						deletePlugin(pluginToRemoveUrl);
+						deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
                 },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4445,7 +4547,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="smotret_4k"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	
@@ -4568,11 +4673,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/jackett.js', 'Переключение Парсеров', '@AndreyURL54', 'Switch_Parser');
+							itemON('https://bylampa.github.io/jackett.js', 'Переключение Парсеров', '@AndreyURL54', 'Switch_Parser', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/jackett.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4604,6 +4711,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
          
@@ -4624,11 +4734,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/tracks.js', 'Tracks', '@lampa', 'Tracks');
+							itemON('https://bylampa.github.io/tracks.js', 'Tracks', '@lampa', 'Tracks', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/tracks.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4659,7 +4771,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -4680,11 +4795,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/etor.js', 'Настройка Торрентов', '@lampa', 'Setting_torrents');
+							itemON('https://bylampa.github.io/etor.js', 'Настройка Торрентов', '@lampa', 'Setting_torrents', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/etor.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4715,7 +4832,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -4735,11 +4855,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://193.233.134.21/plugins/checker.js', 'Поиск Локального TorrServera', '@AndreyURL54', 'Check_server');
+							itemON('http://193.233.134.21/plugins/checker.js', 'Поиск Локального TorrServera', '@AndreyURL54', 'Check_server', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://193.233.134.21/plugins/checker.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4771,6 +4893,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	         Lampa.SettingsApi.addParam({
@@ -4790,11 +4915,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://lampame.github.io/main/torrentmanager/torrentmanager.js', 'Закачка Торрентов', '@feliks', 'Torr_download');
+							itemON('https://lampame.github.io/main/torrentmanager/torrentmanager.js', 'Закачка Торрентов', '@feliks', 'Torr_download', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://lampame.github.io/main/torrentmanager/torrentmanager.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4826,6 +4953,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -4845,11 +4975,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://github.freebie.tom.ru/torrents.js', 'Вторая Кнопка Торренты', '@VitalikPVA', 'second_but_torrents');
+							itemON('https://github.freebie.tom.ru/torrents.js', 'Вторая Кнопка Торренты', '@VitalikPVA', 'second_but_torrents', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://github.freebie.tom.ru/torrents.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4881,6 +5013,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -4900,11 +5035,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/freetorr.js', 'Free Torrserver', '@scabrum', 'free_torr');
+							itemON('https://bylampa.github.io/freetorr.js', 'Free Torrserver', '@scabrum', 'free_torr', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/freetorr.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4935,7 +5072,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -4956,11 +5096,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://plugin.rootu.top/ts-preload.js', 'Визуализация Загрузки TS', '@rootu', 'visual_ts');
+							itemON('https://plugin.rootu.top/ts-preload.js', 'Визуализация Загрузки TS', '@rootu', 'visual_ts', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://plugin.rootu.top/ts-preload.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
                                                 }
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -4991,7 +5133,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="visual_ts"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	/*
@@ -5058,11 +5203,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://andreyurl54.github.io/diesel5/diesel.js', 'Дизель ТВ', '@AndreyURL54', 'Diesel');
+							itemON('https://andreyurl54.github.io/diesel5/diesel.js', 'Дизель ТВ', '@AndreyURL54', 'Diesel', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/diesel.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5093,7 +5240,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 		
@@ -5114,11 +5264,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cdn.kulik.uz/cors', 'Kulik TV', '@SawamuraRen', 'Kulik');
+							itemON('http://cdn.kulik.uz/cors', 'Kulik TV', '@SawamuraRen', 'Kulik', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cdn.kulik.uz/cors";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5149,7 +5301,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -5170,11 +5325,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.red/plugin/iptv', 'IPTV', '@lampa', 'IPTV');
+							itemON('http://cub.red/plugin/iptv', 'IPTV', '@lampa', 'IPTV', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.red/plugin/iptv";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5205,7 +5362,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -5225,11 +5385,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/tv.js', 'Hack TV', '@scabrum', 'Hack_TV');
+							itemON('https://bylampa.github.io/tv.js', 'Hack TV', '@scabrum', 'Hack_TV', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bylampa.github.io/tv.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5261,6 +5423,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	       /* Lampa.SettingsApi.addParam({
@@ -5428,11 +5593,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.red/plugin/radio', 'Радио Record', '@lampa', 'Record');
+							itemON('http://cub.red/plugin/radio', 'Радио Record', '@lampa', 'Record', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.red/plugin/radio";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5464,6 +5631,9 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Record"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 		
@@ -5484,11 +5654,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-							itemON('https://lampame.github.io/main/rradio.js', 'Радио Record Mod', '@GwynnBleiidd', 'Record_Mod');
+							itemON('https://lampame.github.io/main/rradio.js', 'Радио Record Mod', '@GwynnBleiidd', 'Record_Mod', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
                      				}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://lampame.github.io/main/rradio.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
                                         },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5519,7 +5691,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
@@ -5540,11 +5715,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-							itemON('https://tsynik.github.io/lampa/soma.js', 'Радио SomaFM', '@tsynik', 'Radio_Soma');
+							itemON('https://tsynik.github.io/lampa/soma.js', 'Радио SomaFM', '@tsynik', 'Radio_Soma', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
                      				}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/soma.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
                                         },
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5575,7 +5752,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Radio_Soma"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	       /* Lampa.SettingsApi.addParam({
@@ -5641,11 +5821,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bwa.to/s', 'Клубничка', '@rik', 'Sisi');
+							itemON('https://bwa.to/s', 'Клубничка', '@rik', 'Sisi', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://bwa.to/s";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5676,7 +5858,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 	        Lampa.SettingsApi.addParam({
@@ -5696,11 +5881,13 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://bwa-cloud.cfhttp.top/sisi.js', 'Клубничка (Bwa Cloud)', '@rik', 'Nyam');
+							itemON('http://bwa-cloud.cfhttp.top/sisi.js', 'Клубничка (Bwa Cloud)', '@rik', 'Nyam', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://bwa-cloud.cfhttp.top/sisi.js";
-							deletePlugin(pluginToRemoveUrl);
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
@@ -5731,7 +5918,10 @@ Lampa.SettingsApi.addComponent({
                                                        } else {
                                                           $('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
-                                                    }, 100);	
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
 					}
 		});
 
