@@ -3055,7 +3055,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/trailer_off');
+						var myResult = checkPlugin('https://bylampa.github.io/trailer_off.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="tr_off"]').append('<div class="settings-param__status one"></div>');
