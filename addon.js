@@ -3966,7 +3966,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
-	        Lampa.SettingsApi.addParam({
+	     /*   Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
 					param: {
 						name: 'acc_bylampa',
@@ -4002,7 +4002,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/account.js');
+						/*var myResult = checkPlugin('https://bylampa.github.io/account.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="acc_bylampa"]').append('<div class="settings-param__status one"></div>');
@@ -4025,7 +4025,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
+		});*/
 
                 Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
