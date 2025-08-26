@@ -3144,7 +3144,7 @@ Lampa.SettingsApi.addComponent({
 	    Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
 					param: {
-						name: 'asia_card_off',
+						name: 'filter_content',
 						type: 'select',
 						values: {
 							1:	'Установить',
@@ -3153,16 +3153,16 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 						},
 					field: {
-						name: 'Asia cards off',
-						description: 'Плагин убирает на главной странице карточки с азиатским контентом'
+						name: 'Фильтр контента',
+						description: 'Плагин позволяет фильтровать вывод карточек в приложении через настройки в разделе интерфейс - пункт Фильтр контента'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/asia_card_off.js', 'Asia Cards Off', '@bylampa', 'asia_card_off', nthChildIndex);
+						       itemON('https://bylampa.github.io/filter_content.js', 'Фильтр Контента', '@bylampa', 'filter_content', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/asia_card_off.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/filter_content.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -3177,23 +3177,23 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/asia_card_off.js');
+						var myResult = checkPlugin('https://bylampa.github.io/filter_content.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
-                                                       $('div[data-name="asia_card_off"]').append('<div class="settings-param__status one"></div>');
+                                                       $('div[data-name="filter_content"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/asia_card_off.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/filter_content.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
                                                        }
                                                        if (myResult && pluginStatus !== 0) {
-                                                          $('div[data-name="asia_card_off"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                          $('div[data-name="filter_content"]').find('.settings-param__status').removeClass('active error').addClass('active');
                                                        } else if (pluginStatus === 0) {
-                                                          $('div[data-name="asia_card_off"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                          $('div[data-name="filter_content"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
-                                                          $('div[data-name="asia_card_off"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                          $('div[data-name="filter_content"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
 						    item.on("hover:enter", function (event) {
