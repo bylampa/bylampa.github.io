@@ -3201,6 +3201,67 @@ Lampa.SettingsApi.addComponent({
 						    });
 					}
 		});
+
+	    Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'rate_on_main',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Источник рейтинга',
+						description: 'Плагин меняет источник рейтинга на главной странице через настройки интерфейса'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/rate_on_main.js', 'Источник Рейтинга', '@bylampa', 'rate_on_main', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/rate_on_main.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/rate_on_main.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="rate_on_main"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/rate_on_main.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="rate_on_main"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="rate_on_main"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="rate_on_main"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
@@ -4202,6 +4263,67 @@ Lampa.SettingsApi.addComponent({
                                                           $('div[data-name="Reload"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
                                                           $('div[data-name="Reload"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
+
+	    Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'sort_main_menu',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Sort main menu',
+                                    		description: 'Еще один плагин для сортировки главного меню'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/sort_main_menu.js', 'Sort Main Menu', '@bylampa', 'sort_main_menu', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/sort_main_menu.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('https://bylampa.github.io/redirect.js')
+						setTimeout(function() {	
+							$('div[data-name="Redirect"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/sort_main_menu.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="sort_main_menu"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/sort_main_menu.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="sort_main_menu"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="sort_main_menu"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="sort_main_menu"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
 						    item.on("hover:enter", function (event) {
