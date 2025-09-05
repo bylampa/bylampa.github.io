@@ -4284,7 +4284,7 @@ Lampa.SettingsApi.addComponent({
 						},
 					field: {
                                     		name: 'Sort main menu',
-                                    		description: 'Еще один плагин для сортировки главного меню'
+                                    		description: 'Еще один плагин для сортировки главного меню. Настройки находятся в разделе интерфейс, пункт - Управление главным меню'
 					},
 					onChange: function(value) {
 						if (value == '1') {
