@@ -4616,7 +4616,7 @@ Lampa.SettingsApi.addComponent({
 						    });
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	        /*Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                                			name: 'Онлайн_BWA_Cloud',
@@ -4652,7 +4652,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://bwa.to/cloud.js');
+						/*var myResult = checkPlugin('http://bwa.to/cloud.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>');
@@ -4675,7 +4675,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
+		});*/
 	        Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
@@ -6170,7 +6170,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 		
-		Lampa.SettingsApi.addParam({
+		/*Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
 					param: {
 						name: 'Sisi',
@@ -6206,7 +6206,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bwa.to/s');
+						/*var myResult = checkPlugin('https://bwa.to/s');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Sisi"]').append('<div class="settings-param__status one"></div>');
@@ -6229,8 +6229,8 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
-	        Lampa.SettingsApi.addParam({
+		});*/
+	      /*  Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
 					param: {
 						name: 'Nyam',
@@ -6266,7 +6266,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js');
+						/*var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>');
@@ -6289,7 +6289,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
+		});*/
 
                 /*Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
