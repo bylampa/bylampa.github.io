@@ -3,7 +3,8 @@
 
     var network = new Lampa.Reguest();
 
-    var cubUrl = 'https://' + Lampa.Storage.get('cub_domain', 'cub.rip');
+//    var cubUrl = 'https://' + Lampa.Storage.get('cub_domain', 'cub.rip');
+    var cubUrl = 'http://' + Lampa.Storage.get('cub_domain', 'cubfix.fun');
     var cubApiUrl = cubUrl + '/api/';
 
     function convertToFavorite(cubBookmarksResponse) {
