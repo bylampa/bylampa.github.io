@@ -6315,7 +6315,7 @@ Lampa.SettingsApi.addComponent({
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
-					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();*/
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
 						/*var myResult = checkPlugin('http://bwa-cloud.cfhttp.top/sisi.js')
 						setTimeout(function() {	
 							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
