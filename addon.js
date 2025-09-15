@@ -6291,7 +6291,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});*/
 
-                /*Lampa.SettingsApi.addParam({
+                Lampa.SettingsApi.addParam({
 					component: 'add_sisi_plugin',
 					param: {
 						name: 'sisi_durex',
@@ -6303,15 +6303,15 @@ Lampa.SettingsApi.addComponent({
 						//default: '1',
 					},
 					field: {
-						name: 'Клубничка Durex',
-						description: 'Замена Клубнички BWA'
+						name: 'Клубничка',
+						description: 'Плагин для просмотра контента 18+'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://durex.monster/sisi.js', 'Клубничка Durex', '@rik', 'sisi_durex');
+							itemON('https://bylampa.github.io/sisi.js', 'Клубничка', '@rik', 'sisi_durex');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://durex.monster/sisi.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/sisi.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -6325,13 +6325,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						/*var myResult = checkPlugin('http://durex.monster/sisi.js');
+						var myResult = checkPlugin('https://bylampa.github.io/sisi.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="sisi_durex"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://durex.monster/sisi.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/sisi.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
@@ -6345,7 +6345,7 @@ Lampa.SettingsApi.addComponent({
                                                        }
                                                     }, 100);	
 					}
-		});*/
+		});
 	
 	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
