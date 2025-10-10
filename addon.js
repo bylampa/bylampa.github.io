@@ -4512,11 +4512,11 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bwa.to/plugins/prestige.js', 'Онлайн Filmix', '@rik', 'Онлайн_Prestige', nthChildIndex);
+							itemON('https://bylampa.github.io/fx.js', 'Онлайн Filmix', '@rik', 'Онлайн_Prestige', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bwa.to/plugins/prestige.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/fx.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -4531,13 +4531,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bwa.to/plugins/prestige.js');
+						var myResult = checkPlugin('https://bylampa.github.io/fx.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Онлайн_Prestige"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://bwa.to/plugins/prestige.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/fx.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
