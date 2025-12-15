@@ -184,6 +184,10 @@
     color: #000;
 }
 
+.watched-history.focus::after {
+    border: solid 0.3em #519D9E;
+}
+
 .broadcast__scan > div,
 .broadcast__device.focus {
     background-color: #519D9E;
