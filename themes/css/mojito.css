@@ -42,11 +42,11 @@
 .selectbox-item--checked.focus .selectbox-item__checkbox::after {
     border-right: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
-    display: block;
-    position: absolute;
-    top: 0em;
-    right: 0.25em;
-    content: "";
+    display: block !important;
+    position: absolute !important;
+    top: 0em !important;
+    right: 0.25em !important;
+    content: "" !important;
 }
 
 .selectbox-item.selected.focus:not(.nomark)::after {
