@@ -39,14 +39,9 @@
    border-color: #000;
 }   
 
-.selectbox-item--checked.focus .selectbox-item__checkbox::after {
+.selectbox-item--checked.focus .selectbox-item__checkbox {
     border-right: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
-    display: block !important;
-    position: absolute !important;
-    top: 0em !important;
-    right: 0.25em !important;
-    content: "" !important;
 }
 
 .selectbox-item.selected.focus:not(.nomark)::after {
