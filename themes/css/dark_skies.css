@@ -160,6 +160,7 @@
     box-shadow: 0 0 5px rgba(75, 121, 161, 1), 0 0 10px rgba(75, 121, 161, 0.5);
 }
 
+.watched-history.focus::after,
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
 .card-episode.focus .full-episode::after,
 .register.focus::after,
