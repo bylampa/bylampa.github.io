@@ -160,6 +160,7 @@
     box-shadow: 0 0 5px rgba(78, 205, 196, 1), 0 0 10px rgba(78, 205, 196, 0.5);
 }
 
+.watched-history.focus::after,
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
 .card-episode.focus .full-episode::after,
 .register.focus::after,
@@ -182,10 +183,6 @@
 .torrent-serial__size {
     background-color: #fff;
     color: #000;
-}
-
-.watched-history.focus::after {
-    border: solid 0.3em #519D9E;
 }
 
 .broadcast__scan > div,
