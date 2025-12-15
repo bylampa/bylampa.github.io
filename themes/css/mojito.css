@@ -43,6 +43,7 @@
     border-right: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
     display: block;
+    position: absolute;
 }
 
 .selectbox-item.selected.focus:not(.nomark)::after {
