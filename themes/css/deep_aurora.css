@@ -1,6 +1,6 @@
 body {
    /* background-color: #1d1f20;*/
-    background-color: rgba(18, 34, 59, 1);
+    background-color: rgba(18, 34, 59, 1) !important;
     color: #fff;
 }
 
