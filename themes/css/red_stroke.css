@@ -120,6 +120,7 @@
     border-color: #e40c2b !important;
 }
 
+.watched-history.focus::after,
 .ad-bot.focus .ad-bot__content::after, .ad-bot.hover .ad-bot__content::after,
 .card-episode.focus .full-episode::after,
 .register.focus::after,
