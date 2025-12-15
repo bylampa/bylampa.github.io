@@ -39,7 +39,7 @@
    border-color: #000;
 }   
 
-.selectbox-item--checked.focus .selectbox-item__checkbox {
+.selectbox-item--checked.focus .selectbox-item__checkbox::after {
     border-right: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
 }
