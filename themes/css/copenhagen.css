@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #3b2b35;
+    background-color: #3b2b35 !important;
     color: #fff;
 }
 
