@@ -557,17 +557,17 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton', 'Rating', nthChildIndex);
+							itemON('https://bylampa.github.io/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton', 'Rating', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://nb557.github.io/plugins/rating.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/rating.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
-						/*var myResult = checkPlugin('https://nb557.github.io/plugins/rating.js')
+						/*var myResult = checkPlugin('https://bylampa.github.io/rating.js')
 						setTimeout(function() {	
 							$('div[data-name="Rating"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
@@ -576,13 +576,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://nb557.github.io/plugins/rating.js');
+						var myResult = checkPlugin('https://bylampa.github.io/rating.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Rating"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://nb557.github.io/plugins/rating.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/rating.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
