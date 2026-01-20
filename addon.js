@@ -3426,7 +3426,7 @@ Lampa.SettingsApi.addComponent({
 						var myResult = checkPlugin('https://bylampa.github.io/time2end.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
-                                                       $('div[data-name="animated_reaction"]').append('<div class="settings-param__status one"></div>');
+                                                       $('div[data-name="time2end"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
                                                           if (pluginsArray[i].url === 'https://bylampa.github.io/time2end.js') {
@@ -4521,7 +4521,7 @@ Lampa.SettingsApi.addComponent({
 	    Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
 					param: {
-						name: 'Speedtest',
+						name: 'speedtest',
 						type: 'select',
 						values: {
 							1:	'Установить',
@@ -4530,7 +4530,7 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 						},
 					field: {
-						name: 'speedtest',
+						name: 'Speedtest',
 						description: 'Плагин создает в верхнем баре кнопку для измерения скорости интернета'
 					},
 					onChange: function(value) {
