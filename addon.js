@@ -3325,6 +3325,129 @@ Lampa.SettingsApi.addComponent({
 						    });
 					}
 		});
+
+        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'animated_reaction',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Анимированные реакции',
+						description: 'Плагин анимирует реакции от CUB'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/animated_reaction.js', 'Анимированные Реакции', '@AndreyURL54', 'animated_reaction', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/animated_reaction.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/animated_reaction.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="animated_reaction"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/animated_reaction.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="animated_reaction"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="animated_reaction"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="animated_reaction"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
+
+	    Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'time2end',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Time2end',
+						description: 'Плагин отображения времени окончания фильма во встроенном плеере Lampa'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/time2end.js', 'Time2End', '@AndreyURL54', 'time2end', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/time2end.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/time2end.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="animated_reaction"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/time2end.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="time2end"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="time2end"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="time2end"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
+	
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
@@ -4394,6 +4517,67 @@ Lampa.SettingsApi.addComponent({
 						    });
 					}
 		});
+
+	    Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Speedtest',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'speedtest',
+						description: 'Плагин создает в верхнем баре кнопку для измерения скорости интернета'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bylampa.github.io/speedtest.js', 'Speedtest', '@AndreyURL54', 'speedtest', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/speedtest.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}	
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
+						/*var myResult = checkPlugin('http://193.233.134.21/plugins/setprotect')
+						setTimeout(function() {	
+							$('div[data-name="setprotect"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="setprotect"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="setprotect"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/speedtest.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="speedtest"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/speedtest.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="speedtest"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="speedtest"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="speedtest"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
@@ -4619,7 +4803,7 @@ Lampa.SettingsApi.addComponent({
 					}
         });
         
-		Lampa.SettingsApi.addParam({
+		/*Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                                			name: 'online_cinema',
@@ -4655,7 +4839,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/cinema.js');
+						/*var myResult = checkPlugin('https://bylampa.github.io/cinema.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="online_cinema"]').append('<div class="settings-param__status one"></div>');
@@ -4678,7 +4862,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
+		});*/
 	        /*Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
@@ -4800,7 +4984,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
-                Lampa.SettingsApi.addParam({
+              /*  Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                                			name: 'smotret_ru',
@@ -4836,7 +5020,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Showy"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://smotret24.ru/online.js');
+						/*var myResult = checkPlugin('http://smotret24.ru/online.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="smotret_ru"]').append('<div class="settings-param__status one"></div>');
@@ -4859,7 +5043,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
+		});*/
 
 	        Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
@@ -5039,7 +5223,7 @@ Lampa.SettingsApi.addComponent({
 					}
 		});*/
 
-	     Lampa.SettingsApi.addParam({
+	    /* Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                                 		name: 'free_onl',
@@ -5075,7 +5259,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/free_onl.js');
+						/*var myResult = checkPlugin('https://bylampa.github.io/free_onl.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="free_onl"]').append('<div class="settings-param__status one"></div>');
@@ -5098,7 +5282,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-        });
+        });*/
 	
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
