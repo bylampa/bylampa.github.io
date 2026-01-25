@@ -4698,11 +4698,11 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton', 'Online_Mod', nthChildIndex);
+							itemON('https://bylampa.github.io/online_mod.js', 'Online Mod', '@t_anton', 'Online_Mod', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://nb557.github.io/plugins/online_mod.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/online_mod.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -4717,13 +4717,13 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://nb557.github.io/plugins/online_mod.js');
+						var myResult = checkPlugin('https://bylampa.github.io/online_mod.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Online_Mod"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://nb557.github.io/plugins/online_mod.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/online_mod.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
