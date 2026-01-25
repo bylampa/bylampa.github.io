@@ -76,12 +76,7 @@
     }
 
     function isDebug3() {
-      var res = false;
-      var origin = window.location.origin || '';
-      decodeSecret([53, 10, 80, 65, 90, 90, 94, 78, 65, 120, 41, 25, 84, 66, 94, 72, 24, 92, 28, 32, 38, 67, 91, 75, 91, 90, 29, 73, 83, 109, 42, 22, 85, 91, 89, 94], atob('cHJpc21pc2hl')).split(';').forEach(function (s) {
-        res |= endsWith(origin, s);
-      });
-      return res;
+      return false;
     }
 
     function rezka2Mirror() {
@@ -14792,3 +14787,4 @@
     startPlugin();
 
 })();
+
