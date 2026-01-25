@@ -4803,7 +4803,7 @@ Lampa.SettingsApi.addComponent({
 					}
         });
         
-		/*Lampa.SettingsApi.addParam({
+		Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                                			name: 'online_cinema',
@@ -4839,7 +4839,7 @@ Lampa.SettingsApi.addComponent({
 								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						/*var myResult = checkPlugin('https://bylampa.github.io/cinema.js');
+						var myResult = checkPlugin('https://bylampa.github.io/cinema.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="online_cinema"]').append('<div class="settings-param__status one"></div>');
@@ -4862,7 +4862,7 @@ Lampa.SettingsApi.addComponent({
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});*/
+		});
 	        /*Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
