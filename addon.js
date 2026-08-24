@@ -966,15 +966,15 @@ Lampa.Settings.listener.follow('open', function (e) {
 						},
 					field: {
 						name: 'Мультфильмы',
-						description: 'Плагин заменяет пункт Аниме на Мульт'
+						description: 'Плагин добавляет пункт Мультфильмы в левое меню'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('http://193.233.134.21/plugins/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult', nthChildIndex);
+						       itemON('https://bylampa.github.io/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://193.233.134.21/plugins/mult.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/mult.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -989,13 +989,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('http://193.233.134.21/plugins/mult.js');
+						var myResult = checkPlugin('https://bylampa.github.io/mult.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://193.233.134.21/plugins/mult.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/mult.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
@@ -3857,6 +3857,67 @@ Lampa.Settings.listener.follow('open', function (e) {
                                                           $('div[data-name="card_buttons_editor"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
                                                           $('div[data-name="card_buttons_editor"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
+
+	     Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'continue_all',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Продолжить просмотр',
+						description: 'Добавляет из истории на главную страницу в ленту Продолжить просмотр ваши фильмы'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/continue_all.js', 'Продолжить просмотр', '@bylampa', 'continue_all', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/continue_all.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://bylampa.github.io/continue_all.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="continue_all"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/continue_all.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="continue_all"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="continue_all"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="continue_all"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);
 						    item.on("hover:enter", function (event) {
