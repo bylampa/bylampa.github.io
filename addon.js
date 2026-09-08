@@ -5340,10 +5340,10 @@ Lampa.Settings.listener.follow('open', function (e) {
 						    });
 					}
 		});
-	        /*Lampa.SettingsApi.addParam({
+	        Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
-                               			name: 'Онлайн_BWA_Cloud',
+                               	name: 'Онлайн_BWA',
                    				type: 'select',
                    				values: {
 							1:	'Установить',
@@ -5352,16 +5352,16 @@ Lampa.Settings.listener.follow('open', function (e) {
 					//default: '1',
                				},
 					field: {
-                                  		name: 'Онлайн BWA Cloud',
+                                  		name: 'Онлайн BWA',
                                   		description: 'Плагин для просмотра фильмов и сериалов в онлайн, менее капризный для работы и более подходит для старых устройств, чем Online BWA'
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://bwa.to/cloud.js', 'Онлайн BWA Cloud', '@rik', 'Онлайн_BWA_Cloud', nthChildIndex);
+						itemON('http://bwa.ad/rc', 'Онлайн BWA', '@rik', 'Онлайн_BWA', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 					}
 					if (value == '2') {
-						var pluginToRemoveUrl = "http://bwa.to/cloud.js";
+						var pluginToRemoveUrl = "http://bwa.ad/rc";
 						deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 					}
@@ -5376,30 +5376,30 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						/*var myResult = checkPlugin('http://bwa.to/cloud.js');
+						var myResult = checkPlugin('http://bwa.ad/rc');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
-                                                       $('div[data-name="Онлайн_BWA_Cloud"]').append('<div class="settings-param__status one"></div>');
+                                                       $('div[data-name="Онлайн_BWA"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://bwa.to/cloud.js') {
+                                                          if (pluginsArray[i].url === 'http://bwa.ad/rc') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
                                                        }
                                                        if (myResult && pluginStatus !== 0) {
-                                                          $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').addClass('active');
                                                        } else if (pluginStatus === 0) {
-                                                          $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
                                                        } else {
-                                                          $('div[data-name="Онлайн_BWA_Cloud"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                          $('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error').addClass('error');
                                                        }
                                                     }, 100);	
 						    item.on("hover:enter", function (event) {
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});*/
+		});
 	        Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
@@ -5640,10 +5640,10 @@ Lampa.Settings.listener.follow('open', function (e) {
 					}
 		});*/
 
-	    /* Lampa.SettingsApi.addParam({
+	    Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
-                                		name: 'free_onl',
+                        name: 'free_onl',
 						type: 'select',
 						values: {
 							1:	'Установить',
@@ -5657,7 +5657,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://bylampa.github.io/free_onl.js', 'Free Online', '@AndreyURL54', 'free_onl', nthChildIndex);
+							itemON('https://bylampa.github.io/free_onl.js', 'Free Online', '@bylampa', 'free_onl', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
@@ -5676,7 +5676,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						/*var myResult = checkPlugin('https://bylampa.github.io/free_onl.js');
+						var myResult = checkPlugin('https://bylampa.github.io/free_onl.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="free_onl"]').append('<div class="settings-param__status one"></div>');
@@ -5699,7 +5699,7 @@ Lampa.Settings.listener.follow('open', function (e) {
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-        });*/
+        });
 	
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
