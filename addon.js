@@ -5640,7 +5640,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 					}
 		});*/
 
-	    Lampa.SettingsApi.addParam({
+	   /* Lampa.SettingsApi.addParam({
 					component: 'add_online_plugin',
 					param: {
                         name: 'free_onl',
@@ -5676,7 +5676,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/free_onl.js');
+						/*var myResult = checkPlugin('https://bylampa.github.io/free_onl.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="free_onl"]').append('<div class="settings-param__status one"></div>');
@@ -5699,7 +5699,7 @@ Lampa.Settings.listener.follow('open', function (e) {
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-        });
+        });*/
 	
 	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
