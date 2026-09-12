@@ -1,0 +1,9 @@
+{
+  "version": "MatriX.144.3",
+  "links": {
+    "android-arm64": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.3/TorrServer-android-arm64",
+    "android-arm7": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.3/TorrServer-android-arm7",
+    "windows-amd64.exe": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.3/TorrServer-windows-amd64-MatriX.144.3.exe",
+    "windows-386.exe": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.3/TorrServer-windows-386-MatriX.144.3.exe"
+  }
+}
