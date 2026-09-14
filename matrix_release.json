@@ -1,5 +1,5 @@
 {  
-  "version": "MatriX.144.5 UN",  
+  "version": "MatriX.144.5.UN",  
   "links": {  
     "android-arm64": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.5/TorrServer-android-arm64",  
     "android-arm7": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.5/TorrServer-android-arm7",  
