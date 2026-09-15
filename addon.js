@@ -1625,11 +1625,11 @@ Lampa.Settings.listener.follow('open', function (e) {
 						},
 						onChange: function(value) {
 							if (value == '1') {
-								itemON('https://BDVBurik.github.io/rezkacomment.js', 'Комментарии Rezka', '@BDV_Burik', 'Rezka_comments', nthChildIndex);
+								itemON('https://bylampa.github.io/rezka_comments.js', 'Комментарии Rezka', '@BDV_Burik', 'Rezka_comments', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "https://BDVBurik.github.io/rezkacomment.js";
+								var pluginToRemoveUrl = "https://bylampa.github.io/rezka_comments.js";
 								deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 							}
@@ -1644,13 +1644,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 									$('div[data-name="Rezka_comments"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
 							}, 100);*/
-						var myResult = checkPlugin('https://BDVBurik.github.io/rezkacomment.js');
+						var myResult = checkPlugin('https://bylampa.github.io/rezka_comments.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Rezka_comments"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://BDVBurik.github.io/rezkacomment.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/rezka_comments.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
