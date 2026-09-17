@@ -1,9 +1,9 @@
 {  
-  "version": "MatriX.144.5.UN",  
+  "version": "MatriX.145.UN",  
   "links": {  
-    "android-arm64": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.5.UN/TorrServer-android-arm64",  
-    "android-arm7": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.5.UN/TorrServer-android-arm7",  
-    "windows-amd64.exe": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.5.UN/TorrServer-windows-amd64-MatriX.144.5.exe",  
-    "windows-386.exe": "https://github.com/bylampa/Matrix/releases/download/MatriX.144.5.UN/TorrServer-windows-386-MatriX.144.5.exe"  
+    "android-arm64": "https://github.com/bylampa/Matrix/releases/download/MatriX.145.UN/TorrServer-android-arm64",  
+    "android-arm7": "https://github.com/bylampa/Matrix/releases/download/MatriX.145.UN/TorrServer-android-arm7",  
+    "android-386": "https://github.com/bylampa/Matrix/releases/download/MatriX.145.UN/TorrServer-android-386",  
+    "android-amd64": "https://github.com/bylampa/Matrix/releases/download/MatriX.145.UN/TorrServer-android-amd64"  
   }  
 }
