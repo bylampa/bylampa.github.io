@@ -1743,15 +1743,15 @@ Lampa.Settings.listener.follow('open', function (e) {
 							},
 						field: {
 							name: 'Remove TS',
-							description: 'Плагин убирает на главном экране карточки с качеством TS'
+							description: 'Плагин убирает карточки с качеством TS'
 						},
 						onChange: function(value) {
 							if (value == '1') {
-								itemON('http://193.233.134.21/plugins/nots', 'Remove TS', '@AndreyURL54', 'ts_del', nthChildIndex);
+								itemON('https://bylampa.github.io/remove_ts.js', 'Remove TS', '@oniontorproject', 'ts_del', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "http://193.233.134.21/plugins/nots";
+								var pluginToRemoveUrl = "https://bylampa.github.io/remove_ts.js";
 								deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 							}
@@ -1766,13 +1766,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 									$('div[data-name="ts_del"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
 							}, 100);*/
-						var myResult = checkPlugin('http://193.233.134.21/plugins/nots');
+						var myResult = checkPlugin('https://bylampa.github.io/remove_ts.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="ts_del"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'http://193.233.134.21/plugins/nots') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/remove_ts.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
