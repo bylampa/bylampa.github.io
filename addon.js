@@ -240,7 +240,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		  }, 1500);
-	          setTimeout(function() {
+	          /*setTimeout(function() {
                     if (nthChildIndex) {
                         var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChildIndex + ")")
                         Lampa.Controller.focus(F);
@@ -249,7 +249,13 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
                     } else {
                         console.error("Ошибка: Элемент с индексом nth-child " + nthChildIndex + " не найден.");
                     }
-                  }, 2000);
+                  }, 2000);*/
+	      setTimeout(function() {
+            if (!focusByIndex(nthChildIndex)) {
+                // Если по индексу не нашли — вернуть фокус на компонент, чтобы не падало
+                Lampa.Controller.toggle('settings_component');
+            }
+          }, 2000);
 // Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	  // Lampa.Storage.set('needRebootSettingExit', true);
 	  // settingsWatch();
@@ -270,7 +276,7 @@ function deletePlugin(pluginToRemoveUrl) {
 	  Lampa.Settings.update();
 	  Lampa.Noty.show("Плагин успешно удален");
 	}, 1500);
-	setTimeout(function() {
+	/*setTimeout(function() {
                     if (nthChildIndex) {
                         var F = document.querySelector("#app > div.settings.animate > div.settings__content.layer--height > div.settings__body > div > div > div > div > div:nth-child(" + nthChildIndex + ")")
                         Lampa.Controller.focus(F);
@@ -279,7 +285,12 @@ function deletePlugin(pluginToRemoveUrl) {
                     } else {
                         console.error("Ошибка: Элемент с индексом nth-child " + nthChildIndex + " не найден.");
                     }
-         }, 2000);
+         }, 2000);*/
+	setTimeout(function() {
+      if (!focusByIndex(nthChildIndex)) {
+        Lampa.Controller.toggle('settings_component');
+      }
+    }, 2000);
 	/*Lampa.Settings.update();
 	Lampa.Noty.show("Плагин успешно удален");*/
 	Lampa.Storage.set('needRebootSettingExit', true);
@@ -294,7 +305,7 @@ function checkPlugin(pluginToCheck) {
 	console.log('search', 'pluginToCheck: ' + pluginToCheck);
 	if (JSON.stringify(checkResult) !== '[]') {return true} else {return false}
 };
-
+/*
 // Функция для получения индекса параметра
 function focus_back(event) {
     var targetElement = event.target; // Здесь мы берём объект события
@@ -316,6 +327,40 @@ function focus_back(event) {
 
     // Возвращаем найденный элемент
     return nthChildIndex;
+}*/
+
+// Функция для получения индекса параметра среди всех .settings-param
+function focus_back(event) {
+    var target = event && event.target;
+    if (!target) return null;
+
+    // Поднимаемся до самого .settings-param (на случай, если hover пришёл с вложенного элемента)
+    var param = target.closest ? target.closest('.settings-param') : null;
+    if (!param) return null;
+
+    // Проверяем, что элемент реально в DOM
+    if (!document.body.contains(param)) return null;
+
+    // Считаем индекс среди ВСЕХ .settings-param, а не только соседей
+    var all = document.querySelectorAll('.settings-param');
+    var index = Array.prototype.indexOf.call(all, param);
+    if (index === -1) return null;
+
+    // Возвращаем 1-based индекс
+    return index + 1;
+}
+
+// Возврат фокуса по индексу среди всех .settings-param
+function focusByIndex(index) {
+    if (!index || index < 1) return false;
+
+    var all = document.querySelectorAll('.settings-param');
+    var el = all[index - 1]; // 1-based -> 0-based
+    if (!el || !document.body.contains(el)) return false;
+
+    Lampa.Controller.focus(el);
+    Lampa.Controller.toggle('settings_component');
+    return true;
 }
 	
 /* Компонент */
