@@ -237,7 +237,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 		}, 300);*/
 	        showLoadingBar();
 	          setTimeout(function() {
-			//Lampa.Settings.update();
+			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		  }, 1500);
 	          /*setTimeout(function() {
@@ -273,7 +273,7 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('plugins', updatedPlugins);
 	//Lampa.Storage.set('needReboot', true);
 	setTimeout(function() {
-	 // Lampa.Settings.update();
+	  Lampa.Settings.update();
 	  Lampa.Noty.show("Плагин успешно удален");
 	}, 1500);
 	/*setTimeout(function() {
