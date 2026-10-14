@@ -6910,15 +6910,15 @@ Lampa.Settings.listener.follow('open', function (e) {
 					},
 					field: {
 						name: 'Радио Record Mod',
-						description: 'Всё тот же плагин Радио Record, но с единым списком станций без разделения на жанры'
+						description: 'Плагин для прослушивания радиостанций радио Record. В настройках можно изменить стиль иконок, цветовую схему, отключить анимацию и возможность открывать в плеере'
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-							itemON('https://lampame.github.io/main/rradio.js', 'Радио Record Mod', '@GwynnBleiidd', 'Record_Mod', nthChildIndex);
+							itemON('http://pl.bylampa.online/radio_record.js', 'Радио Record Mod', '@bylampa', 'Record_Mod', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
                      				}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://lampame.github.io/main/rradio.js";
+							var pluginToRemoveUrl = "http://pl.bylampa.online/radio_record.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -6933,13 +6933,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://lampame.github.io/main/rradio.js');
+						var myResult = checkPlugin('http://pl.bylampa.online/radio_record.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Record_Mod"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://lampame.github.io/main/rradio.js') {
+                                                          if (pluginsArray[i].url === 'http://pl.bylampa.online/radio_record.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
