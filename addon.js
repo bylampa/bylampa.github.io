@@ -4082,6 +4082,58 @@ Lampa.Settings.listener.follow('open', function (e) {
 		Lampa.SettingsApi.addParam({
 					component: 'add_management_plugin',
 					param: {
+						name: 'Amo_Server_Switch',
+						type: 'select',
+						values: {
+							1: 'Установить',
+							2: 'Удалить',
+						},
+					},
+					field: {
+						name: 'Amo Server (Easy Install)',
+						description: 'Быстрая установка и переключение сервера Lampa на app.amo.watch (Фильмы 4K, Сериалы, ТВ, 14 языков). Работает на Smart TV, Android TV, Tizen, webOS, ПК и в браузере.'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://app.amo.watch/install_amo.js', 'Amo Server (Easy Install)', '@amo_watch', 'Amo_Server_Switch', typeof nthChildIndex !== 'undefined' ? nthChildIndex : null);
+						}
+						if (value == '2') {
+							deletePlugin('https://app.amo.watch/install_amo.js', typeof nthChildIndex !== 'undefined' ? nthChildIndex : null);
+						}
+					},
+					onRender: function (item) {
+						$('.settings-param__name', item).css('color','f3d900');
+						if (typeof hideInstall === 'function') hideInstall();
+						var myResult = typeof checkPlugin === 'function' ? checkPlugin('https://app.amo.watch/install_amo.js') : false;
+						var pluginsArray = Lampa.Storage.get('plugins');
+						setTimeout(function() {
+							$('div[data-name="Amo_Server_Switch"]').append('<div class="settings-param__status one"></div>');
+							var pluginStatus = null;
+							for (var i = 0; i < pluginsArray.length; i++) {
+								if (pluginsArray[i].url === 'https://app.amo.watch/install_amo.js') {
+									pluginStatus = pluginsArray[i].status;
+									break;
+								}
+							}
+							if (myResult && pluginStatus !== 0) {
+								$('div[data-name="Amo_Server_Switch"]').find('.settings-param__status').removeClass('active error').addClass('active');
+							} else if (pluginStatus === 0) {
+								$('div[data-name="Amo_Server_Switch"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+							} else {
+								$('div[data-name="Amo_Server_Switch"]').find('.settings-param__status').removeClass('active error').addClass('error');
+							}
+						}, 100);
+						if (typeof focus_back === 'function') {
+							item.on("hover:enter", function (event) {
+								nthChildIndex = focus_back(event);
+							});
+						}
+					}
+		});
+
+		Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
                                		name: 'Exit_Menu',
 						type: 'select',
 						values: {
