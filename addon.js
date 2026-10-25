@@ -3727,7 +3727,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 					}
 		});
 
-	    Lampa.SettingsApi.addParam({
+	    /*Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
 					param: {
 						name: 'time2end',
@@ -3763,7 +3763,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/time2end.js');
+						/*var myResult = checkPlugin('https://bylampa.github.io/time2end.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="time2end"]').append('<div class="settings-param__status one"></div>');
@@ -3786,7 +3786,7 @@ Lampa.Settings.listener.follow('open', function (e) {
                                                         nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
 						    });
 					}
-		});
+		});*/
 
 	    Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
