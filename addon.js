@@ -6398,6 +6398,67 @@ Lampa.Settings.listener.follow('open', function (e) {
 					}
 		});
 
+	    Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'ts_bridge',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Ts Bridge',
+						description: 'Плагин позволяет обойти черный список со стороны Torrserver'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://zgoly.github.io/lampa-plugins/ts-bridge.js', 'Ts Bridge', '@zgoly', 'ts_bridge', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://zgoly.github.io/lampa-plugins/ts-bridge.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						/*var myResult = checkPlugin('https://bylampa.github.io/freetorr.js')
+						setTimeout(function() {	
+							$('div[data-name="free_torr"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://zgoly.github.io/lampa-plugins/ts-bridge.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="ts_bridge"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://zgoly.github.io/lampa-plugins/ts-bridge.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="ts_bridge"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="ts_bridge"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="ts_bridge"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
+
 
 	/*
 	        Lampa.SettingsApi.addParam({
