@@ -2,6 +2,17 @@
     'use strict';
 	
 function addonStart() {
+
+var pluginsWeather = Lampa.Storage.get('plugins', []);
+
+pluginsWeather.forEach(function (plug) {
+    plug.url = (plug.url + '').replace(
+        'https://bylampa.github.io/weather.js',
+        'http://pl.bylampa.online/weather.js'
+    );
+});
+
+Lampa.Storage.set('plugins', pluginsWeather);
 	    
 /*
  * * * Иконки разделов плагина
