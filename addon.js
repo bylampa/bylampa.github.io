@@ -3324,15 +3324,15 @@ Lampa.Settings.listener.follow('open', function (e) {
 						},
 					field: {
 						name: 'Трейлеры',
-						description: 'Плагин добавляет на главную страницу пункт меню Трейлеры с различными разделами (Популярные фильмы, В прокате, Скоро в кино, Популярные сериалы, Новые сериалы и сезоны, Скоро на ТВ)'
+						description: 'Плагин добавляет на главную страницу пункт меню Трейлеры с различными разделами'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://mastermagic98.github.io/l_plugins/upcoming.js', 'Трейлеры', '@myroslav_kuzyshyn', 'trailers_on_main', nthChildIndex);
+						       itemON('https://bylampa.github.io/trailers.js', 'Трейлеры', '@myroslav_kuzyshyn', 'trailers_on_main', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://mastermagic98.github.io/l_plugins/upcoming.js";
+							var pluginToRemoveUrl = "https://bylampa.github.io/trailers.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -3347,13 +3347,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://mastermagic98.github.io/l_plugins/upcoming.js');
+						var myResult = checkPlugin('https://bylampa.github.io/trailers.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="trailers_on_main"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://mastermagic98.github.io/l_plugins/upcoming.js') {
+                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/trailers.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
