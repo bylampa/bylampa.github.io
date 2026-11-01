@@ -4042,6 +4042,67 @@ Lampa.Settings.listener.follow('open', function (e) {
 						    });
 					}
 		});
+
+	    Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'picker',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Picker',
+						description: 'Подборщик фильмов и сериалов на вечер для Lampa. Плагин знает, что вы смотрели и что вам понравилось, спрашивает, какой сегодня вечер, и предлагает пять вариантов с объяснением, почему именно они'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://mragasferon.github.io/lampa-picker/picker.js', 'Picker', '@MrAgasferon', 'picker', nthChildIndex);
+							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://mragasferon.github.io/lampa-picker/picker.js";
+							deletePlugin(pluginToRemoveUrl, nthChildIndex);
+							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						/*var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);*/
+						var myResult = checkPlugin('https://mragasferon.github.io/lampa-picker/picker.js');
+                                                var pluginsArray = Lampa.Storage.get('plugins');
+                                                    setTimeout(function() {
+                                                       $('div[data-name="picker"]').append('<div class="settings-param__status one"></div>');
+                                                       var pluginStatus = null;
+                                                       for (var i = 0; i < pluginsArray.length; i++) {
+                                                          if (pluginsArray[i].url === 'https://mragasferon.github.io/lampa-picker/picker.js') {
+                                                             pluginStatus = pluginsArray[i].status;
+                                                             break;
+                                                          }
+                                                       }
+                                                       if (myResult && pluginStatus !== 0) {
+                                                          $('div[data-name="picker"]').find('.settings-param__status').removeClass('active error').addClass('active');
+                                                       } else if (pluginStatus === 0) {
+                                                          $('div[data-name="picker"]').find('.settings-param__status').removeClass('active error').css('background-color', 'rgb(255, 165, 0)');
+                                                       } else {
+                                                          $('div[data-name="picker"]').find('.settings-param__status').removeClass('active error').addClass('error');
+                                                       }
+                                                    }, 100);
+						    item.on("hover:enter", function (event) {
+                                                        nthChildIndex = focus_back(event); // Сохраняем элемент в переменной
+						    });
+					}
+		});
 	
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
