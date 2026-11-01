@@ -7426,7 +7426,7 @@ Lampa.Settings.listener.follow('open', function (e) {
 	    
         });
 /* Счётчик Яндекса */    
-	(function(m, e, t, r, i, k, a) {
+	/*(function(m, e, t, r, i, k, a) {
                        m[i] = m[i] || function() {
                                (m[i].a = m[i].a || []).push(arguments)
                        };
@@ -7441,7 +7441,7 @@ Lampa.Settings.listener.follow('open', function (e) {
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     ym(93937344, "init", {clickmap: true,trackLinks: true,accurateTrackBounce: true})
     var METRIKA = '<noscript><div><img src="https://mc.yandex.ru/watch/93937344" style="position:absolute; left:-9999px;" alt="" /></div></noscript>';
-    $('body').append(METRIKA);
+    $('body').append(METRIKA); */
 
 
 } // /* addonStart */
