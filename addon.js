@@ -1738,15 +1738,15 @@ Lampa.Settings.listener.follow('open', function (e) {
 							},
 						field: {
 							name: 'Shikimori',
-							description: 'Отображает информацию по аниме с Shikimori, так же пытается найти по оригинальному названию на ТМДБ, если найдено множество результато, то покажет меню с выбором'
+							description: 'Плагин - интеграция с сайтом shikimori с списками просмотренного, онлайн воспроизведением, работа со списками, авторизация либо через никнейм или oAuth'
 						},
 						onChange: function(value) {
 							if (value == '1') {
-								itemON('https://gtdpage.duckdns.org/shikimori.js', 'Shikimori', '@AntMeln', 'Shikimori', nthChildIndex);
+								itemON('https://gtds-page.github.io/lampa-shikimori/shikimori.js', 'Shikimori', '@AntMeln', 'Shikimori', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 							}
 							if (value == '2') {
-								var pluginToRemoveUrl = "https://gtdpage.duckdns.org/shikimori.js";
+								var pluginToRemoveUrl = "https://gtds-page.github.io/lampa-shikimori/shikimori.js";
 								deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 							}
@@ -1761,13 +1761,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 									$('div[data-name="Shikimori"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 								}
 							}, 100);*/
-						var myResult = checkPlugin('https://gtdpage.duckdns.org/shikimori.js');
+						var myResult = checkPlugin('https://gtds-page.github.io/lampa-shikimori/shikimori.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="Shikimori"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://gtdpage.duckdns.org/shikimori.js') {
+                                                          if (pluginsArray[i].url === 'https://gtds-page.github.io/lampa-shikimori/shikimori.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
