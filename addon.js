@@ -2231,11 +2231,11 @@ Lampa.Settings.listener.follow('open', function (e) {
 					},
 					onChange: function(value) {
 						if (value == '1') {
-						       itemON('https://bylampa.github.io/cardify.js', 'Cardify', '@lampa', 'cardify', nthChildIndex);
+						       itemON('http://pl.bylampa.online/cardify.js', 'Cardify', '@lampa', 'cardify', nthChildIndex);
 							// console.log("nthChildIndex, переданный в itemON:", nthChildIndex);
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "https://bylampa.github.io/cardify.js";
+							var pluginToRemoveUrl = "http://pl.bylampa.online/cardify.js";
 							deletePlugin(pluginToRemoveUrl, nthChildIndex);
 							// console.log("nthChildIndex, переданный в deletePlugin:", nthChildIndex);
 						}
@@ -2250,13 +2250,13 @@ Lampa.Settings.listener.follow('open', function (e) {
 								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
 							}
 						}, 100);*/
-						var myResult = checkPlugin('https://bylampa.github.io/cardify.js');
+						var myResult = checkPlugin('http://pl.bylampa.online/cardify.js');
                                                 var pluginsArray = Lampa.Storage.get('plugins');
                                                     setTimeout(function() {
                                                        $('div[data-name="cardify"]').append('<div class="settings-param__status one"></div>');
                                                        var pluginStatus = null;
                                                        for (var i = 0; i < pluginsArray.length; i++) {
-                                                          if (pluginsArray[i].url === 'https://bylampa.github.io/cardify.js') {
+                                                          if (pluginsArray[i].url === 'http://pl.bylampa.online/cardify.js') {
                                                              pluginStatus = pluginsArray[i].status;
                                                              break;
                                                           }
