@@ -3,16 +3,17 @@
 	
 function addonStart() {
 
-var pluginsWeather = Lampa.Storage.get('plugins', []);
+var plugins = Lampa.Storage.get('plugins', []);
 
-pluginsWeather.forEach(function (plug) {
-    plug.url = (plug.url + '').replace(
-        'https://bylampa.github.io/weather.js',
-        'http://pl.bylampa.online/weather.js'
-    );
+plugins.forEach(function (plug) {
+    if (plug.url) {
+        plug.url = (plug.url + '')
+            .replace('https://bylampa.github.io/weather.js', 'http://pl.bylampa.online/weather.js')
+            .replace('https://bylampa.github.io/cardify.js', 'http://pl.bylampa.online/cardify.js');
+    }
 });
 
-Lampa.Storage.set('plugins', pluginsWeather);
+Lampa.Storage.set('plugins', plugins);
 	    
 /*
  * * * Иконки разделов плагина
